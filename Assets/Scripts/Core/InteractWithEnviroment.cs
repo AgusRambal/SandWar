@@ -13,7 +13,7 @@ public class InteractWithEnviroment : MonoBehaviour
             { 
                 if (hit.transform.GetComponent<RecruitMarines>())
                 {
-                    EventManager.TriggerEvent(GenericEvents.HandleRecruitWindow);
+                    EventManager.TriggerEvent(GenericEvents.OpenRecruitWindow);
                 }
             }
         }

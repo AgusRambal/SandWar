@@ -6,7 +6,7 @@ public class UIMethods : MonoBehaviour, IEventListener
 {
     [SerializeField] private GameObject recruitWindow;
 
-    private bool recruitWindowState = false;
+    public static bool isOverUI = false;
 
     private void Awake()
     {    
@@ -18,23 +18,29 @@ public class UIMethods : MonoBehaviour, IEventListener
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            EventManager.TriggerEvent(GenericEvents.HandleRecruitWindow);
+            CloseRecruitWindow();
         }
     }
 
-    public void HandleRecruitWindow(Hashtable hastable)
+    public void OpenRecruitWindow(Hashtable hastable)
     {
-        recruitWindowState = !recruitWindowState;
+        if (isOverUI)
+            return;
 
-        if (recruitWindowState) 
-        {
-            recruitWindow.transform.DOScale(1f, .2f);
-        }
+        recruitWindow.transform.DOScale(1f, .2f);
+    }
 
-        else
-        {
-            recruitWindow.transform.DOScale(0f, .2f);
-        }
+    public void CloseRecruitWindow()
+    {
+        recruitWindow.transform.DOScale(0f, .2f);
+    }
+
+    //Button
+    public void RecruitMarine(int id)
+    {
+        EventManager.TriggerEvent(GenericEvents.RecruitMarine, new Hashtable() {
+        {GameplayEventHashtableParams.MarineID.ToString(), id}       
+        });
     }
 
     private void OnDestroy()
@@ -49,11 +55,11 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     public void OnEnableEventListenerSubscriptions()
     {
-        EventManager.StartListening(GenericEvents.HandleRecruitWindow, HandleRecruitWindow);
+        EventManager.StartListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
     }
 
     public void CancelEventListenerSubscriptions()
     {
-        EventManager.StopListening(GenericEvents.HandleRecruitWindow, HandleRecruitWindow);
+        EventManager.StopListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
     }
 }

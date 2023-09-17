@@ -1,4 +1,5 @@
 ﻿public enum GenericEvents
 {
-    HandleRecruitWindow
+    OpenRecruitWindow,
+    RecruitMarine
 }
