@@ -18,4 +18,4 @@ MonoBehaviour:
   description: This is a spy, his function is go to the enemy base and see its defences,
     works separately of the army because it has no guns
   typeMarine: 5
-  prefab: {fileID: 0}
+  health: 10

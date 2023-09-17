@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Marine : ScriptableObject
 {
+    [Header("Variables")]
     [SerializeField] private int id;
     [SerializeField] private new string name;
     [SerializeField] private Sprite icon;
     [TextArea][SerializeField] private string description;
     [SerializeField] private TypeMarine typeMarine;
-    [SerializeField] private GameObject prefab;
+
+    [Header("Stats")]
+    [SerializeField] private float health;
 
     //Faltan todas las specs tecnicas de vida y demas
 
@@ -17,7 +20,8 @@ public class Marine : ScriptableObject
     public string Name => name;
     public Sprite Icon => icon;
     public string Descriptions => description;
-    public TypeMarine TypeTech => typeMarine;
+    public TypeMarine TypeMarine => typeMarine;
+    public float Health => health;
 }
 
 public enum TypeMarine

@@ -18,4 +18,4 @@ MonoBehaviour:
   description: This is a sniper, has the ability to handle separately over the other
     marines
   typeMarine: 1
-  prefab: {fileID: 0}
+  health: 50

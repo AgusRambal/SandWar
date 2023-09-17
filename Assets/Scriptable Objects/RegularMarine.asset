@@ -17,4 +17,4 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: This is a regular marine
   typeMarine: 2
-  prefab: {fileID: 0}
+  health: 100

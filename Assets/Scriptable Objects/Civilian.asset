@@ -17,4 +17,4 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: Only a civilian
   typeMarine: 6
-  prefab: {fileID: 0}
+  health: 10
