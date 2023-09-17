@@ -8,13 +8,11 @@ public class CameraBehaviour : MonoBehaviour
 
     [Header("Features")]
     [SerializeField] private bool useEdgeScrolling = false;
-    [SerializeField] private bool useDragPan = false;
 
     [Header("Variables")]
     [SerializeField] private float moveSpeed = 25;
     [SerializeField] private float moveSpeedShift = 50f;
     [SerializeField] private float rotateSpeed = 100f;
-    [SerializeField] private float panSpeed = 1;
     [SerializeField] private float zoomOffsetMin = 5f;
     [SerializeField] private float zoomOffsetMax = 50f;
     [SerializeField] private float zoomSpeed = 10f;
@@ -35,11 +33,6 @@ public class CameraBehaviour : MonoBehaviour
         if (useEdgeScrolling)
         {
             UseEdgeScrolling();
-        }
-
-        if (useDragPan)
-        {
-            UseDragPan();
         }
 
         Rotation();
@@ -78,35 +71,6 @@ public class CameraBehaviour : MonoBehaviour
         if (Input.mousePosition.y < edgeScrollSize) inputDir.z = -1f;
         if (Input.mousePosition.x > Screen.width - edgeScrollSize) inputDir.x = +1f;
         if (Input.mousePosition.y > Screen.height - edgeScrollSize) inputDir.z = +1f;
-
-        Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
-        transform.position += moveSpeed * Time.deltaTime * moveDir;
-    }
-
-    private void UseDragPan()
-    {
-        Vector3 inputDir = new Vector3(0, 0, 0);
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            dragPanMoveActive = true;
-            lastMousePosition = Input.mouseScrollDelta;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            dragPanMoveActive = false;
-        }
-
-        if (dragPanMoveActive)
-        {
-            Vector2 mouseMovementDelta = (Vector2)Input.mousePosition - lastMousePosition;
-
-            inputDir.x = mouseMovementDelta.x * panSpeed;
-            inputDir.z = mouseMovementDelta.y * panSpeed;
-
-            lastMousePosition = Input.mousePosition;
-        }
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
         transform.position += moveSpeed * Time.deltaTime * moveDir;
