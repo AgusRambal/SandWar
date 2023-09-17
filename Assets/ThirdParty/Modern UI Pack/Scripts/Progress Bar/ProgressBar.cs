@@ -26,6 +26,7 @@ namespace Michsky.MUIP
         public bool addSuffix = true;
         public string prefix = "";
         public string suffix = "%";
+        public string customName = "";
         public bool isLooped = false;
         [Range(0, 5)] public int decimals = 0;
 
@@ -61,7 +62,7 @@ namespace Michsky.MUIP
         {
             loadingBar.fillAmount = currentPercent / maxValue;
 
-            if (addSuffix == true) { textPercent.text = currentPercent.ToString("F" + decimals) + suffix; }
+            if (addSuffix == true) { textPercent.text = currentPercent.ToString("F" + decimals) + suffix + customName; }
             else { textPercent.text = currentPercent.ToString("F" + decimals); }
 
             if (addPrefix == true)

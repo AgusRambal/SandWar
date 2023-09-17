@@ -15,7 +15,7 @@ namespace Michsky.MUIP
         [Header("Resources")]
         [SerializeField] private Image bar;
         [SerializeField] private Image background;
-        [SerializeField] private TextMeshProUGUI label;
+        public TextMeshProUGUI label;
 
         bool dynamicUpdateEnabled;
 

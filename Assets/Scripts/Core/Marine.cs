@@ -6,22 +6,23 @@ public class Marine : ScriptableObject
 {
     [Header("Variables")]
     [SerializeField] private int id;
-    [SerializeField] private new string name;
+    [SerializeField] private string marineName;
     [SerializeField] private Sprite icon;
     [TextArea][SerializeField] private string description;
     [SerializeField] private TypeMarine typeMarine;
 
     [Header("Stats")]
     [SerializeField] private float health;
+    [SerializeField] private float creationTime;
 
-    //Faltan todas las specs tecnicas de vida y demas
 
     public int Id => id;
-    public string Name => name;
+    public string MarineName => marineName;
     public Sprite Icon => icon;
     public string Descriptions => description;
     public TypeMarine TypeMarine => typeMarine;
     public float Health => health;
+    public float CreationTime => creationTime;
 }
 
 public enum TypeMarine

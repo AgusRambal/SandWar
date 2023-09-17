@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Civilian
   m_EditorClassIdentifier: 
   id: 7
-  name: Civilan
+  marineName: Civilian
   icon: {fileID: 0}
   description: Only a civilian
   typeMarine: 6
   health: 10
+  creationTime: 10

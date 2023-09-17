@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: NavySEAL
   m_EditorClassIdentifier: 
   id: 3
-  name: Navy SEAL
+  marineName: Navy SEAL
   icon: {fileID: 0}
   description: This is a Navy SEAL, has more poweful guns and specs than a regular
     marine
   typeMarine: 3
   health: 150
+  creationTime: 50

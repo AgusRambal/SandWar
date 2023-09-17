@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Insurgent
   m_EditorClassIdentifier: 
   id: 8
-  name: Insurgent
+  marineName: Insurgent
   icon: {fileID: 0}
   description: This is an insurgent, the enemy of the zone, has the same stadistics
     of a regular marine
   typeMarine: 7
   health: 100
+  creationTime: 10

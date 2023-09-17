@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Pilot
   m_EditorClassIdentifier: 
   id: 5
-  name: Pilot marine
+  marineName: Pilot
   icon: {fileID: 0}
   description: This is a pilot marine, has the ability to drive a vehicle that can
     storage all troups, or drive an helicopter alone
   typeMarine: 4
   health: 100
+  creationTime: 20

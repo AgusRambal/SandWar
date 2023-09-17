@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Spy
   m_EditorClassIdentifier: 
   id: 6
-  name: Spy Marine
+  marineName: Spy
   icon: {fileID: 0}
   description: This is a spy, his function is go to the enemy base and see its defences,
     works separately of the army because it has no guns
   typeMarine: 5
   health: 50
+  creationTime: 50
