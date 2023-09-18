@@ -54,6 +54,9 @@ namespace Michsky.MUIP
 
         public void OnBeginDrag(PointerEventData data)
         {
+            if (Input.GetMouseButton(2))
+                return;
+
             originalPanelLocalPosition = DragObjectInternal.localPosition;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(DragAreaInternal, data.position, data.pressEventCamera, out originalLocalPointerPosition);
             gameObject.transform.SetAsLastSibling();
@@ -62,6 +65,9 @@ namespace Michsky.MUIP
 
         public void OnDrag(PointerEventData data)
         {
+            if (Input.GetMouseButton(2))
+                return;
+
             Vector2 localPointerPosition;
 
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(DragAreaInternal, data.position, data.pressEventCamera, out localPointerPosition))
