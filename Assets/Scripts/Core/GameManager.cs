@@ -20,18 +20,19 @@ public class GameManager : MonoBehaviour
     public List<Marine> allMarines = new List<Marine>();
     public float timerReset = 10f;
 
-    public float oilAmmount { get; private set; }
-    public float dollarsAmmount { get; private set; }
+    public float oilAmount { get; private set; }
+    public float dollarsAmount { get; private set; }
     public bool badMarketStatus { get; private set; }
     [field: SerializeField] public float goodOilSellValue { get; private set; }
     [field: SerializeField] public float badOilSellValue { get; private set; }
     [field: SerializeField] public float badDollarToReceive { get; private set; }
     [field: SerializeField] public float goodDollarToReceive { get; private set; }
 
-    [Range(0, 100)][SerializeField] private float marketChance = 50f;
+    [Range(0, 100)] public float marketChance = 50f;
     [SerializeField] private float timeToReset;
-    [SerializeField] private float oilAmmountToAdd;
+    [SerializeField] private float oilAmountToAdd;
 
+    private float marketChanceDecrease = 50f;
     private float timer = 0;
 
     private void Awake()
@@ -51,18 +52,17 @@ public class GameManager : MonoBehaviour
 
         if (timer >= timeToReset)
         {
-            oilAmmount += oilAmmountToAdd;
+            oilAmount += oilAmountToAdd;
             timer = 0;
         }
     }
 
     public IEnumerator SetOilValue()
     {
-        //Cada vez que sucede el cambio de estado, tirar otra chance de que suba un 10%
-        //Pero cada vez que compro, la chance baja un 10%
         yield return new WaitForSeconds(timerReset);
 
         float randomValue = Random.Range(0, 100);
+        float randomValue2 = Random.Range(0, 100);
 
         if (randomValue > marketChance)
         {
@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
             badMarketStatus = false;
         }
 
+        if (randomValue2 > marketChanceDecrease)
+        {
+            marketChance += 10f;
+        }
+
         StartCoroutine(SetOilValue());
     }
 
@@ -81,19 +86,20 @@ public class GameManager : MonoBehaviour
     {
         if (!badMarketStatus)
         {
-            oilAmmount -= goodOilSellValue;
-            dollarsAmmount += goodDollarToReceive;
+            oilAmount -= goodOilSellValue;
+            dollarsAmount += goodDollarToReceive;
         }
 
         else
         {
-            oilAmmount -= badOilSellValue;
-            dollarsAmmount += badDollarToReceive;
+            oilAmount -= badOilSellValue;
+            dollarsAmount += badDollarToReceive;
         }
     }
 
     public void SubstractDollars(int id)
     {
-        dollarsAmmount -= allMarines[id - 1].MarineValue;
+        dollarsAmount -= allMarines[id - 1].MarineValue;
+        marketChance -= 10f;
     }
 }

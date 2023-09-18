@@ -24,20 +24,30 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private TMP_Text marineDescription;
     [SerializeField] private TMP_Text marineHealth;
     [SerializeField] private TMP_Text marineWeapon;
+    [SerializeField] private TMP_Text marineCost;
+    [SerializeField] private TMP_Text marineTime;
 
     [Header("Resources")]
-    [SerializeField] private TMP_Text oilAmmount;
-    [SerializeField] private TMP_Text dollarsAmmount;
+    [SerializeField] private TMP_Text oilAmount;
+    [SerializeField] private TMP_Text dollarsAmount;
     [SerializeField] private GameObject marketGood;
     [SerializeField] private GameObject marketBad;
+    [SerializeField] private GameObject sellButton;
+    [SerializeField] private GameObject progressForSellingAgain;
     [SerializeField] private TMP_Text oilValue;
     [SerializeField] private TMP_Text dollarsValueToRecibie;
+
+    [Header("Notifications")]
+    [SerializeField] private GameObject notificationPrefab;
+    [SerializeField] private Transform notificationParent;
+
 
     public static bool isOverUI = false;
 
     private int selectedID = 1;
     private float sellTimer = 0;
     private bool sellTimerState = false;
+    private bool notificationActive = false;
 
     private void Awake()
     {    
@@ -98,8 +108,8 @@ public class UIMethods : MonoBehaviour, IEventListener
                 marineDescription.text = $"{allMarines[i].Description}";
                 marineHealth.text = $"Health: {allMarines[i].MarineName}";
                 marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
-                //Falta el cossssssto
-                //Agregar el tiempo de creacion?
+                marineCost.text = $"Cost: {allMarines[i].MarineValue} USD";
+                marineTime.text = $"Recruiting time: {allMarines[i].CreationTime} secs";
             }
         }
     }
@@ -107,20 +117,29 @@ public class UIMethods : MonoBehaviour, IEventListener
     //Button
     public void RecruitMarine()
     {
+        if (notificationParent.childCount == 0)
+        {
+            notificationActive = false;
+        }
+
         var allMarines = GameManager.Instance.allMarines;
 
         for (int i = 0; i < allMarines.Count; i++)
         {
             if (allMarines[i].Id == selectedID)
             {
-                if (GameManager.Instance.dollarsAmmount < allMarines[i].MarineValue)
+                if (GameManager.Instance.dollarsAmount < allMarines[i].MarineValue)
                 {
-                    //Mandar popUp de que no te alcanza
+                    if (!notificationActive)
+                    {
+                        ShowNotification("Not enough cash", "You can't recruit any marine because you doesnt have the right amount of cash");
+                        notificationActive = true;
+                    }
+
                     return;
                 }
 
                 GameManager.Instance.SubstractDollars(selectedID);
-                //Bajar la chance un 10%
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;
@@ -163,10 +182,11 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     private void SetSellTimerStatus()
     {
-        //Al apretar el boton, hacerlo desaparecer e instanciar un progress circular
-
         if (!sellTimerState)
             return;
+
+        sellButton.SetActive(false);
+        progressForSellingAgain.SetActive(true);
 
         sellTimer += Time.deltaTime;
 
@@ -174,13 +194,22 @@ public class UIMethods : MonoBehaviour, IEventListener
         {
             sellTimer = 0;
             sellTimerState = false;
+            sellButton.SetActive(true);
+            progressForSellingAgain.SetActive(false);
         }
     }
 
     public void ShowResources()
     {
-        oilAmmount.text = $"{GameManager.Instance.oilAmmount} lts";
-        dollarsAmmount.text = $"{GameManager.Instance.dollarsAmmount} USD";
+        oilAmount.text = $"{GameManager.Instance.oilAmount:F2} lts";
+        dollarsAmount.text = $"{GameManager.Instance.dollarsAmount} USD";
+    }
+
+    private void ShowNotification(string title, string content)
+    {
+        GameObject notification = Instantiate(notificationPrefab, notificationParent);
+        notification.GetComponent<Notifications>().title = title;
+        notification.GetComponent<Notifications>().content = content;
     }
 
     private void OnDestroy()

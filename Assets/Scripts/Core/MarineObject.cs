@@ -11,6 +11,7 @@ public class MarineObject : MonoBehaviour
     [SerializeField] private int id;
     [SerializeField] private float health;
     [SerializeField] private TypeMarine typeMarine;
+    [SerializeField] private Weapon weapon;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class MarineObject : MonoBehaviour
         typeMarine = scirptableObject.TypeMarine;
         health = scirptableObject.Health;
         id = scirptableObject.Id;
+        weapon = scirptableObject.Weapon;
     }
 
     private void Update()

@@ -7,7 +7,6 @@ public class ProgressBarTimer : MonoBehaviour
     public int marineID;
 
     private float timer;
-    private bool stopTimer;
 
     private void Update()
     {
