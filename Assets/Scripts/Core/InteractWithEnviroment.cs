@@ -15,6 +15,11 @@ public class InteractWithEnviroment : MonoBehaviour
                 {
                     EventManager.TriggerEvent(GenericEvents.OpenRecruitWindow);
                 }
+
+                if (hit.transform.GetComponent<SellOil>())
+                {
+                    EventManager.TriggerEvent(GenericEvents.OpenSellOilWindow);
+                }
             }
         }
     }

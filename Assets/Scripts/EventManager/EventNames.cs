@@ -1,5 +1,6 @@
 ﻿public enum GenericEvents
 {
     OpenRecruitWindow,
-    RecruitMarine
+    RecruitMarine,
+    OpenSellOilWindow
 }

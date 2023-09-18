@@ -13,6 +13,7 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     [Header("References")]
     [SerializeField] private GameObject recruitWindow;
+    [SerializeField] private GameObject sellOilWindow;
     [SerializeField] private GameObject progressBar;
     [SerializeField] private Transform progressBarTransform;
 
@@ -51,12 +52,20 @@ public class UIMethods : MonoBehaviour, IEventListener
         ShowResources();
     }
 
-    public void OpenRecruitWindow(Hashtable hastable)
+    public void OpenRecruitWindow(Hashtable hashtable)
     {
         if (isOverUI)
             return;
 
         recruitWindow.transform.DOScale(1f, .2f);
+    }
+
+    public void OpenSellOilWindow(Hashtable hashtable)
+    {
+        if (isOverUI)
+            return;
+
+        sellOilWindow.transform.DOScale(1f, .2f);
     }
 
     public void CloseRecruitWindow()
@@ -123,10 +132,12 @@ public class UIMethods : MonoBehaviour, IEventListener
     public void OnEnableEventListenerSubscriptions()
     {
         EventManager.StartListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
+        EventManager.StartListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
     }
 
     public void CancelEventListenerSubscriptions()
     {
         EventManager.StopListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
+        EventManager.StopListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
     }
 }
