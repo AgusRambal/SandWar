@@ -98,6 +98,8 @@ public class UIMethods : MonoBehaviour, IEventListener
                 marineDescription.text = $"{allMarines[i].Description}";
                 marineHealth.text = $"Health: {allMarines[i].MarineName}";
                 marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
+                //Falta el cossssssto
+                //Agregar el tiempo de creacion?
             }
         }
     }
@@ -118,6 +120,7 @@ public class UIMethods : MonoBehaviour, IEventListener
                 }
 
                 GameManager.Instance.SubstractDollars(selectedID);
+                //Bajar la chance un 10%
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;

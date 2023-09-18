@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator SetOilValue()
     {
+        //Cada vez que sucede el cambio de estado, tirar otra chance de que suba un 10%
+        //Pero cada vez que compro, la chance baja un 10%
         yield return new WaitForSeconds(timerReset);
 
         float randomValue = Random.Range(0, 100);

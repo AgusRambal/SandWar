@@ -17,7 +17,6 @@ public class Marine : ScriptableObject
     [SerializeField] private float creationTime;
     [SerializeField] private float marineValue;
 
-
     public int Id => id;
     public string MarineName => marineName;
     public Sprite Icon => icon;
