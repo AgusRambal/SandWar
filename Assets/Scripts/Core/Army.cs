@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Army : MonoBehaviour, IEventListener
 {
-    [SerializeField] private List<Marine> allMarines = new List<Marine>();
     [SerializeField] private List<Marine> myMarines = new List<Marine>();
 
     private void Awake()
@@ -19,11 +18,11 @@ public class Army : MonoBehaviour, IEventListener
         if (myMarines.Count >= 10)
             return;
 
-        for (int i = 0; i < allMarines.Count; i++) 
+        for (int i = 0; i < GameManager.Instance.allMarines.Count; i++) 
         {
-            if (allMarines[i].Id == ID)
+            if (GameManager.Instance.allMarines[i].Id == ID)
             {
-                myMarines.Add(allMarines[i]); 
+                myMarines.Add(GameManager.Instance.allMarines[i]); 
             }
         }
     }

@@ -21,3 +21,4 @@ MonoBehaviour:
   weapon: 2
   health: 50
   creationTime: 50
+  marineValue: 1247

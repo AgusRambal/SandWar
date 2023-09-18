@@ -17,5 +17,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: This marine has the ability to defuse certain bombs through the map
   typeMarine: 0
+  weapon: 0
   health: 150
   creationTime: 100
+  marineValue: 1658

@@ -18,5 +18,7 @@ MonoBehaviour:
   description: This is a spy, his function is go to the enemy base and see its defences,
     works separately of the army because it has no guns
   typeMarine: 5
+  weapon: 0
   health: 50
   creationTime: 50
+  marineValue: 603

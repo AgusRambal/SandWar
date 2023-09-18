@@ -8,9 +8,6 @@ using UnityEngine.UI;
 
 public class UIMethods : MonoBehaviour, IEventListener
 {
-    [Header("Settings")]
-    [SerializeField] private List<Marine> allMarines = new List<Marine>();
-
     [Header("References")]
     [SerializeField] private GameObject recruitWindow;
     [SerializeField] private GameObject sellOilWindow;
@@ -31,10 +28,16 @@ public class UIMethods : MonoBehaviour, IEventListener
     [Header("Resources")]
     [SerializeField] private TMP_Text oilAmmount;
     [SerializeField] private TMP_Text dollarsAmmount;
+    [SerializeField] private GameObject marketGood;
+    [SerializeField] private GameObject marketBad;
+    [SerializeField] private TMP_Text oilValue;
+    [SerializeField] private TMP_Text dollarsValueToRecibie;
 
     public static bool isOverUI = false;
 
     private int selectedID = 1;
+    private float sellTimer = 0;
+    private bool sellTimerState = false;
 
     private void Awake()
     {    
@@ -46,10 +49,12 @@ public class UIMethods : MonoBehaviour, IEventListener
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseRecruitWindow();
+            CloseAllWindows();
         }
 
+        SetSellTimerStatus();
         ShowResources();
+        SetMarketStatus();
     }
 
     public void OpenRecruitWindow(Hashtable hashtable)
@@ -68,15 +73,18 @@ public class UIMethods : MonoBehaviour, IEventListener
         sellOilWindow.transform.DOScale(1f, .2f);
     }
 
-    public void CloseRecruitWindow()
+    public void CloseAllWindows()
     {
         recruitWindow.transform.DOScale(0f, .2f);
+        sellOilWindow.transform.DOScale(0f, .2f);
     }
 
     public void SelectMarine(int id)
     {
         marinesBorder.ForEach(x => x.color = deselectedColor);
         marinesModels.ForEach(x => x.SetActive(false));
+
+        var allMarines = GameManager.Instance.allMarines;
 
         for (int i = 0; i < allMarines.Count; i++)
         {
@@ -97,10 +105,19 @@ public class UIMethods : MonoBehaviour, IEventListener
     //Button
     public void RecruitMarine()
     {
+        var allMarines = GameManager.Instance.allMarines;
+
         for (int i = 0; i < allMarines.Count; i++)
         {
             if (allMarines[i].Id == selectedID)
             {
+                if (GameManager.Instance.dollarsAmmount < allMarines[i].MarineValue)
+                {
+                    //Mandar popUp de que no te alcanza
+                    return;
+                }
+
+                GameManager.Instance.SubstractDollars(selectedID);
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;
@@ -113,10 +130,54 @@ public class UIMethods : MonoBehaviour, IEventListener
         }
     }
 
+    public void SetMarketStatus()
+    {
+        if (!GameManager.Instance.badMarketStatus)
+        {
+            marketBad.SetActive(false);
+            marketGood.SetActive(true);
+            oilValue.text = $"{GameManager.Instance.goodOilSellValue}";
+            dollarsValueToRecibie.text = $"{GameManager.Instance.goodDollarToReceive}";
+        }
+
+        else
+        {
+            marketBad.SetActive(true);
+            marketGood.SetActive(false);
+            oilValue.text = $"{GameManager.Instance.badOilSellValue}";
+            dollarsValueToRecibie.text = $"{GameManager.Instance.badDollarToReceive}";
+        }
+    }
+
+    public void SellOilButton()
+    {
+        if (sellTimerState)
+            return;
+
+        GameManager.Instance.SellOil();
+        sellTimerState = true;
+    }
+
+    private void SetSellTimerStatus()
+    {
+        //Al apretar el boton, hacerlo desaparecer e instanciar un progress circular
+
+        if (!sellTimerState)
+            return;
+
+        sellTimer += Time.deltaTime;
+
+        if (sellTimer >= GameManager.Instance.timerReset)
+        {
+            sellTimer = 0;
+            sellTimerState = false;
+        }
+    }
+
     public void ShowResources()
     {
         oilAmmount.text = $"{GameManager.Instance.oilAmmount} lts";
-        //dollarsAmmount.text = $"{GameManager.Instance.oilAmmount} USD";
+        dollarsAmmount.text = $"{GameManager.Instance.dollarsAmmount} USD";
     }
 
     private void OnDestroy()

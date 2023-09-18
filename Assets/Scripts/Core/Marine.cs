@@ -15,6 +15,7 @@ public class Marine : ScriptableObject
     [Header("Stats")]
     [SerializeField] private float health;
     [SerializeField] private float creationTime;
+    [SerializeField] private float marineValue;
 
 
     public int Id => id;
@@ -25,6 +26,7 @@ public class Marine : ScriptableObject
     public float Health => health;
     public float CreationTime => creationTime;
     public Weapon Weapon => weapon;
+    public float MarineValue => marineValue;
 }
 
 public enum TypeMarine
