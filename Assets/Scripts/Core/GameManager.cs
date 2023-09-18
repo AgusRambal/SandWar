@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [Header("Refernces")]
+    [SerializeField] private UIMethods UIMethods;
+
     [Header("Settings")]
     public List<Marine> allMarines = new List<Marine>();
     public float timerReset = 10f;
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     [Range(0, 100)] public float marketChance = 50f;
     [SerializeField] private float timeToReset;
-    [SerializeField] private float oilAmountToAdd;
+    [SerializeField] private float maxOilAmountToAdd;
 
     private float marketChanceDecrease = 50f;
     private float timer = 0;
@@ -52,7 +55,9 @@ public class GameManager : MonoBehaviour
 
         if (timer >= timeToReset)
         {
-            oilAmount += oilAmountToAdd;
+            var adition = Random.Range(0.2f, maxOilAmountToAdd);
+            oilAmount += adition;
+            UIMethods.FeedbackArrowGreen(0);
             timer = 0;
         }
     }

@@ -36,6 +36,10 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject progressForSellingAgain;
     [SerializeField] private TMP_Text oilValue;
     [SerializeField] private TMP_Text dollarsValueToRecibie;
+    [SerializeField] private GameObject greenArrow;
+    [SerializeField] private GameObject redArrow;
+    [SerializeField] private Transform OilArrowParent;
+    [SerializeField] private Transform DollarArrowParent;
 
     [Header("Notifications")]
     [SerializeField] private GameObject notificationPrefab;
@@ -140,6 +144,7 @@ public class UIMethods : MonoBehaviour, IEventListener
                 }
 
                 GameManager.Instance.SubstractDollars(selectedID);
+                FeedbackArrowRed(1);
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;
@@ -176,8 +181,37 @@ public class UIMethods : MonoBehaviour, IEventListener
         if (sellTimerState)
             return;
 
+        FeedbackArrowRed(0);
+        FeedbackArrowGreen(1);
+
         GameManager.Instance.SellOil();
         sellTimerState = true;
+    }
+
+    public void FeedbackArrowRed(int id)
+    {
+        if (id == 0)
+        {
+            Instantiate(redArrow, OilArrowParent);
+        }
+
+        else
+        {
+            Instantiate(redArrow, DollarArrowParent);
+        }
+    }
+
+    public void FeedbackArrowGreen(int id)
+    {
+        if (id == 0)
+        {
+            Instantiate(greenArrow, OilArrowParent);
+        }
+
+        else
+        {
+            Instantiate(greenArrow, DollarArrowParent);
+        }
     }
 
     private void SetSellTimerStatus()
