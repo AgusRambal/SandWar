@@ -27,6 +27,10 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private TMP_Text marineHealth;
     [SerializeField] private TMP_Text marineWeapon;
 
+    [Header("Resources")]
+    [SerializeField] private TMP_Text oilAmmount;
+    [SerializeField] private TMP_Text dollarsAmmount;
+
     public static bool isOverUI = false;
 
     private int selectedID = 1;
@@ -43,6 +47,8 @@ public class UIMethods : MonoBehaviour, IEventListener
         {
             CloseRecruitWindow();
         }
+
+        ShowResources();
     }
 
     public void OpenRecruitWindow(Hashtable hastable)
@@ -96,6 +102,12 @@ public class UIMethods : MonoBehaviour, IEventListener
                 progressBarInstantiated.GetComponent<ProgressBar>().customName = $" {allMarines[i].MarineName}";
             }
         }
+    }
+
+    public void ShowResources()
+    {
+        oilAmmount.text = $"{GameManager.Instance.oilAmmount} lts";
+        //dollarsAmmount.text = $"{GameManager.Instance.oilAmmount} USD";
     }
 
     private void OnDestroy()
