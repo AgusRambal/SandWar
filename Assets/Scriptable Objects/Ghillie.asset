@@ -18,5 +18,6 @@ MonoBehaviour:
   description: This is a sniper, has the ability to handle separately over the other
     marines
   typeMarine: 1
+  weapon: 2
   health: 50
   creationTime: 50

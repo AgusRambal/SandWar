@@ -18,5 +18,6 @@ MonoBehaviour:
   description: This is a pilot marine, has the ability to drive a vehicle that can
     storage all troups, or drive an helicopter alone
   typeMarine: 4
+  weapon: 1
   health: 100
   creationTime: 20

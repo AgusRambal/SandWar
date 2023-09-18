@@ -10,6 +10,7 @@ public class Marine : ScriptableObject
     [SerializeField] private Sprite icon;
     [TextArea][SerializeField] private string description;
     [SerializeField] private TypeMarine typeMarine;
+    [SerializeField] private Weapon weapon;
 
     [Header("Stats")]
     [SerializeField] private float health;
@@ -19,10 +20,11 @@ public class Marine : ScriptableObject
     public int Id => id;
     public string MarineName => marineName;
     public Sprite Icon => icon;
-    public string Descriptions => description;
+    public string Description => description;
     public TypeMarine TypeMarine => typeMarine;
     public float Health => health;
     public float CreationTime => creationTime;
+    public Weapon Weapon => weapon;
 }
 
 public enum TypeMarine
@@ -35,4 +37,13 @@ public enum TypeMarine
     Spy,
     Civilian,
     Insurgent
+}
+
+public enum Weapon
+{
+    Unarmed,
+    Pistol,
+    Sniper,
+    Rifle,
+    MachineGun
 }

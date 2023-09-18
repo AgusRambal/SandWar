@@ -8,6 +8,7 @@ public class MarineObject : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
 
     [Header("Stats")]
+    [SerializeField] private int id;
     [SerializeField] private float health;
     [SerializeField] private TypeMarine typeMarine;
 
@@ -16,6 +17,7 @@ public class MarineObject : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         typeMarine = scirptableObject.TypeMarine;
         health = scirptableObject.Health;
+        id = scirptableObject.Id;
     }
 
     private void Update()

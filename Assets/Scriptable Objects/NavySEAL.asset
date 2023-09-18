@@ -18,5 +18,6 @@ MonoBehaviour:
   description: This is a Navy SEAL, has more poweful guns and specs than a regular
     marine
   typeMarine: 3
+  weapon: 4
   health: 150
   creationTime: 50

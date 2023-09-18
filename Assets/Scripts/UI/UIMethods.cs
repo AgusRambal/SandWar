@@ -2,7 +2,9 @@ using DG.Tweening;
 using Michsky.MUIP;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMethods : MonoBehaviour, IEventListener
 {
@@ -14,7 +16,20 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject progressBar;
     [SerializeField] private Transform progressBarTransform;
 
+    [Header("SelectWindow")]
+    [SerializeField] private Color selectedColor;
+    [SerializeField] private Color deselectedColor;
+    [SerializeField] private List<Image> marinesBorder = new List<Image>();
+    [SerializeField] private List<GameObject> marinesModels = new List<GameObject>();
+    [SerializeField] private TMP_Text marineName;
+    [SerializeField] private TMP_Text marineclass;
+    [SerializeField] private TMP_Text marineDescription;
+    [SerializeField] private TMP_Text marineHealth;
+    [SerializeField] private TMP_Text marineWeapon;
+
     public static bool isOverUI = false;
+
+    private int selectedID = 1;
 
     private void Awake()
     {    
@@ -43,17 +58,37 @@ public class UIMethods : MonoBehaviour, IEventListener
         recruitWindow.transform.DOScale(0f, .2f);
     }
 
-    //Button
-    public void RecruitMarine(int id)
+    public void SelectMarine(int id)
     {
+        marinesBorder.ForEach(x => x.color = deselectedColor);
+        marinesModels.ForEach(x => x.SetActive(false));
 
         for (int i = 0; i < allMarines.Count; i++)
         {
             if (allMarines[i].Id == id)
             {
+                marinesBorder[i].color = selectedColor;
+                marinesModels[i].SetActive(true);
+                selectedID = id;
+                marineName.text = $"{allMarines[i].MarineName}";
+                marineclass.text = $"{allMarines[i].TypeMarine}";
+                marineDescription.text = $"{allMarines[i].Description}";
+                marineHealth.text = $"Health: {allMarines[i].MarineName}";
+                marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
+            }
+        }
+    }
+
+    //Button
+    public void RecruitMarine()
+    {
+        for (int i = 0; i < allMarines.Count; i++)
+        {
+            if (allMarines[i].Id == selectedID)
+            {
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
-                progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = id;
+                progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;
 
                 int newCreationTime = 100 / (int)allMarines[i].CreationTime;
 
