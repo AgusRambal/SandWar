@@ -143,9 +143,6 @@ public class UIMethods : MonoBehaviour, IEventListener
                 }
 
                 GameManager.Instance.SubstractDollars(selectedID);
-                Debug.Log(selectedID);
-                Debug.Log(allMarines[i].MarineValue);
-
                 FeedbackArrowRed(1);
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
@@ -242,7 +239,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         dollarsAmount.text = $"{GameManager.Instance.dollarsAmount} USD";
     }
 
-    private void ShowNotification(string title, string content)
+    public void ShowNotification(string title, string content)
     {
         GameObject notification = Instantiate(notificationPrefab, notificationParent);
         notification.GetComponent<Notifications>().title = title;

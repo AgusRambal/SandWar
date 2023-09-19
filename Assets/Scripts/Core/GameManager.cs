@@ -1,35 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-    public static GameManager Instance
-    {
-        get 
-        {
-            if (instance == null)
-                Debug.Log("null");
-
-            return instance;
-        }
-    }
+    public static GameManager Instance { get; private set; }
 
     [Header("Refernces")]
     [SerializeField] private UIMethods UIMethods;
 
     [Header("Settings")]
     public List<Marine> allMarines = new List<Marine>();
+    [SerializeField] private List<Marine> myMarines = new List<Marine>();
     public float timerReset = 10f;
 
-    public float oilAmount { get; private set; }
-    public float dollarsAmount { get; private set; }
-    public bool badMarketStatus { get; private set; }
     [field: SerializeField] public float goodOilSellValue { get; private set; }
     [field: SerializeField] public float badOilSellValue { get; private set; }
     [field: SerializeField] public float badDollarToReceive { get; private set; }
     [field: SerializeField] public float goodDollarToReceive { get; private set; }
+
+    public float oilAmount { get; private set; }
+    public float dollarsAmount { get; private set; }
+    public bool badMarketStatus { get; private set; }
 
     [Range(0, 100)] public float marketChance = 50f;
     [SerializeField] private float timeToReset;
@@ -40,7 +33,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void Start()
@@ -59,6 +59,23 @@ public class GameManager : MonoBehaviour
             oilAmount += adition;
             UIMethods.FeedbackArrowGreen(0);
             timer = 0;
+        }
+    }
+
+    public void RecruitMarine(int ID)
+    {
+        if (myMarines.Count >= 10)
+        {
+            UIMethods.ShowNotification("Max Army capacity", "Your army has reached its maximum capacity at the moment");
+            return;
+        }
+
+        for (int i = 0; i < allMarines.Count; i++)
+        {
+            if (allMarines[i].Id == ID)
+            {
+                myMarines.Add(allMarines[i]);
+            }
         }
     }
 

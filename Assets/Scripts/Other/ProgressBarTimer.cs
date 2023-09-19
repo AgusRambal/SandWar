@@ -14,9 +14,7 @@ public class ProgressBarTimer : MonoBehaviour
 
         if (timer >= creationTime)
         {
-            EventManager.TriggerEvent(GenericEvents.RecruitMarine, new Hashtable() {
-            {GameplayEventHashtableParams.MarineID.ToString(), marineID}
-            });
+            GameManager.Instance.RecruitMarine(marineID);
 
             Destroy(gameObject);
         }
