@@ -45,7 +45,6 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject notificationPrefab;
     [SerializeField] private Transform notificationParent;
 
-
     public static bool isOverUI = false;
 
     private int selectedID = 1;
@@ -110,7 +109,7 @@ public class UIMethods : MonoBehaviour, IEventListener
                 marineName.text = $"{allMarines[i].MarineName}";
                 marineclass.text = $"{allMarines[i].TypeMarine}";
                 marineDescription.text = $"{allMarines[i].Description}";
-                marineHealth.text = $"Health: {allMarines[i].MarineName}";
+                marineHealth.text = $"Health: {allMarines[i].Health}";
                 marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
                 marineCost.text = $"Cost: {allMarines[i].MarineValue} USD";
                 marineTime.text = $"Recruiting time: {allMarines[i].CreationTime} secs";
@@ -144,6 +143,9 @@ public class UIMethods : MonoBehaviour, IEventListener
                 }
 
                 GameManager.Instance.SubstractDollars(selectedID);
+                Debug.Log(selectedID);
+                Debug.Log(allMarines[i].MarineValue);
+
                 FeedbackArrowRed(1);
                 GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
                 progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
@@ -230,6 +232,7 @@ public class UIMethods : MonoBehaviour, IEventListener
             sellTimerState = false;
             sellButton.SetActive(true);
             progressForSellingAgain.SetActive(false);
+            progressForSellingAgain.GetComponent<ProgressBar>().currentPercent = 0;
         }
     }
 
