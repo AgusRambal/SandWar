@@ -52,6 +52,7 @@ MonoBehaviour:
   id: 0
   health: 0
   typeMarine: 0
+  weapon: 0
 --- !u!195 &5074275544500038133
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -107,7 +108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4997488207509954, guid: af9b61d3bbf12be4988e190d45a0c168, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4997488207509954, guid: af9b61d3bbf12be4988e190d45a0c168, type: 3}
       propertyPath: m_LocalPosition.z

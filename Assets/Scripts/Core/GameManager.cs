@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,23 +10,33 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UIMethods UIMethods;
 
     [Header("Settings")]
-    public List<Marine> allMarines = new List<Marine>();
-    [SerializeField] private List<Marine> myMarines = new List<Marine>();
+    [Range(0, 100)] public float marketChance = 50f;
     public float timerReset = 10f;
-
+    [SerializeField] private float timeToReset;
+    [SerializeField] private float maxOilAmountToAdd;
     [field: SerializeField] public float goodOilSellValue { get; private set; }
     [field: SerializeField] public float badOilSellValue { get; private set; }
     [field: SerializeField] public float badDollarToReceive { get; private set; }
     [field: SerializeField] public float goodDollarToReceive { get; private set; }
 
+    [Header("Marines")]
+    public List<Marine> allMarines = new List<Marine>();
+    [SerializeField] private GameObject bombsuitMarine;
+    [SerializeField] private GameObject ghillieMarine;
+    [SerializeField] private GameObject spyMarine;
+    [SerializeField] private List<GameObject> pilotMarines = new List<GameObject>();
+    [SerializeField] private List<GameObject> navySEALS = new List<GameObject>();
+    [SerializeField] private List<GameObject> regularMarines = new List<GameObject>();
+    [SerializeField] private List<Transform> marinesSpawnPoints = new List<Transform>();
+    [SerializeField] private List<Transform> marinesTarget = new List<Transform>();
+
+    [Header("My data")]
+    [SerializeField] private List<Marine> myMarines = new List<Marine>();
     public float oilAmount { get; private set; }
     public float dollarsAmount { get; private set; }
+
+    //Flags
     public bool badMarketStatus { get; private set; }
-
-    [Range(0, 100)] public float marketChance = 50f;
-    [SerializeField] private float timeToReset;
-    [SerializeField] private float maxOilAmountToAdd;
-
     private float marketChanceDecrease = 50f;
     private float timer = 0;
 
@@ -75,11 +84,54 @@ public class GameManager : MonoBehaviour
             if (allMarines[i].Id == ID)
             {
                 myMarines.Add(allMarines[i]);
+                CreateMarine(allMarines[i].TypeMarine);
             }
         }
     }
 
-    public IEnumerator SetOilValue()
+    private void CreateMarine(TypeMarine type)
+    {
+        switch (type)
+        {
+            case TypeMarine.Defuser:
+                GameObject bombsuitInstantiated = Instantiate(bombsuitMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
+                bombsuitInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
+                bombsuitInstantiated.GetComponent<MarineObject>().isMoving = true;
+                break;
+
+            case TypeMarine.Marine:
+                GameObject marineInstantiated = Instantiate(regularMarines[Random.Range(0, regularMarines.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
+                marineInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
+                marineInstantiated.GetComponent<MarineObject>().isMoving = true;
+                break;
+
+            case TypeMarine.Driver:
+                GameObject pilotInstantiated = Instantiate(pilotMarines[Random.Range(0, pilotMarines.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
+                pilotInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
+                pilotInstantiated.GetComponent<MarineObject>().isMoving = true;
+                break;
+
+            case TypeMarine.NavySEAL:
+                GameObject sealInstantiated = Instantiate(navySEALS[Random.Range(0, navySEALS.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
+                sealInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
+                sealInstantiated.GetComponent<MarineObject>().isMoving = true;
+                break;
+
+            case TypeMarine.Sniper:
+                GameObject sniperInstantiated = Instantiate(ghillieMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
+                sniperInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
+                sniperInstantiated.GetComponent<MarineObject>().isMoving = true;
+                break;
+
+            case TypeMarine.Spy:
+                GameObject spyInstantiated = Instantiate(spyMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
+                spyInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
+                spyInstantiated.GetComponent<MarineObject>().isMoving = true;
+                break;
+        }
+    }
+
+    private IEnumerator SetOilValue()
     {
         yield return new WaitForSeconds(timerReset);
 
