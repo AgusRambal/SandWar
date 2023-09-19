@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
     {
         if (myMarines.Count >= 10)
         {
-            UIMethods.ShowNotification("Max Army capacity", "Your army has reached its maximum capacity at the moment");
+            UIMethods.ShowNotification("Max Army capacity", "Your army has reached it's maximum capacity at the moment");
             return;
         }
 

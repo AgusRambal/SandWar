@@ -92,6 +92,16 @@ public class UIMethods : MonoBehaviour, IEventListener
         sellOilWindow.transform.DOScale(0f, .2f);
     }
 
+    public void CloseRecruitWindows()
+    {
+        recruitWindow.transform.DOScale(0f, .2f);
+    }
+
+    public void CloseSellOilWindows()
+    {
+        sellOilWindow.transform.DOScale(0f, .2f);
+    }
+
     public void SelectMarine(int id)
     {
         marinesBorder.ForEach(x => x.color = deselectedColor);
@@ -135,7 +145,7 @@ public class UIMethods : MonoBehaviour, IEventListener
                 {
                     if (!notificationActive)
                     {
-                        ShowNotification("Not enough cash", "You can't recruit any marine because you doesnt have the right amount of cash");
+                        ShowNotification("Not enough cash", "You can't recruit this marine because you doesn't have the right amount of cash");
                         notificationActive = true;
                     }
 
