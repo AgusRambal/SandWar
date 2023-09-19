@@ -5932,10 +5932,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scirptableObject: {fileID: 11400000, guid: a38a62e57dc6c0b42871d5e0751af95c, type: 2}
   agent: {fileID: 0}
+  animator: {fileID: 0}
   id: 0
   health: 0
   typeMarine: 0
   weapon: 0
+  <CurrentHealth>k__BackingField: 0
+  isMoving: 0
 --- !u!195 &7728985862582227048
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5946,7 +5949,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

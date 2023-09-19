@@ -8,7 +8,8 @@ public class Idle : State
 
     public override void EnterState()
     {
-        Debug.Log("Estoy en idle");
+        marine.animator.SetBool("isWalking", false);
+        marine.animator.SetBool("isWalkingWithRifle", false);
     }
 
     public override void Update()

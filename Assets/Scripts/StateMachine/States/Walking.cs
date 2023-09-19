@@ -8,7 +8,16 @@ public class Walking : State
 
     public override void EnterState()
     {
-        Debug.Log("Me muevo");
+        //CAMBIAR ESTO Y USAR UN OVERRIDE ANIMATOR
+        if (marine.typeMarine == TypeMarine.Marine) 
+        {
+            marine.animator.SetBool("isWalkingWithRifle", true);
+        }
+
+        else
+        {
+            marine.animator.SetBool("isWalking", true);
+        }
     }
 
     public override void Update()

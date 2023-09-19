@@ -4,13 +4,14 @@ using UnityEngine.AI;
 public class MarineObject : MonoBehaviour, IDamageable
 {
     [Header("References")]
-    [SerializeField] private Marine scirptableObject;
+    public Marine scirptableObject;
     public NavMeshAgent agent;
+    public Animator animator;
 
     [Header("Stats")]
     [SerializeField] private int id;
     [SerializeField] private float health;
-    [SerializeField] private TypeMarine typeMarine;
+    public TypeMarine typeMarine;
     [SerializeField] private Weapon weapon;
     public float MaxHealth { get; set; }
     [field: SerializeField] public float CurrentHealth { get; set; }
@@ -30,6 +31,7 @@ public class MarineObject : MonoBehaviour, IDamageable
         WalkingState = new Walking(this, StateMachine);
 
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
         typeMarine = scirptableObject.TypeMarine;
         health = scirptableObject.Health;
         id = scirptableObject.Id;
@@ -50,7 +52,6 @@ public class MarineObject : MonoBehaviour, IDamageable
         if (agent.remainingDistance <= 1f)
         {
             isMoving = false;
-            Debug.Log("Llegue a mi destino");
         }
     }
 
