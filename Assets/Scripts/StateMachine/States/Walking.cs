@@ -8,11 +8,12 @@ public class Walking : State
 
     public override void EnterState()
     {
-        marine.animator.SetBool("isWalking", true);
     }
 
     public override void Update()
     {
+        marine.animator.SetFloat("Velocity", marine.agent.remainingDistance);
+
         if (!marine.isMoving)
         {
             marine.StateMachine.ChangeState(marine.IdleState);

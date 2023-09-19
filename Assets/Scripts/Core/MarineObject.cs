@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,7 @@ public class MarineObject : MonoBehaviour, IDamageable
     public NavMeshAgent agent;
     public Animator animator;
     public AnimatorOverrideController animatorOverride;
+    [SerializeField] private GameObject selectionArrow;
 
     [Header("Stats")]
     [SerializeField] private int id;
@@ -30,6 +32,7 @@ public class MarineObject : MonoBehaviour, IDamageable
         StateMachine = new StateMachine();
         IdleState = new Idle(this, StateMachine);
         WalkingState = new Walking(this, StateMachine);
+        DOTween.Init();
 
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
@@ -39,6 +42,7 @@ public class MarineObject : MonoBehaviour, IDamageable
         id = scirptableObject.Id;
         weapon = scirptableObject.Weapon;
         MaxHealth = health;
+        SelectionManager.Instance.AvailableMarines.Add(this);
     }
 
     private void Start()
@@ -55,6 +59,22 @@ public class MarineObject : MonoBehaviour, IDamageable
         {
             isMoving = false;
         }
+    }
+
+    public void MoveTo(Vector3 position)
+    { 
+        agent.SetDestination(position);
+        isMoving = true;
+    }
+
+    public void OnSelected()
+    {
+        selectionArrow.transform.DOScale(1f, .2f);
+    }
+
+    public void OnDeselected()
+    {
+        selectionArrow.transform.DOScale(0f, .2f);
     }
 
     public void Damage(float damageAmount)
