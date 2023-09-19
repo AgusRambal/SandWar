@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5895080362240585094}
   - component: {fileID: 5074275544500038133}
   - component: {fileID: -7142526642878535534}
+  - component: {fileID: -5516173329788565926}
   m_Layer: 6
   m_Name: NavySEAL01
   m_TagString: Untagged
@@ -129,6 +130,27 @@ MonoBehaviour:
   useGymAnims: 0
   animator: {fileID: 0}
   animationValue: 0
+--- !u!65 &-5516173329788565926
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065595410472424271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5392202, y: 1.8270427, z: 0.4793039}
+  m_Center: {x: -0.01536566, y: 0.86805624, z: 0.0063607767}
 --- !u!1001 &1194204003945630681
 PrefabInstance:
   m_ObjectHideFlags: 0

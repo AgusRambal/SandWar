@@ -6090,6 +6090,7 @@ GameObject:
   - component: {fileID: 778375504014307119}
   - component: {fileID: 2593089840976953350}
   - component: {fileID: 6554260628711583542}
+  - component: {fileID: 8866612161686457870}
   m_Layer: 6
   m_Name: Marine14
   m_TagString: Untagged
@@ -6174,6 +6175,27 @@ MonoBehaviour:
   useGymAnims: 0
   animator: {fileID: 0}
   animationValue: 0
+--- !u!65 &8866612161686457870
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7876504433263902795}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5392202, y: 1.8270427, z: 0.4793039}
+  m_Center: {x: -0.01536566, y: 0.86805624, z: 0.0063607767}
 --- !u!1 &8024621375540027482
 GameObject:
   m_ObjectHideFlags: 0

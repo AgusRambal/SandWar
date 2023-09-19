@@ -43,6 +43,9 @@ public class PlayerInput : MonoBehaviour
 
         else if (Input.GetMouseButton(0) && mouseDownTime + dragDelay < Time.time)
         {
+            if (UIMethods.isOverUI)
+                return;
+
             ResizeSelectionBox();
         }
 

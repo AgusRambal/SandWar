@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace Michsky.MUIP
 {
-    public class WindowDragger : UIBehaviour, IBeginDragHandler, IDragHandler
+    public class WindowDragger : UIBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         [Header("Resources")]
         public RectTransform dragArea;
@@ -68,6 +68,8 @@ namespace Michsky.MUIP
             if (Input.GetMouseButton(2))
                 return;
 
+            UIMethods.isOverUI = true;
+
             Vector2 localPointerPosition;
 
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(DragAreaInternal, data.position, data.pressEventCamera, out localPointerPosition))
@@ -90,6 +92,11 @@ namespace Michsky.MUIP
             pos.y = Mathf.Clamp(DragObjectInternal.localPosition.y, minPosition.y, maxPosition.y);
 
             DragObjectInternal.localPosition = pos;
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            UIMethods.isOverUI = false;
         }
     }
 }

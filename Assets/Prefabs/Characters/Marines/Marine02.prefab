@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4093599338629540807}
   - component: {fileID: 4554282370113769844}
   - component: {fileID: 9041725236550387931}
+  - component: {fileID: 973254533774669960}
   m_Layer: 6
   m_Name: Marine02
   m_TagString: Untagged
@@ -96,6 +97,27 @@ MonoBehaviour:
   useGymAnims: 0
   animator: {fileID: 0}
   animationValue: 0
+--- !u!65 &973254533774669960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917206772305487641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5392202, y: 1.8270427, z: 0.4793039}
+  m_Center: {x: -0.01536566, y: 0.86805624, z: 0.0063607767}
 --- !u!1001 &3501013845771605318
 PrefabInstance:
   m_ObjectHideFlags: 0
