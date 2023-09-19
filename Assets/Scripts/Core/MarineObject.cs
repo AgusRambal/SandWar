@@ -7,6 +7,7 @@ public class MarineObject : MonoBehaviour, IDamageable
     public Marine scirptableObject;
     public NavMeshAgent agent;
     public Animator animator;
+    public AnimatorOverrideController animatorOverride;
 
     [Header("Stats")]
     [SerializeField] private int id;
@@ -32,6 +33,7 @@ public class MarineObject : MonoBehaviour, IDamageable
 
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        animator.runtimeAnimatorController = animatorOverride;
         typeMarine = scirptableObject.TypeMarine;
         health = scirptableObject.Health;
         id = scirptableObject.Id;

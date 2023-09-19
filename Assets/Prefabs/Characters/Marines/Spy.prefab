@@ -50,6 +50,7 @@ MonoBehaviour:
   scirptableObject: {fileID: 11400000, guid: 509189772fc17414491131a337ebb8f1, type: 2}
   agent: {fileID: 0}
   animator: {fileID: 0}
+  animatorOverride: {fileID: 22100000, guid: 57f4744b966a3ce4f9a54529dba1b997, type: 2}
   id: 0
   health: 0
   typeMarine: 5

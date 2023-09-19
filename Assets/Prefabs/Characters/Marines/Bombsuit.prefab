@@ -5933,6 +5933,7 @@ MonoBehaviour:
   scirptableObject: {fileID: 11400000, guid: a38a62e57dc6c0b42871d5e0751af95c, type: 2}
   agent: {fileID: 0}
   animator: {fileID: 0}
+  animatorOverride: {fileID: 22100000, guid: 4740a54814a716749b79122700ad0578, type: 2}
   id: 0
   health: 0
   typeMarine: 0
