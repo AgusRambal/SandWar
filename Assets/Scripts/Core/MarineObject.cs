@@ -10,9 +10,10 @@ public class MarineObject : MonoBehaviour, IDamageable
     public Animator animator;
     public AnimatorOverrideController animatorOverride;
     [SerializeField] private GameObject selectionArrow;
+    public SelectableCharacter mySelf;
 
     [Header("Stats")]
-    [SerializeField] private int id;
+    public int id;
     [SerializeField] private float health;
     public TypeMarine typeMarine;
     [SerializeField] private Weapon weapon;
@@ -88,6 +89,7 @@ public class MarineObject : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        //No hacer destroy, dejar el cuerpo ahi tirado en el piso
         Destroy(gameObject);
     }
 }

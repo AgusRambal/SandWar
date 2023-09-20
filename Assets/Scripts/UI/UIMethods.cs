@@ -3,6 +3,7 @@ using Michsky.MUIP;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -44,6 +45,11 @@ public class UIMethods : MonoBehaviour, IEventListener
     [Header("Notifications")]
     [SerializeField] private GameObject notificationPrefab;
     [SerializeField] private Transform notificationParent;
+
+    [Header("SelectableCharacters")]
+    public List<SelectableCharacter> selectableCharacterPrefabs = new List<SelectableCharacter>();
+    [SerializeField] private GameObject selectableCharacterPrefab;
+    [SerializeField] private Transform selectableCharacterParent;
 
     public static bool isOverUI = false;
 
@@ -257,6 +263,32 @@ public class UIMethods : MonoBehaviour, IEventListener
         GameObject notification = Instantiate(notificationPrefab, notificationParent);
         notification.GetComponent<Notifications>().title = title;
         notification.GetComponent<Notifications>().content = content;
+    }
+
+    public void CreateSelectableIcon(int id, MarineObject marine)
+    {
+        GameObject icon = Instantiate(selectableCharacterPrefab, selectableCharacterParent);
+        selectableCharacterPrefabs.Add(icon.GetComponent<SelectableCharacter>());
+        icon.GetComponent<SelectableCharacter>().Uimethods = this;
+        icon.GetComponent<SelectableCharacter>().marineObject = marine;
+        marine.mySelf = icon.GetComponent<SelectableCharacter>();
+        icon.GetComponent<SelectableCharacter>().marineImage.sprite = GameManager.Instance.allMarines[id - 1].Icon;
+        icon.transform.DOScale(1f, .2f);
+    }
+
+    public void OnSelectIcon(SelectableCharacter icon, MarineObject marine)
+    {
+        DeselectAll();
+        icon.selectedSprite.SetActive(true);
+        SelectionManager.Instance.Select(marine);
+    }
+
+    public void DeselectAll()
+    {
+        for (int i = 0; i < selectableCharacterPrefabs.Count; i++)
+        {
+            selectableCharacterPrefabs[i].selectedSprite.SetActive(false);
+        }
     }
 
     private void OnDestroy()

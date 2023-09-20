@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   marineName: Pilot
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: cd0ba0ff6a34f664e84438c9dfbb4d59, type: 3}
   description: This is a pilot marine, has the ability to drive a vehicle that can
     storage all troups, or drive an helicopter alone
   typeMarine: 4

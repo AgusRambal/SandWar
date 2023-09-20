@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   marineName: Ghillie
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7f979dcea78e0ad479f86567149c2453, type: 3}
   description: This is a sniper, has the ability to handle separately over the other
     marines
   typeMarine: 1

@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 4067585793128023766}
   - component: {fileID: 1035212855478973128}
   - component: {fileID: 6511383599768341897}
+  - component: {fileID: 5316526892823231401}
   m_Layer: 5
   m_Name: Popup Notification
   m_TagString: Untagged
@@ -336,6 +337,18 @@ MonoBehaviour:
   contentText: {fileID: 969830693945916158}
   title: 
   content: 
+--- !u!114 &5316526892823231401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3719191668530784432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ce07a993094cb49981865ccb171ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6953158748487839725
 GameObject:
   m_ObjectHideFlags: 0

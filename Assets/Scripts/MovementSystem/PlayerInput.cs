@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Camera Camera;
+    [SerializeField] private UIMethods uiMethods;
     [SerializeField] private RectTransform selectionBox;
     [SerializeField] private LayerMask UnitLayers;
     [SerializeField] private LayerMask FloorLayers;
@@ -39,6 +40,12 @@ public class PlayerInput : MonoBehaviour
             selectionBox.gameObject.SetActive(true);
             startMousePosition = Input.mousePosition;
             mouseDownTime = Time.time;
+            SelectionManager.Instance.DeselectAll();
+
+            if (UIMethods.isOverUI)
+                return;
+
+            uiMethods.DeselectAll();
         }
 
         else if (Input.GetMouseButton(0) && mouseDownTime + dragDelay < Time.time)
@@ -74,13 +81,14 @@ public class PlayerInput : MonoBehaviour
                 {
                     SelectionManager.Instance.DeselectAll();
                     SelectionManager.Instance.Select(marine);
+                    uiMethods.OnSelectIcon(marine.mySelf, marine);
                 }
             }
 
-            else if (mouseDownTime + dragDelay > Time.time)
+            /*else if (mouseDownTime + dragDelay > Time.time)
             {
                 SelectionManager.Instance.DeselectAll();
-            }
+            }*/
 
             mouseDownTime = 0;
         }
@@ -115,5 +123,4 @@ public class PlayerInput : MonoBehaviour
         return position.x > bounds.min.x && position.x < bounds.max.x
             && position.y > bounds.min.y && position.y < bounds.max.y;
     }
-
 }

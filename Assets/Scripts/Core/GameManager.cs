@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     private float marketChanceDecrease = 50f;
     private float timer = 0;
+    private MarineObject lastMarineCreated;
 
     private void Awake()
     {
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
             {
                 myMarines.Add(allMarines[i]);
                 CreateMarine(allMarines[i].TypeMarine);
+                UIMethods.CreateSelectableIcon(ID, lastMarineCreated);
             }
         }
     }
@@ -107,36 +109,42 @@ public class GameManager : MonoBehaviour
                 GameObject bombsuitInstantiated = Instantiate(bombsuitMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
                 bombsuitInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
                 bombsuitInstantiated.GetComponent<MarineObject>().isMoving = true;
+                lastMarineCreated = bombsuitInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Marine:
                 GameObject marineInstantiated = Instantiate(regularMarines[Random.Range(0, regularMarines.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
                 marineInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
                 marineInstantiated.GetComponent<MarineObject>().isMoving = true;
+                lastMarineCreated = marineInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Driver:
                 GameObject pilotInstantiated = Instantiate(pilotMarines[Random.Range(0, pilotMarines.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
                 pilotInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
                 pilotInstantiated.GetComponent<MarineObject>().isMoving = true;
+                lastMarineCreated = pilotInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.NavySEAL:
                 GameObject sealInstantiated = Instantiate(navySEALS[Random.Range(0, navySEALS.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
                 sealInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
                 sealInstantiated.GetComponent<MarineObject>().isMoving = true;
+                lastMarineCreated = sealInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Sniper:
                 GameObject sniperInstantiated = Instantiate(ghillieMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
                 sniperInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
                 sniperInstantiated.GetComponent<MarineObject>().isMoving = true;
+                lastMarineCreated = sniperInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Spy:
                 GameObject spyInstantiated = Instantiate(spyMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
                 spyInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
                 spyInstantiated.GetComponent<MarineObject>().isMoving = true;
+                lastMarineCreated = spyInstantiated.GetComponent<MarineObject>();
                 break;
         }
     }

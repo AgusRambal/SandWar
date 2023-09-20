@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   marineName: Marine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 12d4efd3ce7dd8b46a08f1ce4a8bf313, type: 3}
   description: This is a regular marine
   typeMarine: 2
   weapon: 3
