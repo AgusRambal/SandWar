@@ -190,6 +190,9 @@ public class UIMethods : MonoBehaviour, IEventListener
         if (sellTimerState)
             return;
 
+        if (GameManager.Instance.oilAmount < GameManager.Instance.actualMarketPrice)
+            return;
+
         FeedbackArrowRed(0);
         FeedbackArrowGreen(1);
 

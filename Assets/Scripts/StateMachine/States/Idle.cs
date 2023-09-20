@@ -8,6 +8,7 @@ public class Idle : State
 
     public override void EnterState()
     {
+        marine.isMoving = false;
     }
 
     public override void Update()

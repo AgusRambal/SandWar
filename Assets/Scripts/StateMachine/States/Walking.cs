@@ -8,6 +8,7 @@ public class Walking : State
 
     public override void EnterState()
     {
+        marine.isMoving = true;
     }
 
     public override void Update()

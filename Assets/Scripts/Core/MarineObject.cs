@@ -35,7 +35,7 @@ public class MarineObject : MonoBehaviour, IDamageable
         DOTween.Init();
 
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
+        animator = transform.GetChild(1).GetComponent<Animator>();
         animator.runtimeAnimatorController = animatorOverride;
         typeMarine = scirptableObject.TypeMarine;
         health = scirptableObject.Health;
@@ -55,7 +55,7 @@ public class MarineObject : MonoBehaviour, IDamageable
     {
         StateMachine.currentState.Update();
 
-        if (agent.remainingDistance <= 1f)
+        if (agent.remainingDistance <= 1.5f)
         {
             isMoving = false;
         }
@@ -64,12 +64,11 @@ public class MarineObject : MonoBehaviour, IDamageable
     public void MoveTo(Vector3 position)
     { 
         agent.SetDestination(position);
-        isMoving = true;
     }
 
     public void OnSelected()
     {
-        selectionArrow.transform.DOScale(1f, .2f);
+        selectionArrow.transform.DOScale(1.5f, .2f);
     }
 
     public void OnDeselected()

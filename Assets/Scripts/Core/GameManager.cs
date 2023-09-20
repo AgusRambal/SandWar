@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public float badOilSellValue { get; private set; }
     [field: SerializeField] public float badDollarToReceive { get; private set; }
     [field: SerializeField] public float goodDollarToReceive { get; private set; }
+    public bool test = false;
 
     [Header("Marines")]
     public List<Marine> allMarines = new List<Marine>();
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     //Flags
     public bool badMarketStatus { get; private set; }
+    public float actualMarketPrice { get; private set; }
+
     private float marketChanceDecrease = 50f;
     private float timer = 0;
 
@@ -55,7 +58,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         badMarketStatus = false;
+        actualMarketPrice = goodOilSellValue;
         StartCoroutine(SetOilValue());
+
+        if (test)
+        {
+            oilAmount = 500;
+            dollarsAmount = 5000;
+        }
     }
 
     private void Update()
@@ -141,11 +151,13 @@ public class GameManager : MonoBehaviour
         if (randomValue > marketChance)
         {
             badMarketStatus = true;
+            actualMarketPrice = badOilSellValue;
         }
 
         else
         {
-            badMarketStatus = false;
+            badMarketStatus = false; 
+            actualMarketPrice = goodOilSellValue;
         }
 
         if (randomValue2 > marketChanceDecrease)
