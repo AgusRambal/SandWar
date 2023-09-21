@@ -13,7 +13,7 @@ public class Idle : State
 
     public override void Update()
     {
-        marine.animator.SetFloat("Velocity", marine.agent.remainingDistance);
+        marine.animator.SetFloat("Velocity", 0);
 
         if (marine.isMoving)
         {
