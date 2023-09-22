@@ -29,7 +29,6 @@ public class NPC_Patrolling : NPC_State
         {
             marine.agent.SetDestination(marine.pathToPatroll[actualPath].position);
             actualPath++;
-            Debug.Log(actualPath);
         }
     }
 }

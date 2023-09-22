@@ -20,7 +20,7 @@ public class NPC_Marine : MonoBehaviour
 
     private void Awake()
     {
-        StateMachine = new StateMachine();
+        StateMachine = gameObject.AddComponent<StateMachine>();
         IdleState = new NPC_Idle(this, StateMachine);
         PatrollingState = new NPC_Patrolling(this, StateMachine);
 

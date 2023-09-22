@@ -25,12 +25,9 @@ public class MarineObject : MonoBehaviour, IDamageable
     public Idle IdleState { get; set; }
     public Walking WalkingState { get; set; }
 
-    //Flags
-    [HideInInspector] public bool isMoving;
-
     private void Awake()
     {
-        StateMachine = new StateMachine();
+        StateMachine = gameObject.AddComponent<StateMachine>();
         IdleState = new Idle(this, StateMachine);
         WalkingState = new Walking(this, StateMachine);
         DOTween.Init();
@@ -55,11 +52,6 @@ public class MarineObject : MonoBehaviour, IDamageable
     private void Update()
     {
         StateMachine.currentState.Update();
-
-        if (agent.remainingDistance <= 1.5f)
-        {
-            isMoving = false;
-        }
     }
 
     public void MoveTo(Vector3 position)
@@ -90,6 +82,7 @@ public class MarineObject : MonoBehaviour, IDamageable
     public void Die()
     {
         //No hacer destroy, dejar el cuerpo ahi tirado en el piso
+        //Quitar de la lista de myMairnes
         Destroy(gameObject);
     }
 }

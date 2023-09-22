@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Idle : State
 {
@@ -8,14 +9,13 @@ public class Idle : State
 
     public override void EnterState()
     {
-        marine.isMoving = false;
     }
 
     public override void Update()
     {
         marine.animator.SetFloat("Velocity", 0);
 
-        if (marine.isMoving)
+        if (!marine.agent.isStopped)
         {
             marine.StateMachine.ChangeState(marine.WalkingState);
         }

@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         if (test)
         {
             oilAmount = 500;
-            dollarsAmount = 5000;
+            dollarsAmount = 8000;
         }
     }
 
@@ -107,43 +107,37 @@ public class GameManager : MonoBehaviour
         {
             case TypeMarine.Defuser:
                 GameObject bombsuitInstantiated = Instantiate(bombsuitMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-                bombsuitInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
-                bombsuitInstantiated.GetComponent<MarineObject>().isMoving = true;
+                bombsuitInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
                 lastMarineCreated = bombsuitInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Marine:
                 GameObject marineInstantiated = Instantiate(regularMarines[Random.Range(0, regularMarines.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-                marineInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
-                marineInstantiated.GetComponent<MarineObject>().isMoving = true;
+                marineInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
                 lastMarineCreated = marineInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Driver:
                 GameObject pilotInstantiated = Instantiate(pilotMarines[Random.Range(0, pilotMarines.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-                pilotInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
-                pilotInstantiated.GetComponent<MarineObject>().isMoving = true;
+                pilotInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
                 lastMarineCreated = pilotInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.NavySEAL:
                 GameObject sealInstantiated = Instantiate(navySEALS[Random.Range(0, navySEALS.Count)], marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-                sealInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
-                sealInstantiated.GetComponent<MarineObject>().isMoving = true;
+                sealInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
                 lastMarineCreated = sealInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Sniper:
                 GameObject sniperInstantiated = Instantiate(ghillieMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-                sniperInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
-                sniperInstantiated.GetComponent<MarineObject>().isMoving = true;
+                sniperInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
                 lastMarineCreated = sniperInstantiated.GetComponent<MarineObject>();
                 break;
 
             case TypeMarine.Spy:
                 GameObject spyInstantiated = Instantiate(spyMarine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-                spyInstantiated.GetComponent<MarineObject>().agent.destination = marinesTarget[myMarines.Count - 1].position;
-                spyInstantiated.GetComponent<MarineObject>().isMoving = true;
+                spyInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
                 lastMarineCreated = spyInstantiated.GetComponent<MarineObject>();
                 break;
         }
