@@ -9,8 +9,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup CanvasGroup;
     [SerializeField] private GameObject options;
 
+    [Header("Tabs")]
+    [SerializeField] private GameObject graphicsTab;
+    [SerializeField] private GameObject soundTab;
+    [SerializeField] private GameObject gameplayTab;
+
     private float time = 0;
     private bool changeScene = false;
+    private GameObject openTab;
+    private TabType openTabType;
 
     private void Awake()
     {
@@ -25,6 +32,7 @@ public class MainMenu : MonoBehaviour
         }
 
         DOTween.Init();
+        openTab = graphicsTab;
     }
 
 
@@ -70,4 +78,47 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SelectTab(TabType tab)
+    {
+        if (openTabType == tab)
+            return;
+
+        switch (tab)
+        {
+            case TabType.Graphics:
+                openTab.transform.DOScale(0f, .2f).OnComplete(() =>
+                {
+                    graphicsTab.transform.DOScale(1f, .2f);
+                });
+                openTab = graphicsTab;
+                openTabType = TabType.Graphics;
+                break;
+
+            case TabType.Sound:
+                openTab.transform.DOScale(0f, .2f).OnComplete(() => 
+                {
+                    soundTab.transform.DOScale(1f, .2f);
+                });
+                openTab = soundTab;
+                openTabType = TabType.Sound;
+                break;
+
+            case TabType.Gameplay:
+                openTab.transform.DOScale(0f, .2f).OnComplete(() =>
+                {
+                    gameplayTab.transform.DOScale(1f, .2f);
+                });
+                openTab = gameplayTab;
+                openTabType = TabType.Gameplay;
+                break;
+        }
+    }
+}
+
+public enum TabType
+{
+    Graphics,
+    Sound,
+    Gameplay
 }
