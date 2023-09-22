@@ -1,0 +1,37 @@
+## Issue Ticket -XXXXX
+
+## Problem
+Ticket Header: *{Add ticket title}*
+{ describe the problem we are trying to solve }
+
+## Solution
+{ describe the implemented solution, and any other relevant information to support this approach }
+
+## [QA] Checklist
+```
+{ add all the possible edge cases or affected areas that are not obvious for QA to test }
+- Nothing to test { leave this line if there's nothing for QA, otherwise remove it, this makes QA work easier }
+``` 
+
+## [Config] added or modified
+```
+{ list all added or modified configs required by these changes. Also add the HasConfig label if this section is filled }
+``` 
+
+## Technical Debt
+{ detail here if this is creating any kind of technical debt }
+
+## TODO
+{ include description on missing work that might come later }
+
+## Screenshots
+<table>
+    <tr>
+        <th>Before</th>
+        <th>After</th>
+    </tr>
+    <tr>
+        <td><img src=""></td>
+        <td><img src=""></td>
+    </tr>
+</table>
