@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class PlayMenu : MonoBehaviour
 {
+    [Header("Textures")]
     [SerializeField] private Texture selectedTexturel;
     [SerializeField] private Texture idleTexture;
 
     private void OnMouseDown()
     {
         MainMenu.Instance.ChangeScene();
+        EventManager.TriggerEvent(GenericEvents.ButtonSound);
     }
 
     private void OnMouseEnter()
