@@ -19,6 +19,14 @@ MonoBehaviour:
     of a regular marine
   typeMarine: 7
   weapon: 3
+  marinePrefabs:
+  - {fileID: 8758749674730501089, guid: 559ccae26ef42774c8b1dae68d4f55fe, type: 3}
+  - {fileID: 6100607932079446219, guid: 6f7274aad056bd6448bab9770b915a12, type: 3}
+  - {fileID: 1449033264802069520, guid: 98c60e9f4ced7354c8fdc537d04070e7, type: 3}
+  - {fileID: 2627931885236917448, guid: 9d34fd716da953443b4bb10b34d4275d, type: 3}
+  - {fileID: 7317425205953566905, guid: a5239473bff22a642afacc512c997c5d, type: 3}
+  - {fileID: 4747210567486985986, guid: d038d72a558b4c74db7795bdd9b372bc, type: 3}
+  - {fileID: 288257176983545981, guid: 916df3820214a1a45ab927b7747fdf07, type: 3}
   health: 100
   creationTime: 10
   marineValue: 0

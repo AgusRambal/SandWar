@@ -19,6 +19,8 @@ MonoBehaviour:
     marines
   typeMarine: 1
   weapon: 2
+  marinePrefabs:
+  - {fileID: 2503309199241323388, guid: 0bf5411e311227d43ae8b2b149e51be7, type: 3}
   health: 50
   creationTime: 50
   marineValue: 1247

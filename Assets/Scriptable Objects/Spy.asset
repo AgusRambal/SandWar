@@ -19,6 +19,8 @@ MonoBehaviour:
     works separately of the army because it has no guns
   typeMarine: 5
   weapon: 0
+  marinePrefabs:
+  - {fileID: 51495755309911640, guid: ba25c3a9f045742429a534d10dc451d9, type: 3}
   health: 50
   creationTime: 50
   marineValue: 603

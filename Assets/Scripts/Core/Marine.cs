@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewMarine", menuName = "ScriptableObjects/Marines")]
@@ -11,6 +12,7 @@ public class Marine : ScriptableObject
     [TextArea][SerializeField] private string description;
     [SerializeField] private TypeMarine typeMarine;
     [SerializeField] private Weapon weapon;
+    [SerializeField] private List<GameObject> marinePrefabs = new List<GameObject>();
 
     [Header("Stats")]
     [SerializeField] private float health;
@@ -26,6 +28,11 @@ public class Marine : ScriptableObject
     public float CreationTime => creationTime;
     public Weapon Weapon => weapon;
     public float MarineValue => marineValue;
+
+    public GameObject GetRandomMarine()
+    {
+        return marinePrefabs[Random.Range(0, marinePrefabs.Count)];
+    }
 }
 
 public enum TypeMarine

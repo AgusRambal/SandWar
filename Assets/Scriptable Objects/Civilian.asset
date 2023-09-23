@@ -18,6 +18,11 @@ MonoBehaviour:
   description: Only a civilian
   typeMarine: 6
   weapon: 0
+  marinePrefabs:
+  - {fileID: 7725478573975461872, guid: 48169246f59e58540a9f94fef3870b2b, type: 3}
+  - {fileID: 769018577921923667, guid: dfde078f541aed54888302eed3287d90, type: 3}
+  - {fileID: 3272527538559174352, guid: 6e4d189fdb225904191e5a0aaad86955, type: 3}
+  - {fileID: 1212641663917454206, guid: 3f821d89817d8284fb92aea81ee939af, type: 3}
   health: 10
   creationTime: 10
   marineValue: 0

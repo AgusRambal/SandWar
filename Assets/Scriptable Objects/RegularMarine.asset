@@ -18,6 +18,21 @@ MonoBehaviour:
   description: This is a regular marine
   typeMarine: 2
   weapon: 3
+  marinePrefabs:
+  - {fileID: 585439736456632566, guid: 479d40d1ee421e743962f0daa4178930, type: 3}
+  - {fileID: 917206772305487641, guid: faa000d4a9bf9764980ecc7abed83de4, type: 3}
+  - {fileID: 2771661277202038244, guid: a7f985300e4723a4eb2fd3eb996a5a50, type: 3}
+  - {fileID: 8523937777478909159, guid: 1f86cb29397b9c24aa63e4ca382135ff, type: 3}
+  - {fileID: 564839052738198197, guid: af3a190e871f6a4428013c580c11fcb9, type: 3}
+  - {fileID: 5314780205200030366, guid: 291576f09f4cda841a4337312f721f58, type: 3}
+  - {fileID: 8549760336121959667, guid: 4227aa3b4abd13f4db59b98304e40231, type: 3}
+  - {fileID: 3622526407340679172, guid: aa780ec24f7165e43af0dc8c6f48d374, type: 3}
+  - {fileID: 4129888893165958481, guid: d3e915f95f2f0554e8dd7703e65fc289, type: 3}
+  - {fileID: 4554900943515063753, guid: 149726b6880e4d744b758d7810bbef08, type: 3}
+  - {fileID: 7867559779249852916, guid: 3d082dcadb160ab4db22497c14e4ae88, type: 3}
+  - {fileID: 93494959367759696, guid: 97aa0e4b61815cb44af654b89e475c68, type: 3}
+  - {fileID: 960911359340864580, guid: 6194cef50229bb242900a3428b489605, type: 3}
+  - {fileID: 7876504433263902795, guid: 11c968df1e9f39948bdf96b606a9d3c7, type: 3}
   health: 100
   creationTime: 10
   marineValue: 589
