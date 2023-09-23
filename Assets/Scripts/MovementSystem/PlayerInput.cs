@@ -106,6 +106,8 @@ public class PlayerInput : MonoBehaviour
 
         for (int i = 0; i < SelectionManager.Instance.AvailableMarines.Count; i++)
         {
+            MarineObject marine = SelectionManager.Instance.AvailableMarines[i];
+            if(marine == null) continue;
             if (UnitInSelectionBox(Camera.WorldToScreenPoint(SelectionManager.Instance.AvailableMarines[i].transform.position), bounds))
             {
                 SelectionManager.Instance.Select(SelectionManager.Instance.AvailableMarines[i]);
