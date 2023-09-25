@@ -41,6 +41,18 @@ namespace SandWar.Serialization
             return false;
         }
 
+        public static T TryLoadData<T>(string key, T defaultValue = default)
+        {
+            Dictionary<string, object> saveData = LoadSaveData();
+
+            if (saveData.ContainsKey(key))
+            {
+                return (T)saveData[key];
+            }
+
+            return defaultValue;
+        }
+
         private static void SaveToFile(Dictionary<string, object> saveData)
         {
             BinaryFormatter formatter = new BinaryFormatter();
