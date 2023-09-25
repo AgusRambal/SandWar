@@ -9,6 +9,7 @@ public class Walking : State
 
     public override void EnterState()
     {
+        marine.animator.SetBool("isShooting", false);
     }
 
     public override void Update()
@@ -29,19 +30,6 @@ public class Walking : State
 
     private void HandleAttack()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            marine.target = null;
-        }
-
-        if (Input.GetMouseButtonDown(1) && SelectionManager.Instance.SelectedMarines.Count > 0)
-        {
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitEnemy))
-            {
-                marine.target = hitEnemy.transform.GetComponent<Insurgent>();
-            }
-        }
-
         if (marine.target == null)
             return;
 

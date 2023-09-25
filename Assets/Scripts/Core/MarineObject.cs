@@ -11,6 +11,7 @@ public class MarineObject : MonoBehaviour, IDamageable
     public AnimatorOverrideController animatorOverride;
     [SerializeField] private GameObject selectionArrow;
     public SelectableCharacter mySelf;
+    public CustomLookAtTarget customLookAtTarget;
 
     [Header("Stats")]
     public int id;
@@ -39,7 +40,7 @@ public class MarineObject : MonoBehaviour, IDamageable
         DOTween.Init();
 
         agent = GetComponent<NavMeshAgent>();
-        animator = transform.GetChild(1).GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         animator.runtimeAnimatorController = animatorOverride;
         typeMarine = scirptableObject.TypeMarine;
         health = scirptableObject.Health;
@@ -61,7 +62,8 @@ public class MarineObject : MonoBehaviour, IDamageable
     }
 
     public void MoveTo(Vector3 position)
-    { 
+    {
+        agent.isStopped = false;
         agent.SetDestination(position);
     }
 
@@ -83,6 +85,11 @@ public class MarineObject : MonoBehaviour, IDamageable
         {
             Die();
         }
+    }
+
+    public void Shoot()
+    {
+        Actions.Shoot();
     }
 
     public void Die()

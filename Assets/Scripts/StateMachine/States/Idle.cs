@@ -9,6 +9,7 @@ public class Idle : State
 
     public override void EnterState()
     {
+        marine.animator.SetBool("isShooting", false);
     }
 
     public override void Update()
