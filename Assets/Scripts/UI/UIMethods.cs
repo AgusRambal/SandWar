@@ -122,7 +122,7 @@ public class UIMethods : MonoBehaviour, IEventListener
                 marinesModels[i].SetActive(true);
                 selectedID = id;
                 marineName.text = $"{allMarines[i].MarineName}";
-                marineclass.text = $"{allMarines[i].TypeMarine}";
+                marineclass.text = $"{allMarines[i].SubType}";
                 marineDescription.text = $"{allMarines[i].Description}";
                 marineHealth.text = $"Health: {allMarines[i].Health}";
                 marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
@@ -264,7 +264,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         notification.GetComponent<Notifications>().content = content;
     }
 
-    public void CreateSelectableIcon(int id, MarineObject marine)
+    public void CreateSelectableIcon(int id, Marine marine)
     {
         GameObject icon = Instantiate(selectableCharacterPrefab, selectableCharacterParent);
         selectableCharacterPrefabs.Add(icon.GetComponent<SelectableCharacter>());
@@ -275,7 +275,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         icon.transform.DOScale(1f, .2f);
     }
 
-    public void OnSelectIcon(SelectableCharacter icon, MarineObject marine)
+    public void OnSelectIcon(SelectableCharacter icon, Marine marine)
     {
         DeselectAll();
         icon.selectedSprite.SetActive(true);

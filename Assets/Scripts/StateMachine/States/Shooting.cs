@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : State
 {
-    public Shooting(MarineObject marine, StateMachine stateMachine) : base(marine, stateMachine)
+    public Shooting(Marine marine, StateMachine stateMachine) : base(marine, stateMachine)
     {
     }
 

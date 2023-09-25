@@ -23,18 +23,18 @@ public class SelectionManager
         }
     }
 
-    public HashSet<MarineObject> SelectedMarines = new HashSet<MarineObject>();
-    public List<MarineObject> AvailableMarines = new List<MarineObject>();
+    public HashSet<Marine> SelectedMarines = new HashSet<Marine>();
+    public List<Marine> AvailableMarines = new List<Marine>();
 
     private SelectionManager() { }
 
-    public void Select(MarineObject marine)
+    public void Select(Marine marine)
     {
         marine.OnSelected();
         SelectedMarines.Add(marine);
     }
 
-    public void Deselect(MarineObject marine)
+    public void Deselect(Marine marine)
     {
         marine.OnDeselected();
         SelectedMarines.Remove(marine);
@@ -50,7 +50,7 @@ public class SelectionManager
         SelectedMarines.Clear();
     }
 
-    public bool IsSelected(MarineObject marine) 
+    public bool IsSelected(Marine marine) 
     {
         return SelectedMarines.Contains(marine);
     }

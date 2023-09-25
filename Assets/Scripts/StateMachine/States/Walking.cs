@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Walking : State
 {
-    public Walking(MarineObject marine, StateMachine stateMachine) : base(marine, stateMachine)
+    public Walking(Marine marine, StateMachine stateMachine) : base(marine, stateMachine)
     {
     }
 

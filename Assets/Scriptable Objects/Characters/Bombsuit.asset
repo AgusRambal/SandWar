@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5478672ad825f40acc9f5a7f3a9ef3, type: 3}
+  m_Name: Bombsuit
+  m_EditorClassIdentifier: 
+  id: 1
+  marineName: Bomsuit
+  icon: {fileID: 21300000, guid: d593a5b38a56b934187324e2e6848cde, type: 3}
+  description: This marine has the ability to defuse certain bombs through the map
+  typeMarine: 0
+  weapon: 0
+  marinePrefabs:
+  - {fileID: 8563074849181937604, guid: 0baa1d4da7afd4645b13b257128ff3bc, type: 3}
+  health: 150
+  creationTime: 100
+  marineValue: 1658

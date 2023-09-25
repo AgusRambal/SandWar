@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class Idle : State
 {
-    public Idle(MarineObject marine, StateMachine stateMachine) : base(marine, stateMachine)
+    public Idle(Marine marine, StateMachine stateMachine) : base(marine, stateMachine)
     { 
     }
 

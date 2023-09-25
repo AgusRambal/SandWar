@@ -1,9 +1,9 @@
 public class State
 {
-    protected MarineObject marine;
+    protected Marine marine;
     protected StateMachine stateMachine;
 
-    public State(MarineObject marine, StateMachine stateMachine)
+    public State(Marine marine, StateMachine stateMachine)
     {
         this.marine = marine;
         this.stateMachine = stateMachine;

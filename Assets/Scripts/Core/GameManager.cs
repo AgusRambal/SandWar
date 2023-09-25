@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour
     public bool test = false;
 
     [Header("Marines")]
-    public List<Marine> allMarines = new List<Marine>();
+    public List<Character> allMarines = new List<Character>();
     [SerializeField] private List<Transform> marinesSpawnPoints = new List<Transform>();
     [SerializeField] private List<Transform> marinesTarget = new List<Transform>();
 
     [Header("My data")]
-    [SerializeField] private List<Marine> myMarines = new List<Marine>();
+    [SerializeField] private List<Character> myMarines = new List<Character>();
     public float oilAmount { get; private set; }
     public float dollarsAmount { get; private set; }
 
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     private float marketChanceDecrease = 50f;
     private float timer = 0;
-    private MarineObject lastMarineCreated;
+    private Marine lastMarineCreated;
 
     private void Awake()
     {
@@ -98,8 +98,8 @@ public class GameManager : MonoBehaviour
     private void CreateMarine(GameObject marine)
     {
         GameObject marineInstantiated = Instantiate(marine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
-        marineInstantiated.GetComponent<MarineObject>().MoveTo(marinesTarget[myMarines.Count - 1].position);
-        lastMarineCreated = marineInstantiated.GetComponent<MarineObject>();
+        marineInstantiated.GetComponent<Marine>().MoveTo(marinesTarget[myMarines.Count - 1].position);
+        lastMarineCreated = marineInstantiated.GetComponent<Marine>();
     }
 
     private IEnumerator SetOilValue()
