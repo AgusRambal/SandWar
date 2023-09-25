@@ -20,16 +20,22 @@ public class MarineObject : MonoBehaviour, IDamageable
     public float MaxHealth { get; set; }
     [field: SerializeField] public float CurrentHealth { get; set; }
 
+    [Header("Battle")]
+    public Insurgent target;
+
     //State machine
     public StateMachine StateMachine { get; set; }
     public Idle IdleState { get; set; }
     public Walking WalkingState { get; set; }
+    public Shooting ShootingState { get; set; }
 
     private void Awake()
     {
         StateMachine = gameObject.AddComponent<StateMachine>();
         IdleState = new Idle(this, StateMachine);
         WalkingState = new Walking(this, StateMachine);
+        ShootingState = new Shooting(this, StateMachine);
+
         DOTween.Init();
 
         agent = GetComponent<NavMeshAgent>();
