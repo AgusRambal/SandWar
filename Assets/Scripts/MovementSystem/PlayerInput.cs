@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -34,10 +33,13 @@ public class PlayerInput : MonoBehaviour
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitEnemy))
             {
-                foreach (MarineObject marine in SelectionManager.Instance.SelectedMarines)
+                if (hitEnemy.transform.GetComponent<Insurgent>())
                 {
-                    marine.target = hitEnemy.transform.GetComponent<Insurgent>();
-                    marine.customLookAtTarget.StartRotating(marine.target.transform);
+                    foreach (MarineObject marine in SelectionManager.Instance.SelectedMarines)
+                    {
+                        marine.target = hitEnemy.transform.GetComponent<Insurgent>();
+                        marine.customLookAtTarget.StartRotating(marine.target.transform);
+                    }
                 }
             }
         }

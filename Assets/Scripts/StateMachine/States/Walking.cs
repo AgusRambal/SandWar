@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Walking : State
 {
@@ -10,6 +9,11 @@ public class Walking : State
     public override void EnterState()
     {
         marine.animator.SetBool("isShooting", false);
+
+        if (marine.customLookAtTarget.LookCoroutine == null)
+            return;
+
+        marine.customLookAtTarget.StopCoroutine(marine.customLookAtTarget.LookCoroutine);
     }
 
     public override void Update()
