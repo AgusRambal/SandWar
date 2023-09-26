@@ -6,8 +6,8 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] private Weapon weapon;
     [SerializeField] private Transform weaponPivot;
     [SerializeField] private LayerMask enemyLayer;
-    public bool targetKilled = false;
 
+    public bool targetKilled { get; set; }
     public int bulletsLeft { get; set; }
 
     public Weapon Weapon => weapon;
