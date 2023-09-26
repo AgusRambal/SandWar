@@ -11,7 +11,7 @@ public class Shooting : State
     public override void EnterState()
     {
         marine.actualWeapon.IsShooting = true;
-        marine.actualWeapon.Shoot(marine.totalAccuracy, marine.animator);
+        marine.actualWeapon.Shoot(marine.TotalAccuracy, marine.animator);
     }
 
     public override void Update()

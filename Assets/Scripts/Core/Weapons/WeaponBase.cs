@@ -35,8 +35,10 @@ public abstract class WeaponBase : MonoBehaviour
         if (reloading)
             return;
 
+
         if (bulletsLeft < 1)
         {
+            //Falta el chequeo de cuantos cargadores tengo, si no tengo mas, IsShooting = false y return;
             StartCoroutine(Reload(accuracy, animator));
             reloading = true;
         }
@@ -55,28 +57,22 @@ public abstract class WeaponBase : MonoBehaviour
 
                 var possibility = Random.Range(0, 100);
 
+                //Pego el tiro
                 if (accuracy >= possibility)
                 {
+                    //Mato al enemigo
                     if (enemy.health <= 0)
                     {
-                        Debug.Log("listo");
                         IsShooting = false;
                         targetKilled = true;
                     }
 
-                    enemy.health -= 10;
-                }
-
-                else
-                {
-                    //Debug.Log("erre");
+                    enemy.health -= weapon.Damage;
                 }
             }
         }
 
         bulletsLeft--;
-
-        Debug.Log(bulletsLeft);
 
         StartCoroutine(ResetShot(accuracy, animator)); //Time between shooting
     }
@@ -93,6 +89,7 @@ public abstract class WeaponBase : MonoBehaviour
         //Reproducir animacion
         bulletsLeft = Weapon.BulletsOnMagazine;
         reloading = false;
+        //Falta el descuento del cargador
         StartCoroutine(ResetShot(accuracy, animator));
     }
 }

@@ -18,8 +18,6 @@ public class Weapon : ScriptableObject
     [SerializeField] private float reloadTime;
     [SerializeField] private float maximumRangeAccuracy;
 
-    //AGREGAR UN MODIFICADOR EN BASE A LA DISTANCIA
-
     public int Id => id;
     public string WeaponName => weaponName;
     public Sprite Icon => icon;

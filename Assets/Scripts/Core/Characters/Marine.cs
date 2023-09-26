@@ -2,26 +2,25 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Marine : MonoBehaviour, IDamageable
+public class Marine : MonoBehaviour
 {
     [Header("References")]
     public Character character;
     public NavMeshAgent agent;
     public Animator animator;
     public AnimatorOverrideController animatorOverride;
-    [SerializeField] private GameObject selectionArrow;
     public SelectableCharacter characterSelectionImage;
     public CustomLookAtTarget customLookAtTarget;
     public WeaponBase actualWeapon;
-
-    [Header("Settings")]
-    public int magazines;
-
-    public float CurrentHealth { get; set; }
-    public float totalAccuracy { get; private set; }
+    [SerializeField] private GameObject selectionArrow;
 
     [Header("Battle")]
     public Insurgent target;
+
+    //Stats
+    public float CurrentHealth { get; set; }
+    public float TotalAccuracy { get; private set; }
+    public int magazines { get; set; }
 
     //State machine
     public StateMachine StateMachine { get; set; }
@@ -46,7 +45,8 @@ public class Marine : MonoBehaviour, IDamageable
     {
         StateMachine.Initialize(IdleState);
         CurrentHealth = character.Health;
-        totalAccuracy = character.Accuracy + actualWeapon.Weapon.Accuracy; ;
+        TotalAccuracy = character.Accuracy + actualWeapon.Weapon.Accuracy;
+        magazines = character.Magazines;
     }
 
     private void Update()

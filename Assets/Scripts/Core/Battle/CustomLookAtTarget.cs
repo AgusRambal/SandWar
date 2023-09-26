@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CustomLookAtTarget : MonoBehaviour
 {
-    public float speed = 1f;
+    [SerializeField] private float speed = 1f;
 
     public Coroutine LookCoroutine { get; private set; }
 
