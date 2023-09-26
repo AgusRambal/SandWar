@@ -270,7 +270,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         selectableCharacterPrefabs.Add(icon.GetComponent<SelectableCharacter>());
         icon.GetComponent<SelectableCharacter>().Uimethods = this;
         icon.GetComponent<SelectableCharacter>().marineObject = marine;
-        marine.mySelf = icon.GetComponent<SelectableCharacter>();
+        marine.characterSelectionImage = icon.GetComponent<SelectableCharacter>();
         icon.GetComponent<SelectableCharacter>().marineImage.sprite = GameManager.Instance.allMarines[id - 1].Icon;
         icon.transform.DOScale(1f, .2f);
     }

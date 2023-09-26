@@ -10,7 +10,7 @@ public class Marine : MonoBehaviour, IDamageable
     public Animator animator;
     public AnimatorOverrideController animatorOverride;
     [SerializeField] private GameObject selectionArrow;
-    public SelectableCharacter mySelf;
+    public SelectableCharacter characterSelectionImage;
     public CustomLookAtTarget customLookAtTarget;
     public WeaponBase actualWeapon;
 
@@ -38,8 +38,6 @@ public class Marine : MonoBehaviour, IDamageable
 
         DOTween.Init();
 
-        agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
         animator.runtimeAnimatorController = animatorOverride;
         SelectionManager.Instance.AvailableMarines.Add(this);
     }

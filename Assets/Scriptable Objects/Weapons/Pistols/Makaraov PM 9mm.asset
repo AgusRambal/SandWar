@@ -18,7 +18,8 @@ MonoBehaviour:
   description: Pistola
   type: 1
   damage: 10
-  bulletsOnMagazine: 12
+  bulletsOnMagazine: 11
   fireRate: 1
-  accuracy: 20
-  reloadTime: 0
+  accuracy: 24
+  reloadTime: 1
+  maximumRangeAccuracy: 7

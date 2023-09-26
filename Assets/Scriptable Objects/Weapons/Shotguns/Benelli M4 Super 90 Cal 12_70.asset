@@ -17,8 +17,9 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: M4
   type: 5
-  damage: 30
-  bulletsOnMagazine: 30
-  fireRate: 1
+  damage: 68
+  bulletsOnMagazine: 8
+  fireRate: 2.1
   accuracy: 40
-  reloadTime: 0
+  reloadTime: 3.7
+  maximumRangeAccuracy: 4

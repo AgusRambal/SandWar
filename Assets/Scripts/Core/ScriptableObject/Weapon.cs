@@ -16,6 +16,7 @@ public class Weapon : ScriptableObject
     [SerializeField] private float fireRate;
     [SerializeField] private float accuracy;
     [SerializeField] private float reloadTime;
+    [SerializeField] private float maximumRangeAccuracy;
 
     //AGREGAR UN MODIFICADOR EN BASE A LA DISTANCIA
 
@@ -29,6 +30,7 @@ public class Weapon : ScriptableObject
     public float Accuracy => accuracy;
     public float ReloadTime => reloadTime;
     public int BulletsOnMagazine => bulletsOnMagazine;
+    public float MaximumRangeAccuracy => maximumRangeAccuracy;
 }
 
 public enum WeaponType

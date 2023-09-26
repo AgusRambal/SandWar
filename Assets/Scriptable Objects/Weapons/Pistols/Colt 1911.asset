@@ -19,6 +19,7 @@ MonoBehaviour:
   type: 1
   damage: 10
   bulletsOnMagazine: 12
-  fireRate: 1
-  accuracy: 20
-  reloadTime: 0
+  fireRate: 0.8
+  accuracy: 19
+  reloadTime: 1.45
+  maximumRangeAccuracy: 8

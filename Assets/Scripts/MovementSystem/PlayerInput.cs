@@ -94,7 +94,7 @@ public class PlayerInput : MonoBehaviour
                 {
                     SelectionManager.Instance.DeselectAll();
                     SelectionManager.Instance.Select(marine);
-                    uiMethods.OnSelectIcon(marine.mySelf, marine);
+                    uiMethods.OnSelectIcon(marine.characterSelectionImage, marine);
                 }
             }
 
