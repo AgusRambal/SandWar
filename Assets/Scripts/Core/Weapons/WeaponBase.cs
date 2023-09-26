@@ -4,18 +4,19 @@ using UnityEngine;
 public abstract class WeaponBase : MonoBehaviour
 {
     [Header("Variables")]
-    public Weapon weapon;
-    public Transform weaponPivot;
-    public bool isShooting;
-    public LayerMask enemyLayer;
+    [SerializeField] private Weapon weapon;
+    [SerializeField] private Transform weaponPivot;
+    [SerializeField] private LayerMask enemyLayer;
+    public bool IsShooting;
+    public bool targetKilled = false;
 
     protected int bulletsLeft;
     protected int bulletsShot;
-    protected bool readyToShoot;
     protected bool reloading;
 
-    protected Weapon Weapon => weapon;
-    protected Transform WeaponPivot => weaponPivot;
+    public Weapon Weapon => weapon;
+    public Transform WeaponPivot => weaponPivot;
+    public LayerMask EnemyLayer => enemyLayer;
 
     public virtual void Start()
     {
@@ -28,8 +29,19 @@ public abstract class WeaponBase : MonoBehaviour
 
     public void Shoot(float accuracy, Animator animator)
     {
-        readyToShoot = false;
+        if (!IsShooting)
+            return;
 
+        if (reloading)
+            return;
+
+        if (bulletsLeft < 1)
+        {
+            StartCoroutine(Reload(accuracy, animator));
+            reloading = true;
+        }
+
+        targetKilled = false;
         animator.SetBool("isShooting", true);
         animator.SetTrigger("shoot");
         //Activar el muzzle flash
@@ -45,18 +57,26 @@ public abstract class WeaponBase : MonoBehaviour
 
                 if (accuracy >= possibility)
                 {
+                    if (enemy.health <= 0)
+                    {
+                        Debug.Log("listo");
+                        IsShooting = false;
+                        targetKilled = true;
+                    }
+
                     enemy.health -= 10;
-                    Debug.Log(enemy.health);
                 }
 
                 else
                 {
-                    Debug.Log("erre");
+                    //Debug.Log("erre");
                 }
             }
         }
 
         bulletsLeft--;
+
+        Debug.Log(bulletsLeft);
 
         StartCoroutine(ResetShot(accuracy, animator)); //Time between shooting
     }
@@ -64,7 +84,15 @@ public abstract class WeaponBase : MonoBehaviour
     private IEnumerator ResetShot(float accuracy, Animator animator)
     {
         yield return new WaitForSeconds(Weapon.FireRate);
-        readyToShoot = true;
         Shoot(accuracy, animator);
+    }
+
+    private IEnumerator Reload(float accuracy, Animator animator)
+    {
+        yield return new WaitForSeconds(Weapon.ReloadTime); //El reload time deberia ser la duracion de la animcion + un poquito
+        //Reproducir animacion
+        bulletsLeft = Weapon.BulletsOnMagazine;
+        reloading = false;
+        StartCoroutine(ResetShot(accuracy, animator));
     }
 }

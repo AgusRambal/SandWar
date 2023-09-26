@@ -37,5 +37,6 @@ public enum WeaponType
     Pistol,
     Sniper,
     Rifle,
-    MachineGun
+    MachineGun,
+    Shotgun
 }

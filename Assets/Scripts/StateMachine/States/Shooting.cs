@@ -10,16 +10,14 @@ public class Shooting : State
 
     public override void EnterState()
     {
-        if (marine.actualWeapon.isShooting)
-            return;
-
+        marine.actualWeapon.IsShooting = true;
         marine.actualWeapon.Shoot(marine.totalAccuracy, marine.animator);
-        marine.actualWeapon.isShooting = true;
     }
 
     public override void Update()
     {
         MovingCheck();
+        FinishState();
     }
 
     private void MovingCheck()
@@ -27,6 +25,14 @@ public class Shooting : State
         if (!marine.agent.isStopped)
         {
             marine.StateMachine.ChangeState(marine.WalkingState);
+        }
+    }
+
+    private void FinishState()
+    { 
+        if (marine.actualWeapon.targetKilled) 
+        {
+            marine.StateMachine.ChangeState(marine.IdleState);
         }
     }
 }

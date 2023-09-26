@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 7614082566446903757, guid: 334960c64cf984748a2e03513cf1228d,
         type: 3}
       propertyPath: m_Name
-      value: AK-PKM 7.62mm Variant
+      value: AK-PKM 7.62mm
       objectReference: {fileID: 0}
     - target: {fileID: 8065554491907541330, guid: 334960c64cf984748a2e03513cf1228d,
         type: 3}
@@ -63,6 +63,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8835115668092564964, guid: 334960c64cf984748a2e03513cf1228d,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: b2407e8a511123f4d9adfb7b729a3fe6,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

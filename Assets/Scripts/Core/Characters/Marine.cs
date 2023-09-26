@@ -14,8 +14,9 @@ public class Marine : MonoBehaviour, IDamageable
     public CustomLookAtTarget customLookAtTarget;
     public WeaponBase actualWeapon;
 
-    [Header("Stats")]
-    [SerializeField] private Weapon weapon;
+    [Header("Settings")]
+    public int magazines;
+
     public float CurrentHealth { get; set; }
     public float totalAccuracy { get; private set; }
 
@@ -47,7 +48,7 @@ public class Marine : MonoBehaviour, IDamageable
     {
         StateMachine.Initialize(IdleState);
         CurrentHealth = character.Health;
-        totalAccuracy = character.Accuracy + actualWeapon.weapon.Accuracy; ;
+        totalAccuracy = character.Accuracy + actualWeapon.Weapon.Accuracy; ;
     }
 
     private void Update()
