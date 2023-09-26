@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class WeaponBase : MonoBehaviour
@@ -47,7 +48,9 @@ public abstract class WeaponBase : MonoBehaviour
                         targetKilled = true;
                     }
 
-                    enemy.Damage(weapon.Damage);
+                    EventManager.TriggerEvent(GenericEvents.ApplyDamageToEnemy, new Hashtable() {
+                    {GameplayEventHashtableParams.DamageAmount.ToString(), weapon.Damage}
+                    });
                 }
             }
         }

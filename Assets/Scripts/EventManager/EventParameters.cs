@@ -2,6 +2,7 @@
 {
     AudioClip,
     AudioSource,
+    DamageAmount
 }
 
 

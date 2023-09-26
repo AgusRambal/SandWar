@@ -5,4 +5,5 @@
     ChangeMenuMaterial,
     PlaySound,
     ButtonSound,
+    ApplyDamageToEnemy
 }

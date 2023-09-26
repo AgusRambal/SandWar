@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
-public class Insurgent : MonoBehaviour
+public class Insurgent : MonoBehaviour, IEventListener
 {
     //Datos dummy para testear el sistema de disparo
     [SerializeField] private Character insurgent;
@@ -9,12 +10,15 @@ public class Insurgent : MonoBehaviour
 
     private void Awake()
     {
+        OnEnableEventListenerSubscriptions();
         MaxHealth = insurgent.MaxHealth;
         CurrentHealth = MaxHealth;
     }
 
-    public void Damage(float damageAmount)
+    public void ApplyDamageToEnemy(Hashtable hashtable)
     {
+        float damageAmount = (float)hashtable[GameplayEventHashtableParams.DamageAmount.ToString()];
+
         CurrentHealth -= damageAmount;
 
         if (CurrentHealth <= 0)
@@ -27,5 +31,26 @@ public class Insurgent : MonoBehaviour
     {
         //No hacer destroy, dejar el cuerpo ahi tirado en el piso
         Destroy(gameObject);
+    }
+
+    public void OnEnableEventListenerSubscriptions()
+    {
+        EventManager.StartListening(GenericEvents.ApplyDamageToEnemy, ApplyDamageToEnemy);
+    }
+
+    public void CancelEventListenerSubscriptions()
+    {
+        EventManager.StopListening(GenericEvents.ApplyDamageToEnemy, ApplyDamageToEnemy);
+    }
+
+    private void OnDisable()
+    {
+        CancelEventListenerSubscriptions();
+    }
+
+    private void OnDestroy()
+    {
+        CancelEventListenerSubscriptions();
+
     }
 }
