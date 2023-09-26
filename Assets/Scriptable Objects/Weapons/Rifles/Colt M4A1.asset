@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff5ec60db538a13419fd41904c048797, type: 3}
-  m_Name: Colt 1911
+  m_Name: Colt M4A1
   m_EditorClassIdentifier: 
-  id: 1
-  weaponName: Colt 1911
+  id: 3
+  weaponName: Colt M4A1
   icon: {fileID: 0}
-  description: Pistola
-  type: 1
-  damage: 10
+  description: M4
+  type: 3
+  damage: 30
+  bulletsOnMagazine: 30
   fireRate: 1
-  accuracy: 20
+  accuracy: 40
+  reloadTime: 0

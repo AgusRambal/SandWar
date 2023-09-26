@@ -10,8 +10,11 @@ public class Shooting : State
 
     public override void EnterState()
     {
-        marine.animator.SetBool("isShooting", true);
-        marine.animator.SetTrigger("shoot");
+        if (marine.actualWeapon.isShooting)
+            return;
+
+        marine.actualWeapon.Shoot(marine.totalAccuracy, marine.animator);
+        marine.actualWeapon.isShooting = true;
     }
 
     public override void Update()

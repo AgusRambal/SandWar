@@ -12,8 +12,12 @@ public class Weapon : ScriptableObject
 
     [Header("Stats")]
     [SerializeField] private float damage;
+    [SerializeField] private int bulletsOnMagazine;
     [SerializeField] private float fireRate;
     [SerializeField] private float accuracy;
+    [SerializeField] private float reloadTime;
+
+    //AGREGAR UN MODIFICADOR EN BASE A LA DISTANCIA
 
     public int Id => id;
     public string WeaponName => weaponName;
@@ -23,6 +27,8 @@ public class Weapon : ScriptableObject
     public float Damage => damage;
     public float FireRate => fireRate;
     public float Accuracy => accuracy;
+    public float ReloadTime => reloadTime;
+    public int BulletsOnMagazine => bulletsOnMagazine;
 }
 
 public enum WeaponType

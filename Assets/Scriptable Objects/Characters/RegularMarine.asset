@@ -37,3 +37,4 @@ MonoBehaviour:
   health: 100
   creationTime: 10
   marineValue: 589
+  accuracy: 40

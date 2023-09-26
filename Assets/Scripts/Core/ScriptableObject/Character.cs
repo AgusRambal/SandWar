@@ -19,6 +19,7 @@ public class Character : ScriptableObject
     [SerializeField] private float health;
     [SerializeField] private float creationTime;
     [SerializeField] private float marineValue;
+    [SerializeField] private float accuracy;
 
     public int Id => id;
     public string MarineName => marineName;
@@ -30,6 +31,7 @@ public class Character : ScriptableObject
     public float CreationTime => creationTime;
     public Weapon Weapon => weapon;
     public float MarineValue => marineValue;
+    public float Accuracy => accuracy;
 
     public GameObject GetRandomMarine()
     {

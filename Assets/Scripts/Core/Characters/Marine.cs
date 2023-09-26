@@ -5,22 +5,19 @@ using UnityEngine.AI;
 public class Marine : MonoBehaviour, IDamageable
 {
     [Header("References")]
-    public Character scirptableObject;
+    public Character character;
     public NavMeshAgent agent;
     public Animator animator;
     public AnimatorOverrideController animatorOverride;
     [SerializeField] private GameObject selectionArrow;
     public SelectableCharacter mySelf;
     public CustomLookAtTarget customLookAtTarget;
+    public WeaponBase actualWeapon;
 
     [Header("Stats")]
-    public int id;
-    [SerializeField] private float health;
-    public Type typeMarine;
-    public SubType subType;
     [SerializeField] private Weapon weapon;
-    public float MaxHealth { get; set; }
-    [field: SerializeField] public float CurrentHealth { get; set; }
+    public float CurrentHealth { get; set; }
+    public float totalAccuracy { get; private set; }
 
     [Header("Battle")]
     public Insurgent target;
@@ -43,19 +40,14 @@ public class Marine : MonoBehaviour, IDamageable
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         animator.runtimeAnimatorController = animatorOverride;
-        typeMarine = scirptableObject.Type;
-        subType = scirptableObject.SubType;
-        health = scirptableObject.Health;
-        id = scirptableObject.Id;
-        weapon = scirptableObject.Weapon;
-        MaxHealth = health;
         SelectionManager.Instance.AvailableMarines.Add(this);
     }
 
     private void Start()
     {
         StateMachine.Initialize(IdleState);
-        CurrentHealth = MaxHealth;
+        CurrentHealth = character.Health;
+        totalAccuracy = character.Accuracy + actualWeapon.weapon.Accuracy; ;
     }
 
     private void Update()
@@ -87,11 +79,6 @@ public class Marine : MonoBehaviour, IDamageable
         {
             Die();
         }
-    }
-
-    public void Shoot()
-    {
-        Actions.Shoot();
     }
 
     public void Die()
