@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,11 +18,6 @@ public class Marine : MonoBehaviour
     [Header("Battle")]
     public Insurgent target;
 
-    //Stats
-    [field: SerializeField] public float CurrentHealth { get; set; }
-    [field: SerializeField] public int magazines { get; set; }
-    public float TotalAccuracy { get; private set; }
-
     //State machine
     public StateMachine StateMachine { get; set; }
     public Idle IdleState { get; set; }
@@ -32,6 +28,18 @@ public class Marine : MonoBehaviour
     [Header("LookAt")]
     [SerializeField] private float speed = 1f;
     public Coroutine LookCoroutine { get; private set; }
+
+    public struct Stats
+    {
+        public float CurrentHealth;
+        public float TotalAccuracy;
+        public int Magazines;
+    }
+
+    private Stats _stats;
+
+    public Stats Statss { get; set; }
+
 
     private void Awake()
     {
@@ -50,9 +58,13 @@ public class Marine : MonoBehaviour
     private void Start()
     {
         StateMachine.Initialize(IdleState);
-        CurrentHealth = character.MaxHealth;
-        TotalAccuracy = character.Accuracy + actualWeapon.Weapon.Accuracy;
-        magazines = character.Magazines;
+
+        _stats = new Stats
+        {
+            CurrentHealth = character.MaxHealth,
+            TotalAccuracy = character.Accuracy + actualWeapon.Weapon.Accuracy,
+            Magazines = character.Magazines
+        };
     }
 
     private void Update()
@@ -78,9 +90,9 @@ public class Marine : MonoBehaviour
 
     public void Damage(float damageAmount)
     {
-        CurrentHealth -= damageAmount;
+        _stats.CurrentHealth -= damageAmount;
 
-        if (CurrentHealth <= 0)
+        if (_stats.CurrentHealth <= 0)
         {
             Die();
         }

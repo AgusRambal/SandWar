@@ -25,7 +25,7 @@ public class Reloading : State
         if (timer >= marine.actualWeapon.Weapon.ReloadTime) //El reload time deberia ser la duracion de la animcion + un poquito
         {
             timer = 0;
-            marine.magazines--;
+            //marine.Statss.Magazines--;
             marine.actualWeapon.bulletsLeft = marine.actualWeapon.Weapon.BulletsOnMagazine;
             marine.StateMachine.ChangeState(marine.ShootingState);
         }
