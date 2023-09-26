@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-
+using System;
 
 namespace SandWar.Serialization
 {
@@ -33,8 +33,17 @@ namespace SandWar.Serialization
 
             if (saveData.ContainsKey(key))
             {
-                data = (T)saveData[key];
-                return true;
+                object loadedData = saveData[key];
+
+                if (loadedData is T)
+                {
+                    data = (T)loadedData;
+                    return true;
+                }
+                else
+                {
+                    throw new InvalidCastException($"Cant cast {loadedData.GetType()} to {typeof(T)}"); // Aca en un futuro hay que desarrollar un sistema de manejo de excepciones 
+                }
             }
 
             data = default;
@@ -47,7 +56,16 @@ namespace SandWar.Serialization
 
             if (saveData.ContainsKey(key))
             {
-                return (T)saveData[key];
+                object loadedData = saveData[key];
+
+                if (loadedData is T)
+                {
+                    return (T)loadedData;
+                }
+                else
+                {
+                    throw new InvalidCastException($"Cant cast {loadedData.GetType()} to {typeof(T)}"); // Aca en un futuro hay que desarrollar un sistema de manejo de excepciones 
+                }
             }
 
             return defaultValue;
