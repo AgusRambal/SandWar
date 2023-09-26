@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SandWar.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
+    }    
 
     private void Start()
     {
@@ -58,8 +59,8 @@ public class GameManager : MonoBehaviour
 
         if (test)
         {
-            oilAmount = 500;
-            dollarsAmount = 8000;
+            dollarsAmount = SerializationManager.TryLoadData("Dollar", out float _dollar) ? _dollar : 8000;
+            oilAmount = SerializationManager.TryLoadData("Oil", out float _oil) ? _oil : 8000;
         }
     }
 
@@ -148,5 +149,11 @@ public class GameManager : MonoBehaviour
     {
         dollarsAmount -= allMarines[id - 1].MarineValue;
         marketChance -= 10f;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SerializationManager.SaveData("Dollar", dollarsAmount);
+        SerializationManager.SaveData("oil", oilAmount);
     }
 }
