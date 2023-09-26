@@ -38,7 +38,7 @@ public class PlayerInput : MonoBehaviour
                     foreach (Marine marine in SelectionManager.Instance.SelectedMarines)
                     {
                         marine.target = hitEnemy.transform.GetComponent<Insurgent>();
-                        marine.customLookAtTarget.StartRotating(marine.target.transform);
+                        marine.StartRotating(marine.target.transform);
                     }
                 }
             }

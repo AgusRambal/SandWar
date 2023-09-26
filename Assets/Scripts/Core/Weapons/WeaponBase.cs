@@ -47,7 +47,7 @@ public abstract class WeaponBase : MonoBehaviour
                         targetKilled = true;
                     }
 
-                    enemy.CurrentHealth -= weapon.Damage;
+                    enemy.Damage(weapon.Damage);
                 }
             }
         }

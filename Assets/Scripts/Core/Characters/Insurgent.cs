@@ -3,13 +3,13 @@ using UnityEngine;
 public class Insurgent : MonoBehaviour
 {
     //Datos dummy para testear el sistema de disparo
-    [SerializeField] private Character insrugent;
+    [SerializeField] private Character insurgent;
     [field: SerializeField] public float CurrentHealth { get; set; }
     public float MaxHealth { get; private set; }
 
     private void Awake()
     {
-        MaxHealth = insrugent.MaxHealth;
+        MaxHealth = insurgent.MaxHealth;
         CurrentHealth = MaxHealth;
     }
 

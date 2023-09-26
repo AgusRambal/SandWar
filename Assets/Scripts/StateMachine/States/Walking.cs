@@ -10,10 +10,10 @@ public class Walking : State
     {
         marine.animator.SetBool("isShooting", false);
 
-        if (marine.customLookAtTarget.LookCoroutine == null)
+        if (marine.LookCoroutine == null)
             return;
 
-        marine.customLookAtTarget.StopCoroutine(marine.customLookAtTarget.LookCoroutine);
+        marine.StopCoroutine(marine.LookCoroutine);
     }
 
     public override void Update()
