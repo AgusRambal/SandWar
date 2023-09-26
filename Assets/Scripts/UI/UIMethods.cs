@@ -124,8 +124,8 @@ public class UIMethods : MonoBehaviour, IEventListener
                 marineName.text = $"{allMarines[i].MarineName}";
                 marineclass.text = $"{allMarines[i].SubType}";
                 marineDescription.text = $"{allMarines[i].Description}";
-                marineHealth.text = $"Health: {allMarines[i].Health}";
-                marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
+                marineHealth.text = $"Health: {allMarines[i].MaxHealth}";
+                marineWeapon.text = $"Weapon: {allMarines[i].Weapon.WeaponName}";
                 marineCost.text = $"Cost: {allMarines[i].MarineValue} USD";
                 marineTime.text = $"Recruiting time: {allMarines[i].CreationTime} secs";
             }

@@ -23,6 +23,8 @@ MonoBehaviour:
   marinePrefabs:
   - {fileID: 2132940333490708463, guid: 2add94ead9686df439257227cc9d5c54, type: 3}
   - {fileID: 1876909095151649887, guid: 3960b51e7d670124b90d1c00a41b7762, type: 3}
-  health: 100
+  maxHealth: 100
   creationTime: 20
   marineValue: 1553
+  accuracy: 25
+  magazines: 2

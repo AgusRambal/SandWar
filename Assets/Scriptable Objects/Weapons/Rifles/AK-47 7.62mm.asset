@@ -17,9 +17,9 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: Pistola
   type: 3
-  damage: 20
-  bulletsOnMagazine: 30
-  fireRate: 0.43
+  damage: 1
+  bulletsOnMagazine: 5
+  fireRate: 1
   accuracy: 37
   reloadTime: 2.4
   maximumRangeAccuracy: 12

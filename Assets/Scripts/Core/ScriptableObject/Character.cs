@@ -16,7 +16,7 @@ public class Character : ScriptableObject
     [SerializeField] private List<GameObject> marinePrefabs = new List<GameObject>();
 
     [Header("Stats")]
-    [SerializeField] private float health;
+    [SerializeField] private float maxHealth;
     [SerializeField] private float creationTime;
     [SerializeField] private float marineValue;
     [SerializeField] private float accuracy;
@@ -28,7 +28,7 @@ public class Character : ScriptableObject
     public string Description => description;
     public Type Type => type;
     public SubType SubType => subType;
-    public float Health => health;
+    public float MaxHealth => maxHealth;
     public float CreationTime => creationTime;
     public Weapon Weapon => weapon;
     public float MarineValue => marineValue;

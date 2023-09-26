@@ -18,15 +18,16 @@ public class Marine : MonoBehaviour
     public Insurgent target;
 
     //Stats
-    public float CurrentHealth { get; set; }
+    [field: SerializeField] public float CurrentHealth { get; set; }
+    [field: SerializeField] public int magazines { get; set; }
     public float TotalAccuracy { get; private set; }
-    public int magazines { get; set; }
 
     //State machine
     public StateMachine StateMachine { get; set; }
     public Idle IdleState { get; set; }
     public Walking WalkingState { get; set; }
     public Shooting ShootingState { get; set; }
+    public Reloading ReloadingState { get; set; }
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class Marine : MonoBehaviour
         IdleState = new Idle(this, StateMachine);
         WalkingState = new Walking(this, StateMachine);
         ShootingState = new Shooting(this, StateMachine);
+        ReloadingState = new Reloading(this, StateMachine);
 
         DOTween.Init();
 
@@ -44,7 +46,7 @@ public class Marine : MonoBehaviour
     private void Start()
     {
         StateMachine.Initialize(IdleState);
-        CurrentHealth = character.Health;
+        CurrentHealth = character.MaxHealth;
         TotalAccuracy = character.Accuracy + actualWeapon.Weapon.Accuracy;
         magazines = character.Magazines;
     }

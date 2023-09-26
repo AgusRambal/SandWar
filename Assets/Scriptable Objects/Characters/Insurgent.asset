@@ -28,6 +28,8 @@ MonoBehaviour:
   - {fileID: 7317425205953566905, guid: a5239473bff22a642afacc512c997c5d, type: 3}
   - {fileID: 4747210567486985986, guid: d038d72a558b4c74db7795bdd9b372bc, type: 3}
   - {fileID: 288257176983545981, guid: 916df3820214a1a45ab927b7747fdf07, type: 3}
-  health: 100
+  maxHealth: 100
   creationTime: 10
   marineValue: 0
+  accuracy: 0
+  magazines: 0

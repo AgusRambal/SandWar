@@ -34,7 +34,8 @@ MonoBehaviour:
   - {fileID: 93494959367759696, guid: 97aa0e4b61815cb44af654b89e475c68, type: 3}
   - {fileID: 960911359340864580, guid: 6194cef50229bb242900a3428b489605, type: 3}
   - {fileID: 7876504433263902795, guid: 11c968df1e9f39948bdf96b606a9d3c7, type: 3}
-  health: 100
+  maxHealth: 100
   creationTime: 10
   marineValue: 589
-  accuracy: 40
+  accuracy: 30
+  magazines: 3

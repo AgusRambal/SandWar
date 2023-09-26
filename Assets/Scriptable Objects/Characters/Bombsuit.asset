@@ -16,10 +16,13 @@ MonoBehaviour:
   marineName: Bomsuit
   icon: {fileID: 21300000, guid: d593a5b38a56b934187324e2e6848cde, type: 3}
   description: This marine has the ability to defuse certain bombs through the map
-  typeMarine: 0
-  weapon: 0
+  type: 0
+  subType: 0
+  weapon: {fileID: 0}
   marinePrefabs:
   - {fileID: 8563074849181937604, guid: 0baa1d4da7afd4645b13b257128ff3bc, type: 3}
-  health: 150
+  maxHealth: 100
   creationTime: 100
   marineValue: 1658
+  accuracy: 0
+  magazines: 0

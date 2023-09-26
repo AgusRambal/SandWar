@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public abstract class WeaponBase : MonoBehaviour
@@ -7,12 +6,9 @@ public abstract class WeaponBase : MonoBehaviour
     [SerializeField] private Weapon weapon;
     [SerializeField] private Transform weaponPivot;
     [SerializeField] private LayerMask enemyLayer;
-    public bool IsShooting;
     public bool targetKilled = false;
 
-    protected int bulletsLeft;
-    protected int bulletsShot;
-    protected bool reloading;
+    public int bulletsLeft { get; set; }
 
     public Weapon Weapon => weapon;
     public Transform WeaponPivot => weaponPivot;
@@ -29,21 +25,6 @@ public abstract class WeaponBase : MonoBehaviour
 
     public void Shoot(float accuracy, Animator animator)
     {
-        if (!IsShooting)
-            return;
-
-        if (reloading)
-            return;
-
-
-        if (bulletsLeft < 1)
-        {
-            //Falta el chequeo de cuantos cargadores tengo, si no tengo mas, IsShooting = false y return;
-            StartCoroutine(Reload(accuracy, animator));
-            reloading = true;
-        }
-
-        targetKilled = false;
         animator.SetBool("isShooting", true);
         animator.SetTrigger("shoot");
         //Activar el muzzle flash
@@ -61,35 +42,16 @@ public abstract class WeaponBase : MonoBehaviour
                 if (accuracy >= possibility)
                 {
                     //Mato al enemigo
-                    if (enemy.health <= 0)
+                    if (enemy.CurrentHealth <= 0)
                     {
-                        IsShooting = false;
                         targetKilled = true;
                     }
 
-                    enemy.health -= weapon.Damage;
+                    enemy.CurrentHealth -= weapon.Damage;
                 }
             }
         }
 
         bulletsLeft--;
-
-        StartCoroutine(ResetShot(accuracy, animator)); //Time between shooting
-    }
-
-    private IEnumerator ResetShot(float accuracy, Animator animator)
-    {
-        yield return new WaitForSeconds(Weapon.FireRate);
-        Shoot(accuracy, animator);
-    }
-
-    private IEnumerator Reload(float accuracy, Animator animator)
-    {
-        yield return new WaitForSeconds(Weapon.ReloadTime); //El reload time deberia ser la duracion de la animcion + un poquito
-        //Reproducir animacion
-        bulletsLeft = Weapon.BulletsOnMagazine;
-        reloading = false;
-        //Falta el descuento del cargador
-        StartCoroutine(ResetShot(accuracy, animator));
     }
 }

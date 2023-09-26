@@ -1,3 +1,6 @@
+
+using UnityEngine;
+
 public class State
 {
     protected Marine marine;

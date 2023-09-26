@@ -4,5 +4,5 @@
     OpenSellOilWindow,
     ChangeMenuMaterial,
     PlaySound,
-    ButtonSound
+    ButtonSound,
 }
