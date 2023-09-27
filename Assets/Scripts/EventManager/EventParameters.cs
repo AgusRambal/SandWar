@@ -1,7 +1,8 @@
 ﻿public enum GameplayEventHashtableParams
 {
     AudioClip,
-    AudioSource
+    AudioSource,
+    DamageAmount
 }
 
 

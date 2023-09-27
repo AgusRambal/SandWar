@@ -4,5 +4,6 @@
     OpenSellOilWindow,
     ChangeMenuMaterial,
     PlaySound,
-    ButtonSound
+    ButtonSound,
+    ApplyDamageToEnemy
 }

@@ -3,15 +3,22 @@ using UnityEngine.AI;
 
 public class Idle : State
 {
-    public Idle(MarineObject marine, StateMachine stateMachine) : base(marine, stateMachine)
+    public Idle(Marine marine, StateMachine stateMachine) : base(marine, stateMachine)
     { 
     }
 
     public override void EnterState()
     {
+        marine.animator.SetBool("isShooting", false);
     }
 
     public override void Update()
+    {
+        MovingCheck();
+        GoToAttack();
+    }
+
+    private void MovingCheck()
     {
         marine.animator.SetFloat("Velocity", 0);
 
@@ -19,5 +26,10 @@ public class Idle : State
         {
             marine.StateMachine.ChangeState(marine.WalkingState);
         }
+    }
+
+    private void GoToAttack()
+    { 
+        //Checks if an enemy is in a certain radius and start attacking
     }
 }

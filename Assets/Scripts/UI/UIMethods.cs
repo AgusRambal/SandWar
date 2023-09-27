@@ -122,10 +122,10 @@ public class UIMethods : MonoBehaviour, IEventListener
                 marinesModels[i].SetActive(true);
                 selectedID = id;
                 marineName.text = $"{allMarines[i].MarineName}";
-                marineclass.text = $"{allMarines[i].TypeMarine}";
+                marineclass.text = $"{allMarines[i].SubType}";
                 marineDescription.text = $"{allMarines[i].Description}";
-                marineHealth.text = $"Health: {allMarines[i].Health}";
-                marineWeapon.text = $"Weapon: {allMarines[i].Weapon}";
+                marineHealth.text = $"Health: {allMarines[i].MaxHealth}";
+                marineWeapon.text = $"Weapon: {allMarines[i].Weapon.WeaponName}";
                 marineCost.text = $"Cost: {allMarines[i].MarineValue} USD";
                 marineTime.text = $"Recruiting time: {allMarines[i].CreationTime} secs";
             }
@@ -264,18 +264,18 @@ public class UIMethods : MonoBehaviour, IEventListener
         notification.GetComponent<Notifications>().content = content;
     }
 
-    public void CreateSelectableIcon(int id, MarineObject marine)
+    public void CreateSelectableIcon(int id, Marine marine)
     {
         GameObject icon = Instantiate(selectableCharacterPrefab, selectableCharacterParent);
         selectableCharacterPrefabs.Add(icon.GetComponent<SelectableCharacter>());
         icon.GetComponent<SelectableCharacter>().Uimethods = this;
         icon.GetComponent<SelectableCharacter>().marineObject = marine;
-        marine.mySelf = icon.GetComponent<SelectableCharacter>();
+        marine.characterSelectionImage = icon.GetComponent<SelectableCharacter>();
         icon.GetComponent<SelectableCharacter>().marineImage.sprite = GameManager.Instance.allMarines[id - 1].Icon;
         icon.transform.DOScale(1f, .2f);
     }
 
-    public void OnSelectIcon(SelectableCharacter icon, MarineObject marine)
+    public void OnSelectIcon(SelectableCharacter icon, Marine marine)
     {
         DeselectAll();
         icon.selectedSprite.SetActive(true);

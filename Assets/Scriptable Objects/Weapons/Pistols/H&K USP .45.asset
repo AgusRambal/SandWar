@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5ec60db538a13419fd41904c048797, type: 3}
+  m_Name: H&K USP .45
+  m_EditorClassIdentifier: 
+  id: 2
+  weaponName: H&K USP .45
+  icon: {fileID: 0}
+  description: Pistola
+  type: 1
+  damage: 12
+  bulletsOnMagazine: 13
+  fireRate: 0.9
+  accuracy: 23
+  reloadTime: 1.35
+  maximumRangeAccuracy: 8

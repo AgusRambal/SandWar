@@ -24,9 +24,22 @@ public class PlayerInput : MonoBehaviour
         {
             if (Physics.Raycast(Camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, FloorLayers))
             {
-                foreach (MarineObject marine in SelectionManager.Instance.SelectedMarines)
+                foreach (Marine marine in SelectionManager.Instance.SelectedMarines)
                 {
+                    marine.target = null;
                     marine.MoveTo(hit.point);
+                }
+            }
+
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitEnemy))
+            {
+                if (hitEnemy.transform.GetComponent<Insurgent>())
+                {
+                    foreach (Marine marine in SelectionManager.Instance.SelectedMarines)
+                    {
+                        marine.target = hitEnemy.transform.GetComponent<Insurgent>();
+                        marine.StartRotating(marine.target.transform);
+                    }
                 }
             }
         }
@@ -62,7 +75,7 @@ public class PlayerInput : MonoBehaviour
             selectionBox.gameObject.SetActive(false);
 
             if (Physics.Raycast(Camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, UnitLayers)
-                        && hit.collider.TryGetComponent(out MarineObject marine))
+                        && hit.collider.TryGetComponent(out Marine marine))
             {
                 if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
                 {
@@ -81,7 +94,7 @@ public class PlayerInput : MonoBehaviour
                 {
                     SelectionManager.Instance.DeselectAll();
                     SelectionManager.Instance.Select(marine);
-                    uiMethods.OnSelectIcon(marine.mySelf, marine);
+                    uiMethods.OnSelectIcon(marine.characterSelectionImage, marine);
                 }
             }
 
@@ -106,7 +119,7 @@ public class PlayerInput : MonoBehaviour
 
         for (int i = 0; i < SelectionManager.Instance.AvailableMarines.Count; i++)
         {
-            MarineObject marine = SelectionManager.Instance.AvailableMarines[i];
+            Marine marine = SelectionManager.Instance.AvailableMarines[i];
             if(marine == null) continue;
             if (UnitInSelectionBox(Camera.WorldToScreenPoint(SelectionManager.Instance.AvailableMarines[i].transform.position), bounds))
             {

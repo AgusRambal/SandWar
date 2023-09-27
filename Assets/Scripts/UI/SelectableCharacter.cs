@@ -7,7 +7,7 @@ public class SelectableCharacter : MonoBehaviour
     public Button selectCharacter;
     public GameObject selectedSprite;
     public Image marineImage;
-    public MarineObject marineObject;
+    public Marine marineObject;
 
     private void Start()
     {
