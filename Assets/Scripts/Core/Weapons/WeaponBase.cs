@@ -42,15 +42,15 @@ public abstract class WeaponBase : MonoBehaviour
                 //Pego el tiro
                 if (accuracy >= possibility)
                 {
+                    EventManager.TriggerEvent(GenericEvents.ApplyDamageToEnemy, new Hashtable() {
+                    {GameplayEventHashtableParams.DamageAmount.ToString(), weapon.Damage}
+                    });
+
                     //Mato al enemigo
                     if (enemy.CurrentHealth <= 0)
                     {
                         targetKilled = true;
                     }
-
-                    EventManager.TriggerEvent(GenericEvents.ApplyDamageToEnemy, new Hashtable() {
-                    {GameplayEventHashtableParams.DamageAmount.ToString(), weapon.Damage}
-                    });
                 }
             }
         }

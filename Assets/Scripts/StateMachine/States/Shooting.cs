@@ -10,7 +10,6 @@ public class Shooting : State
 
     public override void EnterState()
     {
-        marine.actualWeapon.targetKilled = false;
     }
 
     public override void Update()
@@ -34,7 +33,7 @@ public class Shooting : State
 
         if (timer >= marine.actualWeapon.Weapon.FireRate)
         {
-            marine.actualWeapon.Shoot(marine.Statss.TotalAccuracy, marine.animator);
+            marine.actualWeapon.Shoot(marine._stats.TotalAccuracy, marine.animator);
             timer = 0;
         }
     }
@@ -46,12 +45,12 @@ public class Shooting : State
             marine.StateMachine.ChangeState(marine.IdleState);
         }
 
-        if (marine.actualWeapon.bulletsLeft <= 0 && marine.Statss.Magazines <= 0)
+        if (marine.actualWeapon.bulletsLeft <= 0 && marine._stats.Magazines <= 0)
         {
             marine.StateMachine.ChangeState(marine.IdleState);
         }
 
-        else if (marine.actualWeapon.bulletsLeft <= 0 && marine.Statss.Magazines > 0)
+        else if (marine.actualWeapon.bulletsLeft <= 0 && marine._stats.Magazines > 0)
         {
             marine.StateMachine.ChangeState(marine.ReloadingState);
         }

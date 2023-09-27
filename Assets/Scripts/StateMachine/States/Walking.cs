@@ -40,6 +40,7 @@ public class Walking : State
         if (Vector3.Distance(marine.transform.position, marine.target.transform.position) <= marine.actualWeapon.Weapon.MaximumRangeAccuracy)
         {
             marine.agent.isStopped = true;
+            marine.actualWeapon.targetKilled = false;
             marine.StateMachine.ChangeState(marine.ShootingState);
         }
     }

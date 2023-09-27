@@ -36,10 +36,7 @@ public class Marine : MonoBehaviour
         public int Magazines;
     }
 
-    private Stats _stats;
-
-    public Stats Statss { get; set; }
-
+    public Stats _stats;
 
     private void Awake()
     {

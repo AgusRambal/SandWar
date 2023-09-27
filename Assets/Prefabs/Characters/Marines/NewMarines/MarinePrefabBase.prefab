@@ -271,7 +271,6 @@ GameObject:
   - component: {fileID: 5963388789324534956}
   - component: {fileID: 5640391342505418837}
   - component: {fileID: 9154735531108242703}
-  - component: {fileID: 5474028505165159695}
   m_Layer: 0
   m_Name: MarinePrefabBase
   m_TagString: Untagged
@@ -481,25 +480,10 @@ MonoBehaviour:
   animator: {fileID: 6860318010650726815}
   animatorOverride: {fileID: 22100000, guid: c11ec1c884ba0cc4d915e9141a3c0120, type: 2}
   characterSelectionImage: {fileID: 0}
-  customLookAtTarget: {fileID: 5474028505165159695}
   actualWeapon: {fileID: 1258411810889434966}
   selectionArrow: {fileID: 8184301202252748618}
   target: {fileID: 0}
-  <CurrentHealth>k__BackingField: 0
-  <magazines>k__BackingField: 0
---- !u!114 &5474028505165159695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948134037445129694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8617eced157a5fc4cb6ccf3b380f4709, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 1
 --- !u!1 &1050367320147021252
 GameObject:
   m_ObjectHideFlags: 0
