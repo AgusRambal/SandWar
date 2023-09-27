@@ -19,7 +19,7 @@ MonoBehaviour:
     of a regular marine
   type: 0
   subType: 2
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: d5bf9b96d7fa9814ea5c61dc6c17c63e, type: 2}
   marinePrefabs:
   - {fileID: 8758749674730501089, guid: 559ccae26ef42774c8b1dae68d4f55fe, type: 3}
   - {fileID: 6100607932079446219, guid: 6f7274aad056bd6448bab9770b915a12, type: 3}
