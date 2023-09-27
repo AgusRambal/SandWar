@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: d593a5b38a56b934187324e2e6848cde, type: 3}
   description: This is an insurgent, the enemy of the zone, has the same stadistics
     of a regular marine
-  type: 0
+  type: 2
   subType: 2
   weapon: {fileID: 11400000, guid: d5bf9b96d7fa9814ea5c61dc6c17c63e, type: 2}
   marinePrefabs:

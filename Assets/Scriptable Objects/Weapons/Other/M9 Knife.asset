@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponName: M9 Knife
   icon: {fileID: 0}
   description: With the knife its insta kill
-  type: 0
+  type: 6
   damage: 100
   bulletsOnMagazine: 0
   fireRate: 0
