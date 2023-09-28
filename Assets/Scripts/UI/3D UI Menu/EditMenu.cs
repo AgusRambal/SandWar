@@ -13,6 +13,6 @@ public class EditMenu : MonoBehaviour
 
         customizationTabs.SetActive(true);
         GetComponent<BoxCollider>().enabled = false;
-        MainMenu.Instance.windowTypeSelected = WindowType.Marine;
+        MainMenu.Instance.windowTypeSelected = WindowType.GoToMarines;
     }
 }

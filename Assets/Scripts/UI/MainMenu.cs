@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject options;
-    [SerializeField] private List<CinemachineVirtualCamera> cameras = new List<CinemachineVirtualCamera>();
+    [SerializeField] private Animator dollyCamAnimator;
 
     [Header("Tabs")]
     [SerializeField] private GameObject graphicsTab;
@@ -182,10 +182,9 @@ public class MainMenu : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
-    public void ChangeCamera(int id)
+    public void ChangeCamera(string trigger)
     {
-        cameras.ForEach(x => x.gameObject.SetActive(false));
-        cameras[id].gameObject.SetActive(true);
+        dollyCamAnimator.SetTrigger(trigger);
     }
 }
 
@@ -200,6 +199,8 @@ public enum TabType
 public enum WindowType
 {
     None,
-    Marine,
-    Weapon
+    GoToMarines,
+    GoToWeapon,
+    BackFromWeapon,
+    BackFromMarines
 }

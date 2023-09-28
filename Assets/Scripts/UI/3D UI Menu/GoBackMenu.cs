@@ -6,9 +6,12 @@ public class GoBackMenu : MonoBehaviour
     [SerializeField] private Texture selectedTexturel;
     [SerializeField] private Texture idleTexture;
 
+    [Header("Settings")]
+    [SerializeField] private WindowType windowType;
+
     private void OnMouseDown()
     {
-        MainMenu.Instance.ChangeCamera(0);
+        MainMenu.Instance.ChangeCamera($"{windowType}");
         EventManager.TriggerEvent(GenericEvents.ButtonSound);
         transform.GetChild(0).gameObject.SetActive(false);
     }

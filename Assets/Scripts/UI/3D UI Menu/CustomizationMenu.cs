@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CustomizationMenu : MonoBehaviour
@@ -5,7 +6,7 @@ public class CustomizationMenu : MonoBehaviour
     [Header("References")]
     [SerializeField] private EditMenu edit;
     [SerializeField] private GameObject customizationTabs;
-    [SerializeField] private GameObject goBack;
+    [SerializeField] private List<GameObject> goBack = new List<GameObject>();
 
     [Header("Textures")]
     [SerializeField] private Texture selectedTexturel;
@@ -13,14 +14,13 @@ public class CustomizationMenu : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private WindowType windowType;
-    [SerializeField] private int cameraID;
     
     private void Update()
     {
         if (!customizationTabs.activeInHierarchy)
             return;
 
-        if (MainMenu.Instance.windowTypeSelected != WindowType.Marine && MainMenu.Instance.windowTypeSelected != WindowType.Weapon)
+        if (MainMenu.Instance.windowTypeSelected != WindowType.GoToMarines && MainMenu.Instance.windowTypeSelected != WindowType.GoToWeapon)
         {
             MainMenu.Instance.windowTypeSelected = WindowType.None;
         }
@@ -41,14 +41,15 @@ public class CustomizationMenu : MonoBehaviour
 
     private void OnMouseDown()
     {
-        MainMenu.Instance.ChangeCamera(cameraID);
+        MainMenu.Instance.ChangeCamera($"{windowType}");
+
         EventManager.TriggerEvent(GenericEvents.ButtonSound);
-        Invoke("GoBackTimer", 2f);
+        Invoke(nameof(GoBackTimer), 2.5f);
     }
 
     private void GoBackTimer()
     {
-        goBack.SetActive(true);
+        goBack.ForEach(x => x.SetActive(true));
     }
 
     private void OnMouseEnter()
