@@ -56,6 +56,8 @@ public class Marine : MonoBehaviour
     {
         StateMachine.Initialize(IdleState);
 
+        //Aca en el start me parece que deberia spawnearle en la mano el arma que tiene como dato, no que ya la tenga attacheada
+
         _stats = new Stats
         {
             CurrentHealth = character.MaxHealth,

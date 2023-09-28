@@ -21,8 +21,8 @@ MonoBehaviour:
   subType: 4
   weapon: {fileID: 11400000, guid: 4d735e8b231e3f3419e923d3bc801d20, type: 2}
   marinePrefabs:
-  - {fileID: 2132940333490708463, guid: 2add94ead9686df439257227cc9d5c54, type: 3}
-  - {fileID: 1876909095151649887, guid: 3960b51e7d670124b90d1c00a41b7762, type: 3}
+  - {fileID: 8668640600531023729, guid: b5baca6615b64874aa53d4f51c360045, type: 3}
+  - {fileID: 8335273468888055608, guid: 8334f555a5557954b96d337d68029722, type: 3}
   maxHealth: 100
   creationTime: 20
   marineValue: 1553

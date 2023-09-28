@@ -18,7 +18,7 @@ MonoBehaviour:
   description: Only a civilian
   type: 1
   subType: 2
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ce1c5b3c1d2861b488d1addb8ca7af31, type: 2}
   marinePrefabs:
   - {fileID: 7725478573975461872, guid: 48169246f59e58540a9f94fef3870b2b, type: 3}
   - {fileID: 769018577921923667, guid: dfde078f541aed54888302eed3287d90, type: 3}

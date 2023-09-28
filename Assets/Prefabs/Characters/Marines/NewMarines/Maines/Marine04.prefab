@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7252975126458232091
+--- !u!1001 &4282768029036864011
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,13 +11,13 @@ PrefabInstance:
     - target: {fileID: 948134037445129694, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
       propertyPath: m_Name
-      value: NavySEAL02
+      value: MarinePrefabBase Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1301015804467961537, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4227107536088217378, guid: 08dfbce7c918e8a448626211de3d37a9,
+      objectReference: {fileID: 4376985979119437378, guid: 2432d3e5bd58b9646bfe90832a6c7e94,
         type: 3}
     - target: {fileID: 6357859682199363914, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
