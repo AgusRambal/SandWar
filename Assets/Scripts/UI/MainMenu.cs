@@ -1,3 +1,4 @@
+using Cinemachine;
 using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
@@ -8,7 +9,9 @@ public class MainMenu : MonoBehaviour
 {
     public static MainMenu Instance { get; private set; }
 
+    [Header("References")]
     [SerializeField] private GameObject options;
+    [SerializeField] private List<CinemachineVirtualCamera> cameras = new List<CinemachineVirtualCamera>();
 
     [Header("Tabs")]
     [SerializeField] private GameObject graphicsTab;
@@ -177,6 +180,12 @@ public class MainMenu : MonoBehaviour
 
         PlayerPrefs.SetInt("masterFullscreen", isFullscreen ? 1 : 0);
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void ChangeCamera(int id)
+    {
+        cameras.ForEach(x => x.gameObject.SetActive(false));
+        cameras[id].gameObject.SetActive(true);
     }
 }
 
