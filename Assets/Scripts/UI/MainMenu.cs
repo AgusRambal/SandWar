@@ -8,13 +8,14 @@ public class MainMenu : MonoBehaviour
 {
     public static MainMenu Instance { get; private set; }
 
-    //[SerializeField] private CanvasGroup CanvasGroup;
     [SerializeField] private GameObject options;
 
     [Header("Tabs")]
     [SerializeField] private GameObject graphicsTab;
     [SerializeField] private GameObject soundTab;
     [SerializeField] private GameObject gameplayTab;
+
+    public WindowType windowTypeSelected;
 
     [Header("Resolution Settings")]
     public TMP_Dropdown resolutionDropdown;
@@ -184,4 +185,12 @@ public enum TabType
     Graphics,
     Sound,
     Gameplay
+}
+
+//For customizationMenu
+public enum WindowType
+{
+    None,
+    Marine,
+    Weapon
 }
