@@ -14,6 +14,8 @@ public class PlayerInput : MonoBehaviour
     private float mouseDownTime;
     private Vector2 startMousePosition;
 
+    public float margin = 1f;
+
     private void Update()
     {
         HandleSelectionInput();
@@ -57,7 +59,6 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
-    public float margin = 1f;
     Vector3 GetRandomPointInCircle(Vector3 center, float radius, List<Vector3> assignedPoints)
     {
         Vector2 randomPoint2D = Random.insideUnitCircle * radius;
