@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -24,11 +26,21 @@ public class PlayerInput : MonoBehaviour
         {
             if (Physics.Raycast(Camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, FloorLayers))
             {
-                foreach (Marine marine in SelectionManager.Instance.SelectedMarines)
+                List<Marine> selectedMarines = SelectionManager.Instance.SelectedMarines.ToList();
+                int cantMarines = selectedMarines.Count;
+
+                float totRadius = selectedMarines.Sum(marine => marine.agent.radius + margin) / (2 * Mathf.PI); // calculo del area en la que voy a asignar los posibles puntos para los agentes 
+                Debug.Log("Radio: " + totRadius);
+
+                List<Vector3> assignedPoints = new List<Vector3>();
+
+                for (int i = 0; i < selectedMarines.Count; ++i)
                 {
-                    marine.target = null;
-                    marine.MoveTo(hit.point);
+                    Vector3 randomPoint = GetRandomPointInCircle(hit.point, totRadius, assignedPoints);
+                    assignedPoints.Add(randomPoint);
+                    selectedMarines[i].MoveTo(randomPoint);
                 }
+
             }
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitEnemy))
@@ -44,6 +56,28 @@ public class PlayerInput : MonoBehaviour
             }
         }
     }
+
+    public float margin = 1f;
+    Vector3 GetRandomPointInCircle(Vector3 center, float radius, List<Vector3> assignedPoints)
+    {
+        Vector2 randomPoint2D = Random.insideUnitCircle * radius;
+        Vector3 randomPoint = center + new Vector3(randomPoint2D.x, 0, randomPoint2D.y);
+
+        int stop = 0;
+
+        while (assignedPoints.Any(p => Vector3.Distance(randomPoint, p) < margin)) // Me aseguro que no me de una posicion ocupada por otro agente, teniendo en cuenta el radio y un margen
+        {
+            randomPoint2D = Random.insideUnitCircle * radius;
+            randomPoint = center + new Vector3(randomPoint2D.x, 0, randomPoint2D.y);
+
+            stop++;
+            if (stop > 1000)
+                break;
+        }
+
+        return randomPoint;
+    }
+
 
     private void HandleSelectionInput()
     {
@@ -120,7 +154,7 @@ public class PlayerInput : MonoBehaviour
         for (int i = 0; i < SelectionManager.Instance.AvailableMarines.Count; i++)
         {
             Marine marine = SelectionManager.Instance.AvailableMarines[i];
-            if(marine == null) continue;
+            if (marine == null) continue;
             if (UnitInSelectionBox(Camera.WorldToScreenPoint(SelectionManager.Instance.AvailableMarines[i].transform.position), bounds))
             {
                 SelectionManager.Instance.Select(SelectionManager.Instance.AvailableMarines[i]);
