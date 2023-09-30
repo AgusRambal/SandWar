@@ -15,6 +15,13 @@ public class PlayerInput : MonoBehaviour
     private Vector2 startMousePosition;
 
     public float margin = 1f;
+    SelectionManager selectionManager;
+
+    private void Start()
+    {
+        if (selectionManager == null)        
+            selectionManager = SelectionManager.Instance;        
+    }
 
     private void Update()
     {
@@ -24,15 +31,13 @@ public class PlayerInput : MonoBehaviour
 
     private void HandleMovementInputs()
     {
-        if (Input.GetMouseButtonDown(1) && SelectionManager.Instance.SelectedMarines.Count > 0)
+        if (Input.GetMouseButtonDown(1) && selectionManager.SelectedMarines.Count > 0)
         {
             if (Physics.Raycast(Camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit, FloorLayers))
             {
-                List<Marine> selectedMarines = SelectionManager.Instance.SelectedMarines.ToList();
+                List<Marine> selectedMarines = ConvertHashSetMarinesToList();
                 int cantMarines = selectedMarines.Count;
-
-                float totRadius = selectedMarines.Sum(marine => marine.agent.radius + margin) / (2 * Mathf.PI); // calculo del area en la que voy a asignar los posibles puntos para los agentes 
-                Debug.Log("Radio: " + totRadius);
+                float totRadius = CalculateTotalRadius(selectedMarines); // calculo del area en la que voy a asignar los posibles puntos para los agentes 
 
                 List<Vector3> assignedPoints = new List<Vector3>();
 
@@ -42,14 +47,13 @@ public class PlayerInput : MonoBehaviour
                     assignedPoints.Add(randomPoint);
                     selectedMarines[i].MoveTo(randomPoint);
                 }
-
             }
 
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitEnemy))
             {
                 if (hitEnemy.transform.GetComponent<Insurgent>())
                 {
-                    foreach (Marine marine in SelectionManager.Instance.SelectedMarines)
+                    foreach (Marine marine in selectionManager.SelectedMarines)
                     {
                         marine.target = hitEnemy.transform.GetComponent<Insurgent>();
                         marine.StartRotating(marine.target.transform);
@@ -77,6 +81,28 @@ public class PlayerInput : MonoBehaviour
         }
 
         return randomPoint;
+    }
+
+    List<Marine> ConvertHashSetMarinesToList()
+    {
+        List<Marine> selectedMarines = new List<Marine>();
+        foreach (Marine marine in  selectionManager.SelectedMarines)
+        {
+            selectedMarines.Add(marine);
+        }
+        return selectedMarines;
+    }
+
+    float CalculateTotalRadius(List<Marine> selectedMarines)
+    {
+        float sum = .0f;
+
+        foreach (var marine in selectedMarines)
+        {
+            sum += marine.agent.radius + margin;
+        }
+
+        return sum / (2 * Mathf.PI);
     }
 
 
