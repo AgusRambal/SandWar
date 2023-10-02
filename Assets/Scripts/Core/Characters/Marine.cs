@@ -73,6 +73,7 @@ public class Marine : MonoBehaviour
 
     public void MoveTo(Vector3 position)
     {
+        agent.stoppingDistance = .1f;
         agent.isStopped = false;
         agent.SetDestination(position);
     }
