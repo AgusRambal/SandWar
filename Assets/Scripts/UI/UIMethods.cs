@@ -20,7 +20,7 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private List<Image> marinesBorder = new List<Image>();
     [SerializeField] private List<GameObject> marinesModels = new List<GameObject>();
     [SerializeField] private TMP_Text marineName;
-    [SerializeField] private TMP_Text marineclass;
+    [SerializeField] private TMP_Text marineClass;
     [SerializeField] private TMP_Text marineDescription;
     [SerializeField] private TMP_Text marineHealth;
     [SerializeField] private TMP_Text marineWeapon;
@@ -35,11 +35,11 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject sellButton;
     [SerializeField] private GameObject progressForSellingAgain;
     [SerializeField] private TMP_Text oilValue;
-    [SerializeField] private TMP_Text dollarsValueToRecibie;
+    [SerializeField] private TMP_Text dollarsValueToReceive;
     [SerializeField] private GameObject greenArrow;
     [SerializeField] private GameObject redArrow;
-    [SerializeField] private Transform OilArrowParent;
-    [SerializeField] private Transform DollarArrowParent;
+    [SerializeField] private Transform oilArrowParent;
+    [SerializeField] private Transform dollarArrowParent;
 
     [Header("Notifications")]
     [SerializeField] private GameObject notificationPrefab;
@@ -53,9 +53,9 @@ public class UIMethods : MonoBehaviour, IEventListener
     public static bool isOverUI = false;
 
     private int selectedID = 1;
-    private float sellTimer = 0;
-    private bool sellTimerState = false;
-    private bool notificationActive = false;
+    private float sellTimer;
+    private bool sellTimerState;
+    private bool notificationActive;
 
     private void Awake()
     {    
@@ -75,7 +75,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         SetMarketStatus();
     }
 
-    public void OpenRecruitWindow(Hashtable hashtable)
+    private void OpenRecruitWindow(Hashtable hashtable)
     {
         if (isOverUI)
             return;
@@ -83,7 +83,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         recruitWindow.transform.DOScale(1f, .2f);
     }
 
-    public void OpenSellOilWindow(Hashtable hashtable)
+    private void OpenSellOilWindow(Hashtable hashtable)
     {
         if (isOverUI)
             return;
@@ -91,7 +91,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         sellOilWindow.transform.DOScale(1f, .2f);
     }
 
-    public void CloseAllWindows()
+    private void CloseAllWindows()
     {
         recruitWindow.transform.DOScale(0f, .2f);
         sellOilWindow.transform.DOScale(0f, .2f);
@@ -116,19 +116,19 @@ public class UIMethods : MonoBehaviour, IEventListener
 
         for (int i = 0; i < allMarines.Count; i++)
         {
-            if (allMarines[i].Id == id)
-            {
-                marinesBorder[i].color = selectedColor;
-                marinesModels[i].SetActive(true);
-                selectedID = id;
-                marineName.text = $"{allMarines[i].MarineName}";
-                marineclass.text = $"{allMarines[i].SubType}";
-                marineDescription.text = $"{allMarines[i].Description}";
-                marineHealth.text = $"Health: {allMarines[i].MaxHealth}";
-                marineWeapon.text = $"Weapon: {allMarines[i].Weapon.WeaponName}";
-                marineCost.text = $"Cost: {allMarines[i].MarineValue} USD";
-                marineTime.text = $"Recruiting time: {allMarines[i].CreationTime} secs";
-            }
+            if (allMarines[i].Id != id) 
+                continue;
+            
+            marinesBorder[i].color = selectedColor;
+            marinesModels[i].SetActive(true);
+            selectedID = id;
+            marineName.text = $"{allMarines[i].MarineName}";
+            marineClass.text = $"{allMarines[i].SubType}";
+            marineDescription.text = $"{allMarines[i].Description}";
+            marineHealth.text = $"Health: {allMarines[i].MaxHealth}";
+            marineWeapon.text = $"Weapon: {allMarines[i].Weapon.WeaponName}";
+            marineCost.text = $"Cost: {allMarines[i].MarineValue} USD";
+            marineTime.text = $"Recruiting time: {allMarines[i].CreationTime} secs";
         }
     }
 
@@ -144,41 +144,41 @@ public class UIMethods : MonoBehaviour, IEventListener
 
         for (int i = 0; i < allMarines.Count; i++)
         {
-            if (allMarines[i].Id == selectedID)
+            if (allMarines[i].Id != selectedID) 
+                continue;
+            
+            if (GameManager.Instance.dollarsAmount < allMarines[i].MarineValue)
             {
-                if (GameManager.Instance.dollarsAmount < allMarines[i].MarineValue)
-                {
-                    if (!notificationActive)
-                    {
-                        ShowNotification("Not enough cash", "You can't recruit this marine because you doesn't have the right amount of cash");
-                        notificationActive = true;
-                    }
-
+                if (notificationActive) 
                     return;
-                }
+                    
+                ShowNotification("Not enough cash", "You can't recruit this marine because you doesn't have the right amount of cash");
+                notificationActive = true;
 
-                GameManager.Instance.SubstractDollars(selectedID);
-                FeedbackArrowRed(1);
-                GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
-                progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
-                progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;
-
-                int newCreationTime = 100 / (int)allMarines[i].CreationTime;
-
-                progressBarInstantiated.GetComponent<ProgressBar>().speed = newCreationTime;
-                progressBarInstantiated.GetComponent<ProgressBar>().customName = $" {allMarines[i].MarineName}";
+                return;
             }
+
+            GameManager.Instance.SubstractDollars(selectedID);
+            FeedbackArrowRed(1);
+            GameObject progressBarInstantiated = Instantiate(progressBar, progressBarTransform);
+            progressBarInstantiated.GetComponent<ProgressBarTimer>().creationTime = allMarines[i].CreationTime;
+            progressBarInstantiated.GetComponent<ProgressBarTimer>().marineID = selectedID;
+
+            var newCreationTime = 100 / (int)allMarines[i].CreationTime;
+
+            progressBarInstantiated.GetComponent<ProgressBar>().speed = newCreationTime;
+            progressBarInstantiated.GetComponent<ProgressBar>().customName = $" {allMarines[i].MarineName}";
         }
     }
 
-    public void SetMarketStatus()
+    private void SetMarketStatus()
     {
         if (!GameManager.Instance.badMarketStatus)
         {
             marketBad.SetActive(false);
             marketGood.SetActive(true);
             oilValue.text = $"{GameManager.Instance.goodOilSellValue}";
-            dollarsValueToRecibie.text = $"{GameManager.Instance.goodDollarToReceive}";
+            dollarsValueToReceive.text = $"{GameManager.Instance.goodDollarToReceive}";
         }
 
         else
@@ -186,7 +186,7 @@ public class UIMethods : MonoBehaviour, IEventListener
             marketBad.SetActive(true);
             marketGood.SetActive(false);
             oilValue.text = $"{GameManager.Instance.badOilSellValue}";
-            dollarsValueToRecibie.text = $"{GameManager.Instance.badDollarToReceive}";
+            dollarsValueToReceive.text = $"{GameManager.Instance.badDollarToReceive}";
         }
     }
 
@@ -205,30 +205,14 @@ public class UIMethods : MonoBehaviour, IEventListener
         sellTimerState = true;
     }
 
-    public void FeedbackArrowRed(int id)
+    private void FeedbackArrowRed(int id)
     {
-        if (id == 0)
-        {
-            Instantiate(redArrow, OilArrowParent);
-        }
-
-        else
-        {
-            Instantiate(redArrow, DollarArrowParent);
-        }
+        Instantiate(redArrow, id == 0 ? oilArrowParent : dollarArrowParent);
     }
 
     public void FeedbackArrowGreen(int id)
     {
-        if (id == 0)
-        {
-            Instantiate(greenArrow, OilArrowParent);
-        }
-
-        else
-        {
-            Instantiate(greenArrow, DollarArrowParent);
-        }
+        Instantiate(greenArrow, id == 0 ? oilArrowParent : dollarArrowParent);
     }
 
     private void SetSellTimerStatus()
@@ -251,7 +235,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         }
     }
 
-    public void ShowResources()
+    private void ShowResources()
     {
         oilAmount.text = $"{GameManager.Instance.oilAmount:F2} lts";
         dollarsAmount.text = $"{GameManager.Instance.dollarsAmount} USD";

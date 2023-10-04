@@ -11,12 +11,12 @@ public class Weapon : ScriptableObject
     [SerializeField] private WeaponType type;
 
     [Header("Stats")]
-    [SerializeField] private float damage;
-    [SerializeField] private int bulletsOnMagazine;
-    [SerializeField] private float fireRate;
-    [SerializeField] private float accuracy;
-    [SerializeField] private float reloadTime;
-    [SerializeField] private float maximumRangeAccuracy;
+    [SerializeField] private float damage; //Lo controla el arma
+    [SerializeField] private int bulletsOnMagazine; //Lo deberia controlar el magazine
+    [SerializeField] private float fireRate; //Lo controla el arma
+    [SerializeField] private float accuracy; //Lo controla la mira
+    [SerializeField] private float reloadTime; //Lo controla el magazine
+    [SerializeField] private float maximumRangeAccuracy; //Lo controla el arma
 
     public int Id => id;
     public string WeaponName => weaponName;

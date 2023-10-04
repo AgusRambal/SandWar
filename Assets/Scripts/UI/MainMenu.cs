@@ -1,3 +1,4 @@
+using Cinemachine;
 using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
@@ -8,13 +9,16 @@ public class MainMenu : MonoBehaviour
 {
     public static MainMenu Instance { get; private set; }
 
-    //[SerializeField] private CanvasGroup CanvasGroup;
+    [Header("References")]
     [SerializeField] private GameObject options;
+    [SerializeField] private Animator dollyCamAnimator;
 
     [Header("Tabs")]
     [SerializeField] private GameObject graphicsTab;
     [SerializeField] private GameObject soundTab;
     [SerializeField] private GameObject gameplayTab;
+
+    public WindowType windowTypeSelected;
 
     [Header("Resolution Settings")]
     public TMP_Dropdown resolutionDropdown;
@@ -177,6 +181,11 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("masterFullscreen", isFullscreen ? 1 : 0);
         Screen.fullScreen = isFullscreen;
     }
+
+    public void ChangeCamera(string trigger)
+    {
+        dollyCamAnimator.SetTrigger(trigger);
+    }
 }
 
 public enum TabType
@@ -184,4 +193,14 @@ public enum TabType
     Graphics,
     Sound,
     Gameplay
+}
+
+//For customizationMenu
+public enum WindowType
+{
+    None,
+    GoToMarines,
+    GoToWeapon,
+    BackFromWeapon,
+    BackFromMarines
 }
