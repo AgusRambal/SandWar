@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pilot02
       objectReference: {fileID: 0}
+    - target: {fileID: 948134037445129694, guid: a20d34d975badea4db2c45dcc6c381d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1301015804467961537, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
       propertyPath: m_Mesh

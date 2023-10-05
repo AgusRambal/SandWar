@@ -2,8 +2,8 @@
 {
     OpenRecruitWindow,
     OpenSellOilWindow,
-    ChangeMenuMaterial,
     PlaySound,
     ButtonSound,
-    ApplyDamageToEnemy
+    ApplyDamageToEnemy,
+    ChangeMarine
 }
