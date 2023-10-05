@@ -6,8 +6,11 @@ using UnityEngine;
 public class CharacterCustomizationManager : MonoBehaviour, IEventListener
 {
     [SerializeField] private List<GameObject> allMarines = new List<GameObject>();
+    
+    [SerializeField] private List<GameObject> helmets = new List<GameObject>();
+    [SerializeField] private List<GameObject> hairs = new List<GameObject>();
 
-    public int marineID;
+    private int marineID;
 
     private void Awake()
     {
@@ -48,15 +51,32 @@ public class CharacterCustomizationManager : MonoBehaviour, IEventListener
         }
     }
 
+    private void ChangeMarineCustomization(Hashtable hashtable)
+    {
+        List<GameObject> marineSkinPart = (List<GameObject>)hashtable[GameplayEventHashtableParams.MarineSkinList.ToString()];
+        int listIndex = (int)hashtable[GameplayEventHashtableParams.ListIndex.ToString()];
+        
+        marineSkinPart.ForEach(x=>x.SetActive(false));
+
+        if (listIndex == marineSkinPart.Count - 1)
+        {
+            listIndex = -1;
+        }
+        
+        listIndex++;
+        marineSkinPart[listIndex].SetActive(true);
+    }
 
     public void OnEnableEventListenerSubscriptions()
     {
         EventManager.StartListening(GenericEvents.ChangeMarine, ChangeMarine);
+        EventManager.StartListening(GenericEvents.ChangeMarineCustomization, ChangeMarineCustomization);
     }
 
     public void CancelEventListenerSubscriptions()
     {
         EventManager.StopListening(GenericEvents.ChangeMarine, ChangeMarine);
+        EventManager.StopListening(GenericEvents.ChangeMarineCustomization, ChangeMarineCustomization);
     }
     
     private void OnDisable()

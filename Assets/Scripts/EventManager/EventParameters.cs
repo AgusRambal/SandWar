@@ -3,7 +3,9 @@
     AudioClip,
     AudioSource,
     DamageAmount,
-    LeftOrRight
+    LeftOrRight,
+    MarineSkinList,
+    ListIndex
 }
 
 
