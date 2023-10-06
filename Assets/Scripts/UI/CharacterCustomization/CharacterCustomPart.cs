@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +9,7 @@ public class CharacterCustomPart : MonoBehaviour
 
     [Header("List")] 
     [SerializeField] private List<GameObject> partList = new List<GameObject>();
-    private int index;
+    public int index;
     
     private static readonly int BaseMap = Shader.PropertyToID("_BaseMap");
 
@@ -24,19 +22,30 @@ public class CharacterCustomPart : MonoBehaviour
 
     private void OnMouseDown()
     {
-        EventManager.TriggerEvent(GenericEvents.ChangeMarineCustomization, new Hashtable() {
-            {GameplayEventHashtableParams.MarineSkinList.ToString(), partList},
-            {GameplayEventHashtableParams.ListIndex.ToString(), index}
-        });
+        ChangeMarineCustomization();
     }
 
+    private void ChangeMarineCustomization()
+    {
+        partList.ForEach(x=>x.SetActive(false));
+
+        if (index == partList.Count - 1)
+        {
+            index = -1;
+        }
+        
+        index++;
+        
+        partList[index].SetActive(true);
+    }
+    
     private void OnMouseEnter()
     {
-        //GetComponent<MeshRenderer>().material.SetTexture(BaseMap, selectedTexture);
+        GetComponent<MeshRenderer>().materials[1].SetTexture(BaseMap, selectedTexture);
     }
 
     private void OnMouseExit()
     {
-        //GetComponent<MeshRenderer>().material.SetTexture(BaseMap, selectedTexture);
+        GetComponent<MeshRenderer>().materials[1].SetTexture(BaseMap, idleTexture);
     }
 }

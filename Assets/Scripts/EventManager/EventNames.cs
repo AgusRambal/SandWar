@@ -6,5 +6,4 @@
     ButtonSound,
     ApplyDamageToEnemy,
     ChangeMarine,
-    ChangeMarineCustomization
 }
