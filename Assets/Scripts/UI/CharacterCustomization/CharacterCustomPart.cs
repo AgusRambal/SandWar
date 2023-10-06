@@ -3,14 +3,18 @@ using UnityEngine;
 
 public class CharacterCustomPart : MonoBehaviour
 {
+    [Header("References")] 
+    [SerializeField] private CharacterCustomizationManager manager;
+    
     [Header("Textures")]
     [SerializeField] private Texture selectedTexture;
     [SerializeField] private Texture idleTexture;
 
     [Header("List")] 
     [SerializeField] private List<GameObject> partList = new List<GameObject>();
-    public int index;
-    
+
+    private int index;
+
     private static readonly int BaseMap = Shader.PropertyToID("_BaseMap");
 
     private void Start()
@@ -18,13 +22,14 @@ public class CharacterCustomPart : MonoBehaviour
         partList.ForEach(x=>x.SetActive(false));
         index = 0;
         partList[index].SetActive(true);
+        manager.InstantiateObjectOnSelectedMarine(partList[index]);
     }
 
     private void OnMouseDown()
     {
         ChangeMarineCustomization();
     }
-
+    
     private void ChangeMarineCustomization()
     {
         partList.ForEach(x=>x.SetActive(false));
@@ -37,6 +42,7 @@ public class CharacterCustomPart : MonoBehaviour
         index++;
         
         partList[index].SetActive(true);
+        manager.InstantiateObjectOnSelectedMarine(partList[index]);
     }
     
     private void OnMouseEnter()

@@ -2,7 +2,10 @@ using System.Collections;
 using UnityEngine;
 
 public class CharacterCustomizationArrow : MonoBehaviour
-{    
+{       
+    [Header("References")] 
+    [SerializeField] private CharacterCustomizationManager manager;
+    
     [Header("Textures")]
     [SerializeField] private Texture selectedTexture;
     [SerializeField] private Texture idleTexture;
@@ -12,9 +15,7 @@ public class CharacterCustomizationArrow : MonoBehaviour
 
     public void OnMouseDown()
     {
-        EventManager.TriggerEvent(GenericEvents.ChangeMarine, new Hashtable() {
-            {GameplayEventHashtableParams.LeftOrRight.ToString(), leftOrRight}
-        });
+        manager.ChangeMarine(leftOrRight);
     }
     
     private void OnMouseEnter()
