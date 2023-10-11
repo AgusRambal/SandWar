@@ -12,7 +12,8 @@ public class CharacterCustomPart : MonoBehaviour
 
     [Header("List")] 
     [SerializeField] private List<GameObject> partList = new List<GameObject>();
-
+    [SerializeField] private int typeOfPart;
+    
     private int index;
 
     private static readonly int BaseMap = Shader.PropertyToID("_BaseMap");
@@ -22,7 +23,8 @@ public class CharacterCustomPart : MonoBehaviour
         partList.ForEach(x=>x.SetActive(false));
         index = 0;
         partList[index].SetActive(true);
-        manager.InstantiateObjectOnSelectedMarine(partList[index]);
+        manager.InstantiateObjectOnSelectedMarine(partList[index], typeOfPart); 
+        manager.partsID[typeOfPart] = index;
     }
 
     private void OnMouseDown()
@@ -42,9 +44,10 @@ public class CharacterCustomPart : MonoBehaviour
         index++;
         
         partList[index].SetActive(true);
-        manager.InstantiateObjectOnSelectedMarine(partList[index]);
+        manager.InstantiateObjectOnSelectedMarine(partList[index], typeOfPart);
+        manager.partsID[typeOfPart] = index;
     }
-    
+
     private void OnMouseEnter()
     {
         GetComponent<MeshRenderer>().materials[1].SetTexture(BaseMap, selectedTexture);

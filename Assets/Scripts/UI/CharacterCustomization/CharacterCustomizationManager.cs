@@ -1,11 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Apply in this script the save & Load system
 public class CharacterCustomizationManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> allMarines = new List<GameObject>();
-    [SerializeField] private GameObject marineSelected;
+
+    public List<int> partsID = new List<int>();
     
+    //Data to save
+    /*public int HelmetID { get; private set; }
+    public int HairID { get; private set; }
+    public int FaceID { get; private set; }
+    public int ChestID { get; private set; }
+    public int WeaponID { get; private set; }
+    public int PatchID { get; private set; }*/
+
+    private GameObject marineSelected;
     private int marineID;
 
     private void Start()
@@ -43,9 +54,16 @@ public class CharacterCustomizationManager : MonoBehaviour
         marineSelected = allMarines[marineID];
     }
 
-    public void InstantiateObjectOnSelectedMarine(GameObject obj)
+    public void InstantiateObjectOnSelectedMarine(GameObject obj, int typeOfObject)
     {
-        //Destruir el objeto anterior si hubiese
-        Debug.Log($"Voy a instanciar el objeto {obj.name} en el marine {marineSelected.name}");
+        if (marineSelected.GetComponentInChildren<MarineRotation>().transformsList[typeOfObject].childCount > 0)
+        {
+            Destroy(marineSelected.GetComponentInChildren<MarineRotation>().transformsList[typeOfObject].GetChild(0).gameObject);
+        }
+
+        GameObject customPart = Instantiate(obj, marineSelected.GetComponentInChildren<MarineRotation>().transformsList[typeOfObject]);
+        customPart.transform.localScale = Vector3.one;
+        customPart.transform.localPosition = Vector3.zero;
+        customPart.transform.localRotation  = Quaternion.identity;
     }
 }

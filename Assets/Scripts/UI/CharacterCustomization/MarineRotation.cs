@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MarineRotation : MonoBehaviour 
 {
+    //Usage for the CustomManager
+    public List<Transform> transformsList = new List<Transform>();
+    
     private Transform marineTransform;
     private Vector3 lastMousePosition;
     
