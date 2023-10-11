@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +25,7 @@ public class CharacterCustomPart : MonoBehaviour
         partList.ForEach(x=>x.SetActive(false));
         index = 0;
         partList[index].SetActive(true);
-        manager.InstantiateObjectOnSelectedMarine(partList[index], typeOfPart); 
+        manager.SetAllMarinesToDefault(partList[index], typeOfPart); 
         manager.partsID[typeOfPart] = index;
     }
 
@@ -31,7 +33,7 @@ public class CharacterCustomPart : MonoBehaviour
     {
         ChangeMarineCustomization();
     }
-    
+
     private void ChangeMarineCustomization()
     {
         partList.ForEach(x=>x.SetActive(false));

@@ -5,4 +5,5 @@
     PlaySound,
     ButtonSound,
     ApplyDamageToEnemy,
+    RestartCustoms
 }

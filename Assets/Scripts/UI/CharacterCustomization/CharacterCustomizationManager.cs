@@ -6,6 +6,7 @@ public class CharacterCustomizationManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> allMarines = new List<GameObject>();
 
+    //Tengo que usar probablemente el scriptable object
     public List<int> partsID = new List<int>();
     
     //Data to save
@@ -29,6 +30,7 @@ public class CharacterCustomizationManager : MonoBehaviour
 
     public void ChangeMarine(bool leftOrRight)
     {
+        //Al cambiar de marine, reinicar los objects y aplicarlselos de 0
         if (leftOrRight)
         {            
             if (marineID == 11)
@@ -52,6 +54,18 @@ public class CharacterCustomizationManager : MonoBehaviour
         }
         
         marineSelected = allMarines[marineID];
+        EventManager.TriggerEvent(GenericEvents.RestartCustoms);
+    }
+
+    public void SetAllMarinesToDefault(GameObject obj, int typeOfObject)
+    {
+        for (int i = 0; i < allMarines.Count; i++)
+        {
+            GameObject customPart = Instantiate(obj, allMarines[i].GetComponentInChildren<MarineRotation>().transformsList[typeOfObject]);
+            customPart.transform.localScale = Vector3.one;
+            customPart.transform.localPosition = Vector3.zero;
+            customPart.transform.localRotation  = Quaternion.identity;
+        }
     }
 
     public void InstantiateObjectOnSelectedMarine(GameObject obj, int typeOfObject)
