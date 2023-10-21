@@ -1,3 +1,4 @@
+using Core.Characters;
 using UnityEngine;
 
 public class Walking : State

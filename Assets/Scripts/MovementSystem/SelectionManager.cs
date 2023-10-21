@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Core.Characters;
 using UnityEngine;
 
 public class SelectionManager

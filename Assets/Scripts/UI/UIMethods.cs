@@ -2,6 +2,7 @@ using DG.Tweening;
 using Michsky.MUIP;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Characters;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,3 +1,4 @@
+using Core.Characters;
 using UnityEngine;
 using UnityEngine.AI;
 
