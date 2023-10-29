@@ -1,6 +1,7 @@
 using System.Collections;
 using Interfaces;
 using UnityEngine;
+using VehicleSystem.Transports;
 
 namespace Transports.Ground
 {
@@ -31,9 +32,9 @@ namespace Transports.Ground
         
         private void Update()
         {
-            if (BasicStates == BasicStates.On)
+            if (BasicStates == BasicStates.On && ImSelected)
             {
-                 if (Input.GetMouseButtonDown(0))
+                 if (Input.GetMouseButtonDown(1))
                  {
                      SetDestinationToPointUnderCursor();
                  }

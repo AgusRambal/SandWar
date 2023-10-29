@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Core.Characters;
@@ -7,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-namespace Transports
+namespace VehicleSystem.Transports
 {
     public enum BasicStates
     {
@@ -24,7 +23,7 @@ namespace Transports
 
     public abstract class Transport : MonoBehaviour , IEventListener , ITransport , IInteractable
     {
-        [SerializeField] private Core.Transports transport;
+        [SerializeField] private VehicleSystem.Transports.Transports transport;
         [SerializeField] private BasicStates basicStates;
         [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private Transform waypointOfDriverPosition;
@@ -35,13 +34,15 @@ namespace Transports
 
         #region Properties
 
-        protected Core.Transports Transports => transport;
+        protected VehicleSystem.Transports.Transports Transports => transport;
         protected BasicStates BasicStates => basicStates;
         protected NavMeshAgent NavMeshAgent => navMeshAgent;
         protected Transform WaypointOfDriverPosition => waypointOfDriverPosition;
         protected IUnit Driver => driver;
         
         protected BasicStats basicStats;
+
+        protected bool ImSelected;
         
         #endregion
 
@@ -126,5 +127,15 @@ namespace Transports
         }
 
         public IUnit CurrentDriver { get; set; }
+
+        public void CanStartDrive()
+        {
+            ImSelected = true;
+        }
+
+        public void Deselect()
+        {
+            ImSelected = false;
+        }
     }
 }

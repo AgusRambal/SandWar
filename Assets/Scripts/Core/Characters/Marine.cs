@@ -5,6 +5,7 @@ using Transports;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
+using VehicleSystem.Transports;
 
 namespace Core.Characters
 {

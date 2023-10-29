@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Core
+namespace VehicleSystem.Transports
 {
     [CreateAssetMenu(fileName = "New Transport", menuName = "Transport")]
     public class Transports : ScriptableObject
