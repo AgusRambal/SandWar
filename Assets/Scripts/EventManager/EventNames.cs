@@ -5,5 +5,10 @@
     ChangeMenuMaterial,
     PlaySound,
     ButtonSound,
-    ApplyDamageToEnemy
+    ApplyDamageToEnemy,
+    CommonUnitHasEnteredToTheTransport,
+    UnitHasEnteredToTheTransport,
+    GetDriverPosition,
+    SetRandomWaypoint,
+    GetRandomPosition
 }

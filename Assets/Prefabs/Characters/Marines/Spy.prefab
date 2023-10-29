@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6255007966913258029}
-  - component: {fileID: 5189071221951257950}
   - component: {fileID: 3924065772721275630}
   - component: {fileID: 5243698925725845903}
   - component: {fileID: -2368309560090362086}
@@ -37,29 +36,6 @@ Transform:
   - {fileID: 8517456398565530319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5189071221951257950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51495755309911640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1d44548e669eb4daad9d790d959109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scirptableObject: {fileID: 11400000, guid: 509189772fc17414491131a337ebb8f1, type: 2}
-  agent: {fileID: 0}
-  animator: {fileID: 0}
-  animatorOverride: {fileID: 22100000, guid: 57f4744b966a3ce4f9a54529dba1b997, type: 2}
-  selectionArrow: {fileID: 997821508328466998}
-  id: 0
-  health: 0
-  typeMarine: 5
-  weapon: 0
-  <CurrentHealth>k__BackingField: 0
-  isMoving: 0
 --- !u!195 &3924065772721275630
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -94,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900092951c9433c4eaedf7ada8c5dabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useGymAnims: 0
   animator: {fileID: 0}
   animationValue: 0
 --- !u!65 &-2368309560090362086
