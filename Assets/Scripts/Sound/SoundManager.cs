@@ -12,10 +12,10 @@ public class SoundManager : MonoBehaviour, IEventListener
     [SerializeField] private AudioSource UI_FX_Source;
 
     [Header("Sliders")]
-    [SerializeField] private Slider generalSlider;
+    /*[SerializeField] private Slider generalSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider UIFXSlider;
-    [SerializeField] private Slider GameplaySlider;
+    [SerializeField] private Slider GameplaySlider;*/
 
     [Header("Prepared sounds")]
     [SerializeField] private AudioClip buttonSound;
@@ -28,18 +28,18 @@ public class SoundManager : MonoBehaviour, IEventListener
     private void Awake()
     {
         OnEnableEventListenerSubscriptions();
-        generalSlider.onValueChanged.AddListener(SetGeneralVolume);
+       /* generalSlider.onValueChanged.AddListener(SetGeneralVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         UIFXSlider.onValueChanged.AddListener(SetUISFXVolume);
-        GameplaySlider.onValueChanged.AddListener(SetGameplayVolume);
+        GameplaySlider.onValueChanged.AddListener(SetGameplayVolume);*/
     }
 
     private void Start()
     {
-        generalSlider.value = PlayerPrefs.GetFloat(AudioManager.General_Key, 1f);
+        /*generalSlider.value = PlayerPrefs.GetFloat(AudioManager.General_Key, 1f);
         musicSlider.value = PlayerPrefs.GetFloat(AudioManager.Music_Key, 1f);
         UIFXSlider.value = PlayerPrefs.GetFloat(AudioManager.UI_SFX_Key, 1f);
-        GameplaySlider.value = PlayerPrefs.GetFloat(AudioManager.Gameplay_Key, 1f);
+        GameplaySlider.value = PlayerPrefs.GetFloat(AudioManager.Gameplay_Key, 1f);*/
     }
 
     public void PlaySound(Hashtable hashtable)
@@ -89,10 +89,10 @@ public class SoundManager : MonoBehaviour, IEventListener
 
     private void OnDisable()
     {
-        PlayerPrefs.SetFloat(AudioManager.General_Key, generalSlider.value);
+        /*PlayerPrefs.SetFloat(AudioManager.General_Key, generalSlider.value);
         PlayerPrefs.SetFloat(AudioManager.Music_Key, musicSlider.value);
         PlayerPrefs.SetFloat(AudioManager.UI_SFX_Key, UIFXSlider.value);
-        PlayerPrefs.SetFloat(AudioManager.Gameplay_Key, GameplaySlider.value);
+        PlayerPrefs.SetFloat(AudioManager.Gameplay_Key, GameplaySlider.value);*/
 
         CancelEventListenerSubscriptions();
     }
