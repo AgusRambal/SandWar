@@ -10,5 +10,6 @@
     UnitHasEnteredToTheTransport,
     GetDriverPosition,
     SetRandomWaypoint,
-    GetRandomPosition
+    GetRandomPosition,
+    RestartCustoms
 }
