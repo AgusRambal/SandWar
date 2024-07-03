@@ -120,7 +120,7 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
-        options.transform.DOScale(1f, .2f);
+        //options.transform.DOScale(1f, .2f);
         optionsOpened = true;
     }
 
