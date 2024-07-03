@@ -48,6 +48,8 @@ public class MainMenu : MonoBehaviour
         openTab = graphicsTab;
     }
 
+    
+    
     private void Start()
     {
         resolutions = Screen.resolutions;
