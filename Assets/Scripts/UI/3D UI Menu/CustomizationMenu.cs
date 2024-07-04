@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CustomizationMenu : MonoBehaviour
@@ -14,7 +15,18 @@ public class CustomizationMenu : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private WindowType windowType;
-    
+
+    [Header("DollyPath")]
+    public CinemachineVirtualCamera virtualCamera;
+    public CinemachineSmoothPath newPath;
+
+    private CinemachineTrackedDolly trackedDolly;
+
+    private void Start()
+    {
+        trackedDolly = virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>();
+    }
+
     private void Update()
     {
         if (!customizationTabs.activeInHierarchy)
@@ -41,6 +53,8 @@ public class CustomizationMenu : MonoBehaviour
 
     private void OnMouseDown()
     {
+        trackedDolly.m_Path = newPath;
+
         MainMenu.Instance.ChangeCamera($"{windowType}");
 
         EventManager.TriggerEvent(GenericEvents.ButtonSound);

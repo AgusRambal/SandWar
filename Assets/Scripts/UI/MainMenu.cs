@@ -1,4 +1,3 @@
-using Cinemachine;
 using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
@@ -30,7 +29,6 @@ public class MainMenu : MonoBehaviour
     private bool changeScene = false;
     private GameObject openTab;
     private TabType openTabType;
-    private bool optionsOpened = false;
 
     private void Awake()
     {
@@ -47,8 +45,6 @@ public class MainMenu : MonoBehaviour
         DOTween.Init();
         openTab = graphicsTab;
     }
-
-    
     
     private void Start()
     {
@@ -83,16 +79,9 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            options.transform.DOScale(0f, .2f);
-            optionsOpened = false;
-        }
-
         if (changeScene)
         {
             time += Time.deltaTime;
-            //CanvasGroup.alpha = time;
 
             if (time >= 1)
             {
@@ -104,9 +93,6 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeMenuMaterial(Transform other, Texture texture)
     {
-        if (optionsOpened)
-            return;
-
         for (int i = 0; i < other.childCount; i++)
         {
             other.GetChild(i).GetComponent<MeshRenderer>().material.SetTexture("_BaseMap", texture);
@@ -116,12 +102,6 @@ public class MainMenu : MonoBehaviour
     public void ChangeScene()
     {
         changeScene = true;
-    }
-
-    public void Options()
-    {
-        //options.transform.DOScale(1f, .2f);
-        optionsOpened = true;
     }
 
     public void Exit()
@@ -204,5 +184,7 @@ public enum WindowType
     GoToMarines,
     GoToWeapon,
     BackFromWeapon,
-    BackFromMarines
+    BackFromMarines,
+    GoToSettings,
+    BackFromSettings
 }
