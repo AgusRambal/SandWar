@@ -13,8 +13,6 @@ public class CharacterCustomizationManager : MonoBehaviour
     /*public int HelmetID { get; private set; }
     public int HairID { get; private set; }
     public int FaceID { get; private set; }
-    public int ChestID { get; private set; }
-    public int WeaponID { get; private set; }
     public int PatchID { get; private set; }*/
 
     private GameObject marineSelected;
@@ -30,10 +28,10 @@ public class CharacterCustomizationManager : MonoBehaviour
 
     public void ChangeMarine(bool leftOrRight)
     {
-        //Al cambiar de marine, reinicar los objects y aplicarlselos de 0
+        //Al cambiar de marine, reiniciar los objects y aplicarlselos de 0
         if (leftOrRight)
         {            
-            if (marineID == 11)
+            if (marineID >= 11)
                 return;
             
             allMarines.ForEach(x=>x.SetActive(false));
@@ -44,7 +42,7 @@ public class CharacterCustomizationManager : MonoBehaviour
 
         else
         {
-            if (marineID == 0)
+            if (marineID <= 0)
                 return;
             
             allMarines.ForEach(x=>x.SetActive(false));

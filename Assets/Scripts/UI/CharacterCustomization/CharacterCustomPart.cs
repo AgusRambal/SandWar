@@ -22,8 +22,8 @@ public class CharacterCustomPart : MonoBehaviour
 
     private void Start()
     {
-        partList.ForEach(x=>x.SetActive(false));
         index = 0;
+        partList.ForEach(x=>x.SetActive(false));
         partList[index].SetActive(true);
         manager.SetAllMarinesToDefault(partList[index], typeOfPart); 
         manager.partsID[typeOfPart] = index;
