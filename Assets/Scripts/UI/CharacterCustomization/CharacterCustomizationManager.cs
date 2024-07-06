@@ -15,6 +15,9 @@ public class CharacterCustomizationManager : MonoBehaviour
     [Header("IDs")]
     public List<int> partsID = new List<int>();
 
+    [Header("Objects")]
+    public List<GameObject> blockParts = new List<GameObject>();
+
     private GameObject marineSelected;
     private int marineID;
     private int selectedMarineID;
@@ -64,6 +67,23 @@ public class CharacterCustomizationManager : MonoBehaviour
         marineSelected = allMarines[marineID];
         characterScriptableObject = characterScriptableObjects[marineID];
         selectedMarineID = marineSelected.GetComponentInChildren<MarineRotation>().ID;
+
+        SetCustomAvailability();
+    }
+
+    private void SetCustomAvailability()
+    {
+        blockParts.ForEach(x => x.SetActive(false));
+        allParts.ForEach(x => x.GetComponent<BoxCollider>().enabled = true);
+
+        for (int i = 0; i < marineSelected.GetComponentInChildren<MarineRotation>().canCustomize.Count; i++)
+        {
+            if (marineSelected.GetComponentInChildren<MarineRotation>().canCustomize[i] == false)
+            {
+                allParts[i].GetComponent<BoxCollider>().enabled = false;
+                blockParts[i].SetActive(true);
+            }
+        }
     }
 
     public void InstantiateObjectOnSelectedMarine(GameObject obj, int typeOfObject)
@@ -79,6 +99,7 @@ public class CharacterCustomizationManager : MonoBehaviour
         customPart.transform.localRotation  = Quaternion.identity;
     }
 
+    //Esto deberia llamarse (no exactamente igual) cuando creo un marine asi carga las customizaciones
     public void ResetMarine()
     {
         for (int i = 0; i < marineSelected.GetComponentInChildren<MarineRotation>().transformsList.Count; i++)

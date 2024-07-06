@@ -5,6 +5,7 @@ public class MarineRotation : MonoBehaviour
 {
     public List<Transform> transformsList = new List<Transform>();
     public int ID;
+    public List<bool> canCustomize = new List<bool>();
 
     private Transform marineTransform;
     private Vector3 lastMousePosition;
