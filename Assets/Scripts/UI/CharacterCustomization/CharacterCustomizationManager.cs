@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CharacterCustomizationManager : MonoBehaviour
 {
+    [Header("Scriptable objects")]
     [SerializeField] private Character characterScriptableObject;
     [SerializeField] private List<Character> characterScriptableObjects = new List<Character>();
+
+    [Header("Marines")]
     [SerializeField] private List<GameObject> allMarines = new List<GameObject>();
     [SerializeField] private List<CharacterCustomPart> allParts = new List<CharacterCustomPart>();
+
+    [Header("IDs")]
     public List<int> partsID = new List<int>();
 
     private GameObject marineSelected;
@@ -54,6 +59,8 @@ public class CharacterCustomizationManager : MonoBehaviour
             allParts[i].Reset();
         }
 
+        ResetMarine();
+
         marineSelected = allMarines[marineID];
         characterScriptableObject = characterScriptableObjects[marineID];
         selectedMarineID = marineSelected.GetComponentInChildren<MarineRotation>().ID;
@@ -70,6 +77,24 @@ public class CharacterCustomizationManager : MonoBehaviour
         customPart.transform.localScale = Vector3.one;
         customPart.transform.localPosition = Vector3.zero;
         customPart.transform.localRotation  = Quaternion.identity;
+    }
+
+    public void ResetMarine()
+    {
+        for (int i = 0; i < marineSelected.GetComponentInChildren<MarineRotation>().transformsList.Count; i++)
+        {
+            if (marineSelected.GetComponentInChildren<MarineRotation>().transformsList[i].childCount > 0)
+            {
+                Destroy(marineSelected.GetComponentInChildren<MarineRotation>().transformsList[i].GetChild(0).gameObject);
+            }
+
+            var obj = characterScriptableObject.allParts[i].parts[characterScriptableObject.customizationSelected[selectedMarineID].parts[i]];
+
+            GameObject customPart = Instantiate(obj, marineSelected.GetComponentInChildren<MarineRotation>().transformsList[i]);
+            customPart.transform.localScale = Vector3.one;
+            customPart.transform.localPosition = Vector3.zero;
+            customPart.transform.localRotation = Quaternion.identity;
+        }
     }
 
     public void SaveMarineCustomization(Hashtable hashtable)

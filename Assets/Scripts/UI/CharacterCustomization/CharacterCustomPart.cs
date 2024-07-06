@@ -51,9 +51,8 @@ public class CharacterCustomPart : MonoBehaviour
     {
         index = 0;
         partList.ForEach(x => x.SetActive(false));
+        manager.partsID.ForEach(x => x = index);
         partList[index].SetActive(true);
-        manager.InstantiateObjectOnSelectedMarine(partList[index], typeOfPart);
-        manager.partsID[typeOfPart] = index;
     }
 
     private void OnMouseEnter()
