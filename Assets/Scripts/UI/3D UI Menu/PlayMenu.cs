@@ -8,7 +8,7 @@ public class PlayMenu : MonoBehaviour
 
     private void OnMouseDown()
     {
-        MainMenu.Instance.ChangeScene();
+        StartCoroutine(MainMenu.Instance.ChangeScene());      
         EventManager.TriggerEvent(GenericEvents.ButtonSound);
     }
 

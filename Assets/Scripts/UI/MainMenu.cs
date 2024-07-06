@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Michsky.LSS;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,11 +13,15 @@ public class MainMenu : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject options;
     [SerializeField] private Animator dollyCamAnimator;
+    [SerializeField] private LSS_Manager lssManager;
 
     [Header("Tabs")]
     [SerializeField] private GameObject graphicsTab;
     [SerializeField] private GameObject soundTab;
     [SerializeField] private GameObject gameplayTab;
+
+    [Header("Objects")]
+    [SerializeField] private CanvasGroup canvasGroup;
 
     public WindowType windowTypeSelected;
 
@@ -77,20 +83,6 @@ public class MainMenu : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    private void Update()
-    {
-        if (changeScene)
-        {
-            time += Time.deltaTime;
-
-            if (time >= 1)
-            {
-                SceneManager.LoadScene("Gameplay");
-                changeScene = false;
-            }
-        }
-    }
-
     public void ChangeMenuMaterial(Transform other, Texture texture)
     {
         for (int i = 0; i < other.childCount; i++)
@@ -99,9 +91,11 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void ChangeScene()
+    public IEnumerator ChangeScene()
     {
-        changeScene = true;
+        canvasGroup.DOFade(1, .5f).SetEase(Ease.InOutQuad);
+        yield return new WaitForSeconds(.5f);
+        lssManager.LoadScene("Gameplay");
     }
 
     public void Exit()

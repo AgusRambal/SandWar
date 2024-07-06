@@ -60,7 +60,7 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = -1;
 
         OnEnableEventListenerSubscriptions();
         DOTween.Init();
