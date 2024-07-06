@@ -83,7 +83,7 @@ public class UIMethods : MonoBehaviour, IEventListener
         if (isOverUI)
             return;
 
-        recruitWindow.transform.DOScale(1f, .2f);
+        recruitWindow.transform.DOScale(1f, .2f).SetEase(Ease.InOutQuad);
     }
 
     private void OpenSellOilWindow(Hashtable hashtable)
@@ -91,23 +91,23 @@ public class UIMethods : MonoBehaviour, IEventListener
         if (isOverUI)
             return;
 
-        sellOilWindow.transform.DOScale(1f, .2f);
+        sellOilWindow.transform.DOScale(1f, .2f).SetEase(Ease.InOutQuad);
     }
 
     private void CloseAllWindows()
     {
-        recruitWindow.transform.DOScale(0f, .2f);
-        sellOilWindow.transform.DOScale(0f, .2f);
+        recruitWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
+        sellOilWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
     }
 
     public void CloseRecruitWindows()
     {
-        recruitWindow.transform.DOScale(0f, .2f);
+        recruitWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
     }
 
     public void CloseSellOilWindows()
     {
-        sellOilWindow.transform.DOScale(0f, .2f);
+        sellOilWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
     }
 
     public void SelectMarine(int id)

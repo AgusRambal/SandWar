@@ -3,45 +3,53 @@ using UnityEngine;
 
 public class CameraBehaviour : MonoBehaviour
 {
-    [Header("Refrences")]
+    [Header("References")]
     [SerializeField] private CinemachineVirtualCamera vCam;
 
     [Header("Features")]
     [SerializeField] private bool useEdgeScrolling = false;
 
-    [Header("Variables")]
-    [SerializeField] private float moveSpeed = 25;
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 25f;
     [SerializeField] private float moveSpeedShift = 50f;
+    [SerializeField] private float moveSmoothTime = 0.1f;
+
+    [Header("Rotation Settings")]
     [SerializeField] private float rotateSpeed = 100f;
+    [SerializeField] private float rotateSmoothTime = 0.1f;
+
+    [Header("Zoom Settings")]
     [SerializeField] private float zoomOffsetMin = 5f;
     [SerializeField] private float zoomOffsetMax = 50f;
     [SerializeField] private float zoomSpeed = 10f;
+    [SerializeField] private float zoomSmoothTime = 0.1f;
+    [SerializeField] private float zoomStep = 2f;
 
-    private bool dragPanMoveActive = false;
-    private Vector2 lastMousePosition;
+    private Vector3 targetPosition;
+    private Vector3 currentVelocity;
+    private float targetRotation;
+    private float rotationVelocity;
     private Vector3 followOffset;
+    private Vector3 zoomVelocity;
 
     private void Awake()
     {
         followOffset = vCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset;
+        targetPosition = transform.position;
+        targetRotation = transform.eulerAngles.y;
     }
 
     private void Update()
     {
-        Movement();
-
-        if (useEdgeScrolling)
-        {
-            UseEdgeScrolling();
-        }
-
-        Rotation();
-        CameraZoom();
+        HandleMovement();
+        HandleEdgeScrolling();
+        HandleRotation();
+        HandleZoom();
     }
 
-    private void Movement()
+    private void HandleMovement()
     {
-        Vector3 inputDir = new Vector3(0, 0, 0);
+        Vector3 inputDir = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W)) inputDir.z = -1f;
         if (Input.GetKey(KeyCode.S)) inputDir.z = +1f;
@@ -50,80 +58,74 @@ public class CameraBehaviour : MonoBehaviour
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            transform.position += moveSpeedShift * Time.deltaTime * moveDir;
-        }
+        float speed = Input.GetKey(KeyCode.LeftShift) ? moveSpeedShift : moveSpeed;
+        targetPosition += speed * Time.deltaTime * moveDir;
 
-        else
-        {
-            transform.position += moveSpeed * Time.deltaTime * moveDir;
-        }
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, moveSmoothTime);
     }
 
-    private void UseEdgeScrolling()
+    private void HandleEdgeScrolling()
     {
-        Vector3 inputDir = new Vector3(0, 0, 0);
+        if (!useEdgeScrolling) return;
 
+        Vector3 inputDir = Vector3.zero;
         int edgeScrollSize = 20;
 
-        if (Input.mousePosition.x < edgeScrollSize) inputDir.x = -1f;
-        if (Input.mousePosition.y < edgeScrollSize) inputDir.z = -1f;
-        if (Input.mousePosition.x > Screen.width - edgeScrollSize) inputDir.x = +1f;
-        if (Input.mousePosition.y > Screen.height - edgeScrollSize) inputDir.z = +1f;
+        if (Input.mousePosition.x < edgeScrollSize) inputDir.x = +1f;
+        if (Input.mousePosition.y < edgeScrollSize) inputDir.z = +1f;
+        if (Input.mousePosition.x > Screen.width - edgeScrollSize) inputDir.x = -1f;
+        if (Input.mousePosition.y > Screen.height - edgeScrollSize) inputDir.z = -1f;
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x;
-        transform.position += moveSpeed * Time.deltaTime * moveDir;
+        targetPosition += moveSpeed * Time.deltaTime * moveDir;
+
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, moveSmoothTime);
     }
 
-    private void Rotation()
+    private void HandleRotation()
     {
         float rotateDir = 0f;
 
         if (Input.GetMouseButton(2))
         {
-            if (Input.GetAxis("Mouse X") < 0)
-            {
-                rotateDir = -1f;
-            }
-
-            if (Input.GetAxis("Mouse X") > 0)
-            {
-                rotateDir = +1f;
-            }
+            rotateDir = Input.GetAxis("Mouse X");
         }
 
-        if (Input.GetKey(KeyCode.Q)) rotateDir = +1f;
-        if (Input.GetKey(KeyCode.E)) rotateDir = -1f;
+        if (Input.GetKey(KeyCode.Q)) rotateDir = -1f;
+        if (Input.GetKey(KeyCode.E)) rotateDir = 1f;
 
-        transform.eulerAngles += new Vector3(0, rotateDir * rotateSpeed * Time.deltaTime, 0);
+        targetRotation += rotateDir * rotateSpeed * Time.deltaTime;
+        float smoothedRotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref rotationVelocity, rotateSmoothTime);
+
+        transform.rotation = Quaternion.Euler(0, smoothedRotation, 0);
     }
 
-    private void CameraZoom()
+    private void HandleZoom()
     {
-        Vector3 zoomDir = followOffset.normalized;
+        float scrollInput = Input.mouseScrollDelta.y * zoomStep;
+        Vector3 zoomDir = followOffset.normalized * scrollInput;
+        Vector3 newFollowOffset = followOffset - zoomDir;
 
-        if (Input.mouseScrollDelta.y > 0)
+        if (newFollowOffset.magnitude < zoomOffsetMin)
         {
-            followOffset -= zoomDir;
+            newFollowOffset = followOffset.normalized * zoomOffsetMin;
+        }
+        else if (newFollowOffset.magnitude > zoomOffsetMax)
+        {
+            newFollowOffset = followOffset.normalized * zoomOffsetMax;
         }
 
-        if (Input.mouseScrollDelta.y < 0)
-        {
-            followOffset += zoomDir;
-        }
+        followOffset = Vector3.SmoothDamp(followOffset, newFollowOffset, ref zoomVelocity, zoomSmoothTime);
 
         if (followOffset.magnitude < zoomOffsetMin)
         {
-            followOffset = zoomDir * zoomOffsetMin;
-        }  
-        
-        if (followOffset.magnitude > zoomOffsetMax)
+            followOffset = followOffset.normalized * zoomOffsetMin;
+        }
+        else if (followOffset.magnitude > zoomOffsetMax)
         {
-            followOffset = zoomDir * zoomOffsetMax;
+            followOffset = followOffset.normalized * zoomOffsetMax;
         }
 
-        vCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = 
-            Vector3.Lerp(vCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, followOffset, Time.deltaTime * zoomSpeed);
+        vCam.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = followOffset;
     }
 }
