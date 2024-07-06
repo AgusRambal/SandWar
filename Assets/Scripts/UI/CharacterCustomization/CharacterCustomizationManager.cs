@@ -1,19 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Apply in this script the save & Load system
 public class CharacterCustomizationManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> allMarines = new List<GameObject>();
+    [SerializeField] private List<CharacterCustomPart> allParts = new List<CharacterCustomPart>();
 
-    //Tengo que usar probablemente el scriptable object
     public List<int> partsID = new List<int>();
-    
-    //Data to save
-    /*public int HelmetID { get; private set; }
-    public int HairID { get; private set; }
-    public int FaceID { get; private set; }
-    public int PatchID { get; private set; }*/
 
     private GameObject marineSelected;
     private int marineID;
@@ -28,7 +21,6 @@ public class CharacterCustomizationManager : MonoBehaviour
 
     public void ChangeMarine(bool leftOrRight)
     {
-        //Al cambiar de marine, reiniciar los objects y aplicarlselos de 0
         if (leftOrRight)
         {            
             if (marineID >= 11)
@@ -51,8 +43,12 @@ public class CharacterCustomizationManager : MonoBehaviour
             allMarines[marineID].SetActive(true);
         }
         
+        for (int i = 0; i < allParts.Count; i++)
+        {
+            allParts[i].Reset();
+        }
+
         marineSelected = allMarines[marineID];
-        EventManager.TriggerEvent(GenericEvents.RestartCustoms);
     }
 
     public void SetAllMarinesToDefault(GameObject obj, int typeOfObject)

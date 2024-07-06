@@ -11,5 +11,4 @@
     GetDriverPosition,
     SetRandomWaypoint,
     GetRandomPosition,
-    RestartCustoms
 }
