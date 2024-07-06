@@ -11,4 +11,5 @@
     GetDriverPosition,
     SetRandomWaypoint,
     GetRandomPosition,
+    SaveMarineCustomization
 }

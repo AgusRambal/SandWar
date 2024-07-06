@@ -15,6 +15,21 @@ public class Character : ScriptableObject
     [SerializeField] private Weapon weapon;
     [SerializeField] private List<GameObject> marinePrefabs = new List<GameObject>();
 
+    [System.Serializable]
+    public class AllParts
+    {
+        public List<GameObject> parts = new List<GameObject>();
+    }
+
+    [System.Serializable]
+    public class Customization
+    {
+        public List<int> parts = new List<int>();
+    }
+
+    public List<AllParts> allParts;
+    public List<Customization> customizationSelected;
+
     [Header("Stats")]
     [SerializeField] private float maxHealth;
     [SerializeField] private float creationTime;

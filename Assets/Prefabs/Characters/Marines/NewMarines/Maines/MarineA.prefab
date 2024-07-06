@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 948134037445129694, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
       propertyPath: m_Name
-      value: Marine01
+      value: MarineA
       objectReference: {fileID: 0}
     - target: {fileID: 948134037445129694, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
