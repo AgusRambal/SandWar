@@ -6908,17 +6908,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1d44548e669eb4daad9d790d959109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scirptableObject: {fileID: 11400000, guid: 2398a3c337b96e14eb2e1fa4b4272558, type: 2}
+  characterScriptableObject: {fileID: 0}
   agent: {fileID: 0}
   animator: {fileID: 0}
   animatorOverride: {fileID: 22100000, guid: c11ec1c884ba0cc4d915e9141a3c0120, type: 2}
+  characterSelectionImage: {fileID: 0}
+  actualWeapon: {fileID: 0}
   selectionArrow: {fileID: 7262259866748197529}
-  id: 0
-  health: 0
-  typeMarine: 2
-  weapon: 0
-  <CurrentHealth>k__BackingField: 0
-  isMoving: 0
+  target: {fileID: 0}
+  speed: 1
 --- !u!195 &1936932148357121191
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6932,7 +6930,7 @@ NavMeshAgent:
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 5000
+  m_AngularSpeed: 360
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -6953,7 +6951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900092951c9433c4eaedf7ada8c5dabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useGymAnims: 0
   animator: {fileID: 0}
   animationValue: 0
 --- !u!65 &701286734140454641

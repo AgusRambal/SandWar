@@ -9,7 +9,7 @@ using VehicleSystem.Transports;
 
 namespace Core.Characters
 {
-    public class Marine : MonoBehaviour , IUnit,IEventListener
+    public class Marine : MonoBehaviour , IUnit, IEventListener
     {
         [FormerlySerializedAs("character")] [Header("References")]
         public Character characterScriptableObject;
@@ -76,10 +76,10 @@ namespace Core.Characters
             // };
         }
 
-        // private void Update()
-        // {
-        //     StateMachine.currentState.Update();
-        // }
+        private void Update()
+        {
+            StateMachine.currentState.Update();
+        }
 
         public void MoveTo(Vector3 position)
         {
