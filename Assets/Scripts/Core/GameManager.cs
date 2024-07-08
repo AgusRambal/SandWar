@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
             dollarsAmount = SerializationManager.TryLoadData("Dollar", out float _dollar) ? _dollar : 8000;
             oilAmount = SerializationManager.TryLoadData("Oil", out float _oil) ? _oil : 8000;
         }
+
+        dollarsAmount += 5000;
     }
 
     private void Update()
