@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public float badOilSellValue { get; private set; }
     [field: SerializeField] public float badDollarToReceive { get; private set; }
     [field: SerializeField] public float goodDollarToReceive { get; private set; }
-    public bool test = false;
+    [SerializeField] private bool useSerializedData = false;
 
     [Header("Marines")]
     public List<Character> allMarines = new List<Character>();
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         actualMarketPrice = goodOilSellValue;
         StartCoroutine(SetOilValue());
 
-        if (test)
+        if (useSerializedData)
         {
             dollarsAmount = SerializationManager.TryLoadData("Dollar", out float _dollar) ? _dollar : 8000;
             oilAmount = SerializationManager.TryLoadData("Oil", out float _oil) ? _oil : 8000;
@@ -105,6 +105,22 @@ public class GameManager : MonoBehaviour
         GameObject marineInstantiated = Instantiate(marine, marinesSpawnPoints[Random.Range(0, marinesSpawnPoints.Count)].position, Quaternion.identity);
         marineInstantiated.GetComponent<Marine>().MoveTo(marinesTarget[myMarines.Count - 1].position);
         lastMarineCreated = marineInstantiated.GetComponent<Marine>();
+
+        for (int i = 0; i < lastMarineCreated.transformsList.Count; i++)
+        {
+            if (lastMarineCreated.transformsList[i].childCount > 0)
+            {
+                Destroy(lastMarineCreated.transformsList[i].GetChild(0).gameObject);
+            }
+
+            var obj = lastMarineCreated.characterScriptableObject.allParts[i].
+                parts[lastMarineCreated.characterScriptableObject.customizationSelected[lastMarineCreated.id].parts[i]];
+
+            GameObject customPart = Instantiate(obj, lastMarineCreated.transformsList[i]);
+            customPart.transform.localScale = Vector3.one;
+            customPart.transform.localPosition = Vector3.zero;
+            customPart.transform.localRotation = Quaternion.identity;
+        }
     }
 
     private IEnumerator SetOilValue()

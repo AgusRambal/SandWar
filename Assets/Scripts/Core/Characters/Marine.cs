@@ -1,7 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using Interfaces;
-using Transports;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -20,6 +20,10 @@ namespace Core.Characters
         public SelectableCharacter characterSelectionImage;
         public WeaponBase actualWeapon;
         [SerializeField] private GameObject selectionArrow;
+
+        [Header("Settings")]
+        public List<Transform> transformsList = new List<Transform>();
+        public int id;
 
         [Header("Battle")]
         public Insurgent target;

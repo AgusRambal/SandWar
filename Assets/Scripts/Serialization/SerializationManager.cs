@@ -58,9 +58,9 @@ namespace SandWar.Serialization
             {
                 object loadedData = saveData[key];
 
-                if (loadedData is T)
+                if (loadedData is T t)
                 {
-                    return (T)loadedData;
+                    return t;
                 }
                 else
                 {

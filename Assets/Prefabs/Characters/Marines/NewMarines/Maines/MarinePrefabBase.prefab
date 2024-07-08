@@ -483,6 +483,8 @@ MonoBehaviour:
   characterSelectionImage: {fileID: 0}
   actualWeapon: {fileID: 0}
   selectionArrow: {fileID: 8184301202252748618}
+  transformsList: []
+  id: 0
   target: {fileID: 0}
   speed: 1
 --- !u!1 &1050367320147021252
