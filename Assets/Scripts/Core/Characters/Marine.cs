@@ -102,7 +102,7 @@ namespace Core.Characters
         {
             _stats.CurrentHealth -= damageAmount;
 
-            if (_stats.CurrentHealth <= 0)
+            if (_stats.CurrentHealth <= 0) 
             {
                 Die();
             }

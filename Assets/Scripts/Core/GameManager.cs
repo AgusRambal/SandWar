@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
             oilAmount = SerializationManager.TryLoadData("Oil", out float _oil) ? _oil : 8000;
         }
 
+        //Delete this when finish
         dollarsAmount += 5000;
     }
 

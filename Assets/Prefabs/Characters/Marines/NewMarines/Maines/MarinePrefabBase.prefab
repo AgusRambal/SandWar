@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 9154735531108242703}
   m_Layer: 0
   m_Name: MarinePrefabBase
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

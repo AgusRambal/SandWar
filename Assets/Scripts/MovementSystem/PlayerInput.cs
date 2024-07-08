@@ -98,12 +98,17 @@ public class PlayerInput : MonoBehaviour
     {
         float sum = .0f;
 
-        foreach (var marine in selectedMarines)
+        if (selectedMarines.Count > 0)
         {
-            sum += marine.agent.radius + margin;
+            foreach (var marine in selectedMarines)
+            {
+                sum += marine.agent.radius + margin;
+            }
+
+            return sum / (2 * Mathf.PI);
         }
 
-        return sum / (2 * Mathf.PI);
+        return 0;
     }
 
 
