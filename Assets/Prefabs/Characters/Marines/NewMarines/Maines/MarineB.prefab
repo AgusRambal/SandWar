@@ -24,6 +24,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8327579959198573976, guid: 8b70218f572a53a4b962d738e7a84587,
         type: 3}
+    - target: {fileID: 5963388789324534956, guid: a20d34d975badea4db2c45dcc6c381d8,
+        type: 3}
+      propertyPath: m_BaseOffset
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963388789324534956, guid: a20d34d975badea4db2c45dcc6c381d8,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 6357859682199363914, guid: a20d34d975badea4db2c45dcc6c381d8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -74,8 +84,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9154735531108242703, guid: a20d34d975badea4db2c45dcc6c381d8,
+        type: 3}
+      propertyPath: actualWeapon
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7033245178504299713, guid: a20d34d975badea4db2c45dcc6c381d8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a20d34d975badea4db2c45dcc6c381d8, type: 3}

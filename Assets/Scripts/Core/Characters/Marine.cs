@@ -9,9 +9,10 @@ using VehicleSystem.Transports;
 
 namespace Core.Characters
 {
-    public class Marine : MonoBehaviour , IUnit, IEventListener
+    public class Marine : MonoBehaviour, IUnit, IEventListener
     {
-        [FormerlySerializedAs("character")] [Header("References")]
+        [FormerlySerializedAs("character")]
+        [Header("References")]
         public Character characterScriptableObject;
         public NavMeshAgent agent;
         public Animator animator;
@@ -23,7 +24,7 @@ namespace Core.Characters
         [Header("Battle")]
         public Insurgent target;
 
-        //State machine
+        // State machine
         public StateMachine StateMachine { get; set; }
         public Idle IdleState { get; set; }
         public Walking WalkingState { get; set; }
@@ -58,27 +59,26 @@ namespace Core.Characters
 
             animator.runtimeAnimatorController = animatorOverride;
             SelectionManager.Instance.AvailableMarines.Add(this);
-            
+
             OnEnableEventListenerSubscriptions();
         }
 
         private void Start()
         {
             StateMachine.Initialize(IdleState);
-
-            //Aca en el start me parece que deberia spawnearle en la mano el arma que tiene como dato, no que ya la tenga attacheada
-
-            // _stats = new Stats
-            // {
-            //     CurrentHealth = characterScriptableObject.MaxHealth,
-            //     TotalAccuracy = characterScriptableObject.Accuracy + actualWeapon.Weapon.Accuracy,
-            //     Magazines = characterScriptableObject.Magazines
-            // };
         }
 
         private void Update()
         {
             StateMachine.currentState.Update();
+        }
+
+        void OnAnimatorMove()
+        {
+            if (StateMachine.currentState is Walking walkingState)
+            {
+                walkingState.OnAnimatorMove();
+            }
         }
 
         public void MoveTo(Vector3 position)
@@ -110,8 +110,8 @@ namespace Core.Characters
 
         public void Die()
         {
-            //No hacer destroy, dejar el cuerpo ahi tirado en el piso
-            //Quitar de la lista de myMairnes
+            // No hacer destroy, dejar el cuerpo ahi tirado en el piso
+            // Quitar de la lista de myMairnes
             Destroy(gameObject);
         }
 
@@ -143,15 +143,15 @@ namespace Core.Characters
         {
             if (this.characterScriptableObject.SubType == SubType.Driver)
             {
-                interactable.Interact(this);//Mandar evento. 
+                interactable.Interact(this); // Mandar evento
             }
             else
             {
                 EventManager.TriggerEvent(GenericEvents.GetRandomPosition, new Hashtable()
                 {
-                    {GameplayEventHashtableParams.Agent.ToString(),this}
+                    {GameplayEventHashtableParams.Agent.ToString(), this}
                 });
-                Debug.Log(this.characterScriptableObject.SubType); //Mandar evento para subirse a las posiciones de copilotos
+                Debug.Log(this.characterScriptableObject.SubType); // Mandar evento para subirse a las posiciones de copilotos
             }
         }
 
@@ -211,8 +211,8 @@ namespace Core.Characters
 
         public void OnEnableEventListenerSubscriptions()
         {
-            EventManager.StartListening(GenericEvents.GetDriverPosition,GetDriverPosition);
-            EventManager.StartListening(GenericEvents.SetRandomWaypoint,SetRandomWaypoint);
+            EventManager.StartListening(GenericEvents.GetDriverPosition, GetDriverPosition);
+            EventManager.StartListening(GenericEvents.SetRandomWaypoint, SetRandomWaypoint);
         }
 
         public void CancelEventListenerSubscriptions()

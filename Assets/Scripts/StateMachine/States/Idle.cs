@@ -11,7 +11,7 @@ public class Idle : State
     public override void EnterState()
     {
         marine.animator.SetBool("isShooting", false);
-
+        marine.animator.SetBool("Walk", false);
     }
 
     public override void Update()
@@ -22,8 +22,6 @@ public class Idle : State
 
     private void MovingCheck()
     {
-        marine.animator.SetFloat("Velocity", 0);
-
         if (!marine.agent.isStopped)
         {
             marine.StateMachine.ChangeState(marine.WalkingState);
