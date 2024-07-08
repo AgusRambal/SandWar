@@ -1,0 +1,8 @@
+Video Tutorial : https://youtu.be/LXZSc37_RjM
+
+You need to install two packages, Burst and Collections, into your project.
+1. Open “Package Manager window”
+2. Install Burst package
+3. Click on “+” -> “Add from git” 
+4. Enter “com.unity.collections”
+5. Install

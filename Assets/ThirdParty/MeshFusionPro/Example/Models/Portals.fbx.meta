@@ -1,0 +1,1620 @@
+fileFormatVersion: 2
+guid: 2c1cce7cfaec38244b655ebe4184e0eb
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -5274580855651604958
+    second: rock1|CameraAction.001
+  - first:
+      74: -7495744017183933730
+    second: rock1|Cube.001Action
+  - first:
+      74: 168629397378164871
+    second: rock1|Cube.005Action
+  - first:
+      74: 6190770639481478162
+    second: rock1|Cube.005Action.001
+  - first:
+      74: -8066846656462318560
+    second: rock1|Cube.005Action.002
+  - first:
+      74: 88570961978089556
+    second: rock1|Cube.007Action
+  - first:
+      74: -5101910572684498431
+    second: rock1|Cube.008Action
+  - first:
+      74: -4690786747968670337
+    second: rock1|Cube.011Action
+  - first:
+      74: 5200273795747668246
+    second: rock1|Cube.011Action.001
+  - first:
+      74: -3651267160408328046
+    second: rock1|Cube.013Action
+  - first:
+      74: 3272879435265975065
+    second: rock1|Cube.013Action.001
+  - first:
+      74: -3813957093062469714
+    second: rock1|Cube.013Action.002
+  - first:
+      74: -3188798548326164747
+    second: rock1|CubeAction.001
+  - first:
+      74: 7125180525265933378
+    second: rock1|Plane.001Action
+  - first:
+      74: -4377011122970832647
+    second: rock1|Plane.001Action.001
+  - first:
+      74: 6824187629434930836
+    second: rock1|Plane.002Action
+  - first:
+      74: -5445768504176202215
+    second: rock1|portal 1Action.001
+  - first:
+      74: -2885337060668671684
+    second: rock1|portal 2Action
+  - first:
+      74: 1388697259824594384
+    second: rock1|portal frame 1Action.001
+  - first:
+      74: 2994378572102752551
+    second: rock1|rock1Action
+  - first:
+      74: 2282309910612917994
+    second: rock1|rock7.001Action.001
+  - first:
+      74: -941891170919620234
+    second: rock1|rock7.002Action.001
+  - first:
+      74: -7594692549863059866
+    second: rock2|CameraAction.001
+  - first:
+      74: 6918443529068871099
+    second: rock2|Cube.001Action
+  - first:
+      74: 254182805230719108
+    second: rock2|Cube.005Action
+  - first:
+      74: 1299615496529547614
+    second: rock2|Cube.005Action.001
+  - first:
+      74: -4154156312925734649
+    second: rock2|Cube.005Action.002
+  - first:
+      74: 8342394033617321399
+    second: rock2|Cube.007Action
+  - first:
+      74: 3392699173739385391
+    second: rock2|Cube.008Action
+  - first:
+      74: -2250048754545788104
+    second: rock2|Cube.011Action
+  - first:
+      74: -5565888118208438119
+    second: rock2|Cube.011Action.001
+  - first:
+      74: -7002002177121852243
+    second: rock2|Cube.013Action
+  - first:
+      74: 4995909640747810313
+    second: rock2|Cube.013Action.001
+  - first:
+      74: -5775201931743264709
+    second: rock2|Cube.013Action.002
+  - first:
+      74: -1092525201668401016
+    second: rock2|CubeAction.001
+  - first:
+      74: 7082436487069964858
+    second: rock2|Plane.001Action
+  - first:
+      74: 8878927062595568204
+    second: rock2|Plane.001Action.001
+  - first:
+      74: 8312413706634031227
+    second: rock2|Plane.002Action
+  - first:
+      74: -4815321758924015961
+    second: rock2|portal 1Action.001
+  - first:
+      74: 930001698654657160
+    second: rock2|portal 2Action
+  - first:
+      74: -1305434451189191158
+    second: rock2|portal frame 1Action.001
+  - first:
+      74: 1446448617453811055
+    second: rock2|rock1Action
+  - first:
+      74: -1743398226079346019
+    second: rock2|rock7.001Action.001
+  - first:
+      74: 8918300524180232139
+    second: rock2|rock7.002Action.001
+  - first:
+      74: -2580756884686816676
+    second: rock3|CameraAction.001
+  - first:
+      74: -2992237208963487114
+    second: rock3|Cube.001Action
+  - first:
+      74: 4938451942185534423
+    second: rock3|Cube.005Action
+  - first:
+      74: -2669492316500289127
+    second: rock3|Cube.005Action.001
+  - first:
+      74: 1133353049315099201
+    second: rock3|Cube.005Action.002
+  - first:
+      74: 657739348386359547
+    second: rock3|Cube.007Action
+  - first:
+      74: 2943737388590245060
+    second: rock3|Cube.008Action
+  - first:
+      74: 1540162800395171411
+    second: rock3|Cube.011Action
+  - first:
+      74: -4946718484925327382
+    second: rock3|Cube.011Action.001
+  - first:
+      74: 1958294783391844320
+    second: rock3|Cube.013Action
+  - first:
+      74: 4728341543315277871
+    second: rock3|Cube.013Action.001
+  - first:
+      74: -3418355428258873141
+    second: rock3|Cube.013Action.002
+  - first:
+      74: -6559434245785146098
+    second: rock3|CubeAction.001
+  - first:
+      74: 1731073115805472196
+    second: rock3|Plane.001Action
+  - first:
+      74: -8634805446439546457
+    second: rock3|Plane.001Action.001
+  - first:
+      74: -8383066730289028300
+    second: rock3|Plane.002Action
+  - first:
+      74: 6319062510714875737
+    second: rock3|portal 1Action.001
+  - first:
+      74: 2207986735308150518
+    second: rock3|portal 2Action
+  - first:
+      74: -632667766407383705
+    second: rock3|portal frame 1Action.001
+  - first:
+      74: -8227230972298600040
+    second: rock3|rock1Action
+  - first:
+      74: -8309039454653431910
+    second: rock3|rock7.001Action.001
+  - first:
+      74: -1930361272686155493
+    second: rock3|rock7.002Action.001
+  - first:
+      74: 8364766460134157248
+    second: portal 1|CameraAction.001
+  - first:
+      74: -6743114848694609972
+    second: portal 1|Cube.001Action
+  - first:
+      74: 4977623563583826173
+    second: portal 1|Cube.005Action
+  - first:
+      74: -7401767818036699529
+    second: portal 1|Cube.005Action.001
+  - first:
+      74: -441373994458286500
+    second: portal 1|Cube.005Action.002
+  - first:
+      74: 526228641093869946
+    second: portal 1|Cube.007Action
+  - first:
+      74: 8138106469508543621
+    second: portal 1|Cube.008Action
+  - first:
+      74: 2217900005716161834
+    second: portal 1|Cube.011Action
+  - first:
+      74: -7920640880889713241
+    second: portal 1|Cube.011Action.001
+  - first:
+      74: 190955877191186954
+    second: portal 1|Cube.013Action
+  - first:
+      74: -3589477433027749209
+    second: portal 1|Cube.013Action.001
+  - first:
+      74: -2989169150561922910
+    second: portal 1|Cube.013Action.002
+  - first:
+      74: -8319659764966531485
+    second: portal 1|CubeAction.001
+  - first:
+      74: -7368531110494812269
+    second: portal 1|Plane.001Action
+  - first:
+      74: -4680426094564400581
+    second: portal 1|Plane.001Action.001
+  - first:
+      74: -5121808493308934208
+    second: portal 1|Plane.002Action
+  - first:
+      74: 3319975808806692977
+    second: portal 1|portal 1Action.001
+  - first:
+      74: -5670298231889175868
+    second: portal 1|portal 2Action
+  - first:
+      74: -2900171323244844766
+    second: portal 1|portal frame 1Action.001
+  - first:
+      74: -7824725536931197689
+    second: portal 1|rock1Action
+  - first:
+      74: -2262361736935036517
+    second: portal 1|rock7.001Action.001
+  - first:
+      74: 4883091864303559454
+    second: portal 1|rock7.002Action.001
+  - first:
+      74: 4476229237487176753
+    second: portal frame 1|CameraAction.001
+  - first:
+      74: 1968155997228500280
+    second: portal frame 1|Cube.001Action
+  - first:
+      74: 7764334800199489067
+    second: portal frame 1|Cube.005Action
+  - first:
+      74: 7371328713063436292
+    second: portal frame 1|Cube.005Action.001
+  - first:
+      74: -6778252709190353590
+    second: portal frame 1|Cube.005Action.002
+  - first:
+      74: 8380577406035596849
+    second: portal frame 1|Cube.007Action
+  - first:
+      74: 6221981730849443926
+    second: portal frame 1|Cube.008Action
+  - first:
+      74: -9161092728177410801
+    second: portal frame 1|Cube.011Action
+  - first:
+      74: -5758237786730989116
+    second: portal frame 1|Cube.011Action.001
+  - first:
+      74: -7402807115162660082
+    second: portal frame 1|Cube.013Action
+  - first:
+      74: -6010300262814692018
+    second: portal frame 1|Cube.013Action.001
+  - first:
+      74: -1237508265912654188
+    second: portal frame 1|Cube.013Action.002
+  - first:
+      74: 4124481942571983716
+    second: portal frame 1|CubeAction.001
+  - first:
+      74: -6499975545095960692
+    second: portal frame 1|Plane.001Action
+  - first:
+      74: 7610159667994494271
+    second: portal frame 1|Plane.001Action.001
+  - first:
+      74: -7460155814880868161
+    second: portal frame 1|Plane.002Action
+  - first:
+      74: -4975956642292792983
+    second: portal frame 1|portal 1Action.001
+  - first:
+      74: 2566563752903827757
+    second: portal frame 1|portal 2Action
+  - first:
+      74: 3112727306048684523
+    second: portal frame 1|portal frame 1Action.001
+  - first:
+      74: -8590228332626560003
+    second: portal frame 1|rock1Action
+  - first:
+      74: -7615476893309555747
+    second: portal frame 1|rock7.001Action.001
+  - first:
+      74: -313360592109181767
+    second: portal frame 1|rock7.002Action.001
+  - first:
+      74: -2844197989313019928
+    second: portal 2|CameraAction.001
+  - first:
+      74: -9166278539972847622
+    second: portal 2|Cube.001Action
+  - first:
+      74: 8565444417977296748
+    second: portal 2|Cube.005Action
+  - first:
+      74: -4975356637150535849
+    second: portal 2|Cube.005Action.001
+  - first:
+      74: 2717471622841399695
+    second: portal 2|Cube.005Action.002
+  - first:
+      74: -661989339552415507
+    second: portal 2|Cube.007Action
+  - first:
+      74: 8182852437189398342
+    second: portal 2|Cube.008Action
+  - first:
+      74: 2609541082549301398
+    second: portal 2|Cube.011Action
+  - first:
+      74: 8358599364824409905
+    second: portal 2|Cube.011Action.001
+  - first:
+      74: 3334472316511294480
+    second: portal 2|Cube.013Action
+  - first:
+      74: -2233729180296433544
+    second: portal 2|Cube.013Action.001
+  - first:
+      74: -7619702226768107319
+    second: portal 2|Cube.013Action.002
+  - first:
+      74: -7627695806714348388
+    second: portal 2|CubeAction.001
+  - first:
+      74: -7252996644634585349
+    second: portal 2|Plane.001Action
+  - first:
+      74: -169329984018604984
+    second: portal 2|Plane.001Action.001
+  - first:
+      74: -3283394537592164841
+    second: portal 2|Plane.002Action
+  - first:
+      74: -8932892736137874822
+    second: portal 2|portal 1Action.001
+  - first:
+      74: -626973675292070511
+    second: portal 2|portal 2Action
+  - first:
+      74: 6735246037881100119
+    second: portal 2|portal frame 1Action.001
+  - first:
+      74: -7294694948015789547
+    second: portal 2|rock1Action
+  - first:
+      74: -5534650842759147684
+    second: portal 2|rock7.001Action.001
+  - first:
+      74: -3413002905434885109
+    second: portal 2|rock7.002Action.001
+  - first:
+      74: -2211126490514838815
+    second: Portal frame 2|CameraAction.001
+  - first:
+      74: -6940851090406000761
+    second: Portal frame 2|Cube.001Action
+  - first:
+      74: 8650148874246167092
+    second: Portal frame 2|Cube.005Action
+  - first:
+      74: -7746635050967846986
+    second: Portal frame 2|Cube.005Action.001
+  - first:
+      74: 6198538746727550630
+    second: Portal frame 2|Cube.005Action.002
+  - first:
+      74: -6111191345894539245
+    second: Portal frame 2|Cube.007Action
+  - first:
+      74: 3704660185683729693
+    second: Portal frame 2|Cube.008Action
+  - first:
+      74: 6725794903301746582
+    second: Portal frame 2|Cube.011Action
+  - first:
+      74: -4655969005968072841
+    second: Portal frame 2|Cube.011Action.001
+  - first:
+      74: -6745878784599739077
+    second: Portal frame 2|Cube.013Action
+  - first:
+      74: 1264904887882920145
+    second: Portal frame 2|Cube.013Action.001
+  - first:
+      74: -2706955705359996391
+    second: Portal frame 2|Cube.013Action.002
+  - first:
+      74: 3581379976375754407
+    second: Portal frame 2|CubeAction.001
+  - first:
+      74: 4804606502851900973
+    second: Portal frame 2|Plane.001Action
+  - first:
+      74: -259263368452046026
+    second: Portal frame 2|Plane.001Action.001
+  - first:
+      74: -8932607807925641859
+    second: Portal frame 2|Plane.002Action
+  - first:
+      74: -6971915447056030963
+    second: Portal frame 2|portal 1Action.001
+  - first:
+      74: 7926214739714223090
+    second: Portal frame 2|portal 2Action
+  - first:
+      74: -8716664589905210952
+    second: Portal frame 2|portal frame 1Action.001
+  - first:
+      74: 6611128114851208904
+    second: Portal frame 2|rock1Action
+  - first:
+      74: -3387626838175955112
+    second: Portal frame 2|rock7.001Action.001
+  - first:
+      74: -8146870721723484453
+    second: Portal frame 2|rock7.002Action.001
+  - first:
+      74: 229891432131813574
+    second: portal 3|CameraAction.001
+  - first:
+      74: -263464855892766959
+    second: portal 3|Cube.001Action
+  - first:
+      74: -6820176310027372685
+    second: portal 3|Cube.005Action
+  - first:
+      74: -5877317926323101898
+    second: portal 3|Cube.005Action.001
+  - first:
+      74: -612457483435950958
+    second: portal 3|Cube.005Action.002
+  - first:
+      74: 739150939824812854
+    second: portal 3|Cube.007Action
+  - first:
+      74: 6884599723726796765
+    second: portal 3|Cube.008Action
+  - first:
+      74: -8467012366886916724
+    second: portal 3|Cube.011Action
+  - first:
+      74: 7511661696169379572
+    second: portal 3|Cube.011Action.001
+  - first:
+      74: 2091597837305379253
+    second: portal 3|Cube.013Action
+  - first:
+      74: 275785817352281085
+    second: portal 3|Cube.013Action.001
+  - first:
+      74: -4867796960696016070
+    second: portal 3|Cube.013Action.002
+  - first:
+      74: -8352930900185729093
+    second: portal 3|CubeAction.001
+  - first:
+      74: -7942555536507194349
+    second: portal 3|Plane.001Action
+  - first:
+      74: -5226132900887083956
+    second: portal 3|Plane.001Action.001
+  - first:
+      74: -4334181742590514464
+    second: portal 3|Plane.002Action
+  - first:
+      74: -3630928394895079501
+    second: portal 3|portal 1Action.001
+  - first:
+      74: -2486202391768022040
+    second: portal 3|portal 2Action
+  - first:
+      74: -7521736200748289141
+    second: portal 3|portal frame 1Action.001
+  - first:
+      74: -6247361922918843551
+    second: portal 3|rock1Action
+  - first:
+      74: -2265056405483342362
+    second: portal 3|rock7.001Action.001
+  - first:
+      74: -5474218597121695578
+    second: portal 3|rock7.002Action.001
+  - first:
+      74: -2619091587843048582
+    second: portal frame 3|CameraAction.001
+  - first:
+      74: 2333085356481179960
+    second: portal frame 3|Cube.001Action
+  - first:
+      74: 1102132137716101361
+    second: portal frame 3|Cube.005Action
+  - first:
+      74: -407305639501385559
+    second: portal frame 3|Cube.005Action.001
+  - first:
+      74: 4976187931572707878
+    second: portal frame 3|Cube.005Action.002
+  - first:
+      74: 4615672521143697316
+    second: portal frame 3|Cube.007Action
+  - first:
+      74: 7296016391486428950
+    second: portal frame 3|Cube.008Action
+  - first:
+      74: -7526045452077543221
+    second: portal frame 3|Cube.011Action
+  - first:
+      74: -2033281824189027639
+    second: portal frame 3|Cube.011Action.001
+  - first:
+      74: 7558287583772562589
+    second: portal frame 3|Cube.013Action
+  - first:
+      74: -3122059147423443334
+    second: portal frame 3|Cube.013Action.001
+  - first:
+      74: -4230351304244616060
+    second: portal frame 3|Cube.013Action.002
+  - first:
+      74: 8022852333264115105
+    second: portal frame 3|CubeAction.001
+  - first:
+      74: 3516521670038483017
+    second: portal frame 3|Plane.001Action
+  - first:
+      74: 1891421339565346146
+    second: portal frame 3|Plane.001Action.001
+  - first:
+      74: -5082677977219606044
+    second: portal frame 3|Plane.002Action
+  - first:
+      74: -1309971342093119068
+    second: portal frame 3|portal 1Action.001
+  - first:
+      74: -8844973548881208658
+    second: portal frame 3|portal 2Action
+  - first:
+      74: 4970973737977907393
+    second: portal frame 3|portal frame 1Action.001
+  - first:
+      74: -2814294153512386237
+    second: portal frame 3|rock1Action
+  - first:
+      74: -1226623127375019426
+    second: portal frame 3|rock7.001Action.001
+  - first:
+      74: -6252125640355483654
+    second: portal frame 3|rock7.002Action.001
+  - first:
+      74: -4188723015136162339
+    second: Xopouuue stairs|CameraAction.001
+  - first:
+      74: 8693070679920752034
+    second: Xopouuue stairs|Cube.001Action
+  - first:
+      74: -6703992391343504507
+    second: Xopouuue stairs|Cube.005Action
+  - first:
+      74: -3548759892510401978
+    second: Xopouuue stairs|Cube.005Action.001
+  - first:
+      74: 5430583994774239614
+    second: Xopouuue stairs|Cube.005Action.002
+  - first:
+      74: -7849486811706145015
+    second: Xopouuue stairs|Cube.007Action
+  - first:
+      74: 6884467913705441991
+    second: Xopouuue stairs|Cube.008Action
+  - first:
+      74: 6763274316165673009
+    second: Xopouuue stairs|Cube.011Action
+  - first:
+      74: -7282141268064690244
+    second: Xopouuue stairs|Cube.011Action.001
+  - first:
+      74: 1165115064495251934
+    second: Xopouuue stairs|Cube.013Action
+  - first:
+      74: 3281719896622390550
+    second: Xopouuue stairs|Cube.013Action.001
+  - first:
+      74: -1762137416724396362
+    second: Xopouuue stairs|Cube.013Action.002
+  - first:
+      74: 6135826673748395322
+    second: Xopouuue stairs|CubeAction.001
+  - first:
+      74: 6353651512516932879
+    second: Xopouuue stairs|Plane.001Action
+  - first:
+      74: 7853938480233241081
+    second: Xopouuue stairs|Plane.001Action.001
+  - first:
+      74: 7175336746325750153
+    second: Xopouuue stairs|Plane.002Action
+  - first:
+      74: -4804704004688923786
+    second: Xopouuue stairs|portal 1Action.001
+  - first:
+      74: -2418892681624183825
+    second: Xopouuue stairs|portal 2Action
+  - first:
+      74: -4253605102072837005
+    second: Xopouuue stairs|portal frame 1Action.001
+  - first:
+      74: 8540382205093237463
+    second: Xopouuue stairs|rock1Action
+  - first:
+      74: 8798121048112619081
+    second: Xopouuue stairs|rock7.001Action.001
+  - first:
+      74: 7205001618224169147
+    second: Xopouuue stairs|rock7.002Action.001
+  - first:
+      74: -9187371857518918791
+    second: portal 4|CameraAction.001
+  - first:
+      74: -339474610984034039
+    second: portal 4|Cube.001Action
+  - first:
+      74: 8845305370250584528
+    second: portal 4|Cube.005Action
+  - first:
+      74: -6601822939329570907
+    second: portal 4|Cube.005Action.001
+  - first:
+      74: 4897184670369409030
+    second: portal 4|Cube.005Action.002
+  - first:
+      74: -7608735927756538776
+    second: portal 4|Cube.007Action
+  - first:
+      74: -6236853746283169965
+    second: portal 4|Cube.008Action
+  - first:
+      74: -4438994409165611496
+    second: portal 4|Cube.011Action
+  - first:
+      74: -6455035175579301504
+    second: portal 4|Cube.011Action.001
+  - first:
+      74: -1469738926136830885
+    second: portal 4|Cube.013Action
+  - first:
+      74: -4755239957341175818
+    second: portal 4|Cube.013Action.001
+  - first:
+      74: 3950216659618194488
+    second: portal 4|Cube.013Action.002
+  - first:
+      74: -749362139200197563
+    second: portal 4|CubeAction.001
+  - first:
+      74: 619762718298954827
+    second: portal 4|Plane.001Action
+  - first:
+      74: 5734565745133928644
+    second: portal 4|Plane.001Action.001
+  - first:
+      74: -633307212067106925
+    second: portal 4|Plane.002Action
+  - first:
+      74: -6660681224837459370
+    second: portal 4|portal 1Action.001
+  - first:
+      74: 7697130670218286380
+    second: portal 4|portal 2Action
+  - first:
+      74: 3993453719100407401
+    second: portal 4|portal frame 1Action.001
+  - first:
+      74: -3797167862463683452
+    second: portal 4|rock1Action
+  - first:
+      74: 4202193961976542754
+    second: portal 4|rock7.001Action.001
+  - first:
+      74: 5922152830707694890
+    second: portal 4|rock7.002Action.001
+  - first:
+      74: 803409967888210911
+    second: portal frame 4|CameraAction.001
+  - first:
+      74: 7095782751481149023
+    second: portal frame 4|Cube.001Action
+  - first:
+      74: -887803761359021286
+    second: portal frame 4|Cube.005Action
+  - first:
+      74: 5857732294362529248
+    second: portal frame 4|Cube.005Action.001
+  - first:
+      74: -4381284693303662228
+    second: portal frame 4|Cube.005Action.002
+  - first:
+      74: 3433953305476439270
+    second: portal frame 4|Cube.007Action
+  - first:
+      74: -7983397010074043567
+    second: portal frame 4|Cube.008Action
+  - first:
+      74: -5640437184937131316
+    second: portal frame 4|Cube.011Action
+  - first:
+      74: 8971170655736968231
+    second: portal frame 4|Cube.011Action.001
+  - first:
+      74: 9202823779262715020
+    second: portal frame 4|Cube.013Action
+  - first:
+      74: -4759701355565248328
+    second: portal frame 4|Cube.013Action.001
+  - first:
+      74: -7985936719564000966
+    second: portal frame 4|Cube.013Action.002
+  - first:
+      74: -851359749142760989
+    second: portal frame 4|CubeAction.001
+  - first:
+      74: 2055085095551419780
+    second: portal frame 4|Plane.001Action
+  - first:
+      74: 2964301856827479569
+    second: portal frame 4|Plane.001Action.001
+  - first:
+      74: 5177678381052668729
+    second: portal frame 4|Plane.002Action
+  - first:
+      74: 1683092158947424865
+    second: portal frame 4|portal 1Action.001
+  - first:
+      74: -9086114204897390978
+    second: portal frame 4|portal 2Action
+  - first:
+      74: -1210080037335047098
+    second: portal frame 4|portal frame 1Action.001
+  - first:
+      74: -7248228335376108068
+    second: portal frame 4|rock1Action
+  - first:
+      74: -3608020773103056757
+    second: portal frame 4|rock7.001Action.001
+  - first:
+      74: 1577200467494615639
+    second: portal frame 4|rock7.002Action.001
+  - first:
+      74: -7395587041826082327
+    second: IIloxue stairs|CameraAction.001
+  - first:
+      74: -8171987060161616102
+    second: IIloxue stairs|Cube.001Action
+  - first:
+      74: 6948727861387764189
+    second: IIloxue stairs|Cube.005Action
+  - first:
+      74: -4603861972137441099
+    second: IIloxue stairs|Cube.005Action.001
+  - first:
+      74: 6412269553887302017
+    second: IIloxue stairs|Cube.005Action.002
+  - first:
+      74: -87730664710851341
+    second: IIloxue stairs|Cube.007Action
+  - first:
+      74: 4783917855214983643
+    second: IIloxue stairs|Cube.008Action
+  - first:
+      74: -25878046863871832
+    second: IIloxue stairs|Cube.011Action
+  - first:
+      74: 2422425715127656317
+    second: IIloxue stairs|Cube.011Action.001
+  - first:
+      74: -3494331831610204244
+    second: IIloxue stairs|Cube.013Action
+  - first:
+      74: 7313195967039482134
+    second: IIloxue stairs|Cube.013Action.001
+  - first:
+      74: 4538215581545102767
+    second: IIloxue stairs|Cube.013Action.002
+  - first:
+      74: 2201498721254047535
+    second: IIloxue stairs|CubeAction.001
+  - first:
+      74: -1795226849668500034
+    second: IIloxue stairs|Plane.001Action
+  - first:
+      74: 5480607986053921494
+    second: IIloxue stairs|Plane.001Action.001
+  - first:
+      74: -2576759695237339500
+    second: IIloxue stairs|Plane.002Action
+  - first:
+      74: -1254956357671724360
+    second: IIloxue stairs|portal 1Action.001
+  - first:
+      74: 4747648730212914150
+    second: IIloxue stairs|portal 2Action
+  - first:
+      74: -6340720077603755925
+    second: IIloxue stairs|portal frame 1Action.001
+  - first:
+      74: -6909960845446864661
+    second: IIloxue stairs|rock1Action
+  - first:
+      74: 6666103101842429692
+    second: IIloxue stairs|rock7.001Action.001
+  - first:
+      74: -7375290260307762975
+    second: IIloxue stairs|rock7.002Action.001
+  - first:
+      74: 2282677283524946466
+    second: rock4|CameraAction.001
+  - first:
+      74: 5119265709942177112
+    second: rock4|Cube.001Action
+  - first:
+      74: -6881229910673770473
+    second: rock4|Cube.005Action
+  - first:
+      74: -3921080682791352082
+    second: rock4|Cube.005Action.001
+  - first:
+      74: 1983477222958022289
+    second: rock4|Cube.005Action.002
+  - first:
+      74: -6633629845179276409
+    second: rock4|Cube.007Action
+  - first:
+      74: -7815136019661381254
+    second: rock4|Cube.008Action
+  - first:
+      74: -4052605835252856057
+    second: rock4|Cube.011Action
+  - first:
+      74: 7503941616861666057
+    second: rock4|Cube.011Action.001
+  - first:
+      74: 1828873578397198516
+    second: rock4|Cube.013Action
+  - first:
+      74: 4428526866550042449
+    second: rock4|Cube.013Action.001
+  - first:
+      74: -6846986905528891663
+    second: rock4|Cube.013Action.002
+  - first:
+      74: -476419889661566904
+    second: rock4|CubeAction.001
+  - first:
+      74: -5090728925964203251
+    second: rock4|Plane.001Action
+  - first:
+      74: -899313365480501564
+    second: rock4|Plane.001Action.001
+  - first:
+      74: -3811206658966675273
+    second: rock4|Plane.002Action
+  - first:
+      74: -4367497964108030830
+    second: rock4|portal 1Action.001
+  - first:
+      74: -2976980311291532777
+    second: rock4|portal 2Action
+  - first:
+      74: -5170577031695830932
+    second: rock4|portal frame 1Action.001
+  - first:
+      74: 8698701230925252767
+    second: rock4|rock1Action
+  - first:
+      74: -4688924096379439782
+    second: rock4|rock7.001Action.001
+  - first:
+      74: 6212887830975246262
+    second: rock4|rock7.002Action.001
+  - first:
+      74: 9097373103824930817
+    second: rock5|CameraAction.001
+  - first:
+      74: -5512333661765187498
+    second: rock5|Cube.001Action
+  - first:
+      74: 7013703349964787985
+    second: rock5|Cube.005Action
+  - first:
+      74: 1683170978193672342
+    second: rock5|Cube.005Action.001
+  - first:
+      74: -6132898356522280084
+    second: rock5|Cube.005Action.002
+  - first:
+      74: 2779360158942110006
+    second: rock5|Cube.007Action
+  - first:
+      74: -6395472186998826974
+    second: rock5|Cube.008Action
+  - first:
+      74: -8584048801014319964
+    second: rock5|Cube.011Action
+  - first:
+      74: -4153413412776929231
+    second: rock5|Cube.011Action.001
+  - first:
+      74: -7495994983881560118
+    second: rock5|Cube.013Action
+  - first:
+      74: 7224061460881976240
+    second: rock5|Cube.013Action.001
+  - first:
+      74: 6338640548764537967
+    second: rock5|Cube.013Action.002
+  - first:
+      74: -7246955570046186952
+    second: rock5|CubeAction.001
+  - first:
+      74: -3507791277034218222
+    second: rock5|Plane.001Action
+  - first:
+      74: 7094152690101800536
+    second: rock5|Plane.001Action.001
+  - first:
+      74: 2960552914003332926
+    second: rock5|Plane.002Action
+  - first:
+      74: -7990957629860268795
+    second: rock5|portal 1Action.001
+  - first:
+      74: -1533406825852531771
+    second: rock5|portal 2Action
+  - first:
+      74: -6794641763219797873
+    second: rock5|portal frame 1Action.001
+  - first:
+      74: -4714719669612664272
+    second: rock5|rock1Action
+  - first:
+      74: -8087251048492776043
+    second: rock5|rock7.001Action.001
+  - first:
+      74: -1790098372359349150
+    second: rock5|rock7.002Action.001
+  - first:
+      74: 8292121535922289146
+    second: rock6|CameraAction.001
+  - first:
+      74: -2138362008107151774
+    second: rock6|Cube.001Action
+  - first:
+      74: 4326471767749097745
+    second: rock6|Cube.005Action
+  - first:
+      74: -1529690717048130290
+    second: rock6|Cube.005Action.001
+  - first:
+      74: -7135414887384928078
+    second: rock6|Cube.005Action.002
+  - first:
+      74: 7497255897107660965
+    second: rock6|Cube.007Action
+  - first:
+      74: 8462769887901159259
+    second: rock6|Cube.008Action
+  - first:
+      74: -5796509184496252303
+    second: rock6|Cube.011Action
+  - first:
+      74: 4508408381436014917
+    second: rock6|Cube.011Action.001
+  - first:
+      74: 3125159141575823992
+    second: rock6|Cube.013Action
+  - first:
+      74: 69736480495984697
+    second: rock6|Cube.013Action.001
+  - first:
+      74: -7054239583436879038
+    second: rock6|Cube.013Action.002
+  - first:
+      74: -4065833327900430743
+    second: rock6|CubeAction.001
+  - first:
+      74: 7430036170284871856
+    second: rock6|Plane.001Action
+  - first:
+      74: 5129206431761599309
+    second: rock6|Plane.001Action.001
+  - first:
+      74: 3392376972887121395
+    second: rock6|Plane.002Action
+  - first:
+      74: 220848995836966905
+    second: rock6|portal 1Action.001
+  - first:
+      74: 4392430728840022599
+    second: rock6|portal 2Action
+  - first:
+      74: 1180085055348681641
+    second: rock6|portal frame 1Action.001
+  - first:
+      74: -5522604501361607630
+    second: rock6|rock1Action
+  - first:
+      74: 9217176150860182436
+    second: rock6|rock7.001Action.001
+  - first:
+      74: 299129454369867065
+    second: rock6|rock7.002Action.001
+  - first:
+      74: -4514080506033126507
+    second: rock7|CameraAction.001
+  - first:
+      74: -4885814388059744480
+    second: rock7|Cube.001Action
+  - first:
+      74: -5641380157692342142
+    second: rock7|Cube.005Action
+  - first:
+      74: 6228007084106996217
+    second: rock7|Cube.005Action.001
+  - first:
+      74: -2037202741229899359
+    second: rock7|Cube.005Action.002
+  - first:
+      74: 6677940163416211951
+    second: rock7|Cube.007Action
+  - first:
+      74: 4141993391421648135
+    second: rock7|Cube.008Action
+  - first:
+      74: 498634241287014816
+    second: rock7|Cube.011Action
+  - first:
+      74: 1851211045973838001
+    second: rock7|Cube.011Action.001
+  - first:
+      74: 8229381810252340502
+    second: rock7|Cube.013Action
+  - first:
+      74: -3965997524656920386
+    second: rock7|Cube.013Action.001
+  - first:
+      74: -2343530388980117167
+    second: rock7|Cube.013Action.002
+  - first:
+      74: 7670594506582726445
+    second: rock7|CubeAction.001
+  - first:
+      74: -5338659805893571742
+    second: rock7|Plane.001Action
+  - first:
+      74: 9140204953825106026
+    second: rock7|Plane.001Action.001
+  - first:
+      74: -6959705465580134043
+    second: rock7|Plane.002Action
+  - first:
+      74: 6238610062918433830
+    second: rock7|portal 1Action.001
+  - first:
+      74: 6262847769239331756
+    second: rock7|portal 2Action
+  - first:
+      74: 6574050572313699567
+    second: rock7|portal frame 1Action.001
+  - first:
+      74: -8580892073824098023
+    second: rock7|rock1Action
+  - first:
+      74: 6771133641371764163
+    second: rock7|rock7.001Action.001
+  - first:
+      74: 2268605004852675875
+    second: rock7|rock7.002Action.001
+  - first:
+      74: -2890454891510952701
+    second: rock8|CameraAction.001
+  - first:
+      74: -5372088026938033186
+    second: rock8|Cube.001Action
+  - first:
+      74: 4087313583580026906
+    second: rock8|Cube.005Action
+  - first:
+      74: 641603631206788008
+    second: rock8|Cube.005Action.001
+  - first:
+      74: -1196497271169126596
+    second: rock8|Cube.005Action.002
+  - first:
+      74: 8995907046787535553
+    second: rock8|Cube.007Action
+  - first:
+      74: -7664103058220526025
+    second: rock8|Cube.008Action
+  - first:
+      74: -83815086290186399
+    second: rock8|Cube.011Action
+  - first:
+      74: -2665897366525115588
+    second: rock8|Cube.011Action.001
+  - first:
+      74: -213921162357961891
+    second: rock8|Cube.013Action
+  - first:
+      74: 2176924142119129868
+    second: rock8|Cube.013Action.001
+  - first:
+      74: -2349811739929612972
+    second: rock8|Cube.013Action.002
+  - first:
+      74: 52514344471737111
+    second: rock8|CubeAction.001
+  - first:
+      74: 3882515760319893021
+    second: rock8|Plane.001Action
+  - first:
+      74: 6465969085583586089
+    second: rock8|Plane.001Action.001
+  - first:
+      74: -3789884674770037817
+    second: rock8|Plane.002Action
+  - first:
+      74: 7494166103634416267
+    second: rock8|portal 1Action.001
+  - first:
+      74: -1227309631635971102
+    second: rock8|portal 2Action
+  - first:
+      74: 1098822096373762234
+    second: rock8|portal frame 1Action.001
+  - first:
+      74: 175468532279909906
+    second: rock8|rock1Action
+  - first:
+      74: -4103481135190427521
+    second: rock8|rock7.001Action.001
+  - first:
+      74: -3266378817050208424
+    second: rock8|rock7.002Action.001
+  - first:
+      74: 7070657573822809544
+    second: rock9|CameraAction.001
+  - first:
+      74: 4831205793731750137
+    second: rock9|Cube.001Action
+  - first:
+      74: 8128636647014415030
+    second: rock9|Cube.005Action
+  - first:
+      74: -3293167085040884385
+    second: rock9|Cube.005Action.001
+  - first:
+      74: 6429304577418772215
+    second: rock9|Cube.005Action.002
+  - first:
+      74: -428420438422402008
+    second: rock9|Cube.007Action
+  - first:
+      74: 2061859789331568946
+    second: rock9|Cube.008Action
+  - first:
+      74: 2016577068280767390
+    second: rock9|Cube.011Action
+  - first:
+      74: 7525002376616752305
+    second: rock9|Cube.011Action.001
+  - first:
+      74: 5811892641788254040
+    second: rock9|Cube.013Action
+  - first:
+      74: -4275531339726212724
+    second: rock9|Cube.013Action.001
+  - first:
+      74: 6993250328162943604
+    second: rock9|Cube.013Action.002
+  - first:
+      74: 7428514109632010477
+    second: rock9|CubeAction.001
+  - first:
+      74: -7186506778522639178
+    second: rock9|Plane.001Action
+  - first:
+      74: -1484738538258108558
+    second: rock9|Plane.001Action.001
+  - first:
+      74: -6690518449842023647
+    second: rock9|Plane.002Action
+  - first:
+      74: -5040268236555402189
+    second: rock9|portal 1Action.001
+  - first:
+      74: -8089026700254398225
+    second: rock9|portal 2Action
+  - first:
+      74: 3111416417217473675
+    second: rock9|portal frame 1Action.001
+  - first:
+      74: 3667369586177278277
+    second: rock9|rock1Action
+  - first:
+      74: 3701798943553333475
+    second: rock9|rock7.001Action.001
+  - first:
+      74: 6775627325789612683
+    second: rock9|rock7.002Action.001
+  - first:
+      74: -4498652364581710840
+    second: rock10|CameraAction.001
+  - first:
+      74: -469060508344726154
+    second: rock10|Cube.001Action
+  - first:
+      74: -6445010590694218837
+    second: rock10|Cube.005Action
+  - first:
+      74: 6910660826225588203
+    second: rock10|Cube.005Action.001
+  - first:
+      74: -1556375278568512294
+    second: rock10|Cube.005Action.002
+  - first:
+      74: 8226696913695885380
+    second: rock10|Cube.007Action
+  - first:
+      74: 4456247319710355962
+    second: rock10|Cube.008Action
+  - first:
+      74: 3159691079325952740
+    second: rock10|Cube.011Action
+  - first:
+      74: -6999173364331614480
+    second: rock10|Cube.011Action.001
+  - first:
+      74: -2370860581404229149
+    second: rock10|Cube.013Action
+  - first:
+      74: -6143770168041711406
+    second: rock10|Cube.013Action.001
+  - first:
+      74: -3258212245308279394
+    second: rock10|Cube.013Action.002
+  - first:
+      74: -6068024595876867782
+    second: rock10|CubeAction.001
+  - first:
+      74: -3199703743440222490
+    second: rock10|Plane.001Action
+  - first:
+      74: -9129903562337289929
+    second: rock10|Plane.001Action.001
+  - first:
+      74: -4093647384884950082
+    second: rock10|Plane.002Action
+  - first:
+      74: 1540859501190675771
+    second: rock10|portal 1Action.001
+  - first:
+      74: 6572697433993007440
+    second: rock10|portal 2Action
+  - first:
+      74: 454802376779157000
+    second: rock10|portal frame 1Action.001
+  - first:
+      74: 2459261621393757988
+    second: rock10|rock1Action
+  - first:
+      74: 1378537251011791489
+    second: rock10|rock7.001Action.001
+  - first:
+      74: 6009792801761614406
+    second: rock10|rock7.002Action.001
+  - first:
+      74: 4461129809242622848
+    second: rock11|CameraAction.001
+  - first:
+      74: -6953180246153631508
+    second: rock11|Cube.001Action
+  - first:
+      74: -3213759675155867875
+    second: rock11|Cube.005Action
+  - first:
+      74: -2529295034276875644
+    second: rock11|Cube.005Action.001
+  - first:
+      74: -5467193868622822992
+    second: rock11|Cube.005Action.002
+  - first:
+      74: -1167573989912515859
+    second: rock11|Cube.007Action
+  - first:
+      74: -3954667338191879882
+    second: rock11|Cube.008Action
+  - first:
+      74: 3465137343681268932
+    second: rock11|Cube.011Action
+  - first:
+      74: -2074443929505891237
+    second: rock11|Cube.011Action.001
+  - first:
+      74: -9106396821876300383
+    second: rock11|Cube.013Action
+  - first:
+      74: -2516297273882980116
+    second: rock11|Cube.013Action.001
+  - first:
+      74: 5677927606206561254
+    second: rock11|Cube.013Action.002
+  - first:
+      74: -5080622936855099188
+    second: rock11|CubeAction.001
+  - first:
+      74: 337112802818431817
+    second: rock11|Plane.001Action
+  - first:
+      74: -8671556301083871468
+    second: rock11|Plane.001Action.001
+  - first:
+      74: 8524593513985688119
+    second: rock11|Plane.002Action
+  - first:
+      74: -993913858036167350
+    second: rock11|portal 1Action.001
+  - first:
+      74: 2569090786950131929
+    second: rock11|portal 2Action
+  - first:
+      74: -2835867157532866238
+    second: rock11|portal frame 1Action.001
+  - first:
+      74: 7519743178096994448
+    second: rock11|rock1Action
+  - first:
+      74: 4725025623977169671
+    second: rock11|rock7.001Action.001
+  - first:
+      74: -3004148342037872078
+    second: rock11|rock7.002Action.001
+  - first:
+      74: 8617184179832821283
+    second: rock7.001|CameraAction.001
+  - first:
+      74: 4114699810766203910
+    second: rock7.001|Cube.001Action
+  - first:
+      74: 5456945786359918762
+    second: rock7.001|Cube.005Action
+  - first:
+      74: -7912909084705724298
+    second: rock7.001|Cube.005Action.001
+  - first:
+      74: 4007133908173990579
+    second: rock7.001|Cube.005Action.002
+  - first:
+      74: 6831791326439609145
+    second: rock7.001|Cube.007Action
+  - first:
+      74: -4452035187682371228
+    second: rock7.001|Cube.008Action
+  - first:
+      74: -8219614293986205358
+    second: rock7.001|Cube.011Action
+  - first:
+      74: 1786552554611613781
+    second: rock7.001|Cube.011Action.001
+  - first:
+      74: 1187231112762943715
+    second: rock7.001|Cube.013Action
+  - first:
+      74: 8685337917499953332
+    second: rock7.001|Cube.013Action.001
+  - first:
+      74: 765268069414474169
+    second: rock7.001|Cube.013Action.002
+  - first:
+      74: -2790540749239416858
+    second: rock7.001|CubeAction.001
+  - first:
+      74: 3946932692398566950
+    second: rock7.001|Plane.001Action
+  - first:
+      74: -2062519808233759781
+    second: rock7.001|Plane.001Action.001
+  - first:
+      74: -3568688349522039087
+    second: rock7.001|Plane.002Action
+  - first:
+      74: 1529228796890830338
+    second: rock7.001|portal 1Action.001
+  - first:
+      74: 8455668703539652093
+    second: rock7.001|portal 2Action
+  - first:
+      74: -4550400668295879731
+    second: rock7.001|portal frame 1Action.001
+  - first:
+      74: 3304412069859720933
+    second: rock7.001|rock1Action
+  - first:
+      74: -4519820791647578361
+    second: rock7.001|rock7.001Action.001
+  - first:
+      74: -5810104266190483415
+    second: rock7.001|rock7.002Action.001
+  - first:
+      74: 4070326853267610516
+    second: rock7.002|CameraAction.001
+  - first:
+      74: -340652275224621186
+    second: rock7.002|Cube.001Action
+  - first:
+      74: -3661625369242804537
+    second: rock7.002|Cube.005Action
+  - first:
+      74: -2127090169865377914
+    second: rock7.002|Cube.005Action.001
+  - first:
+      74: -5845387909033486970
+    second: rock7.002|Cube.005Action.002
+  - first:
+      74: -2191842085820800363
+    second: rock7.002|Cube.007Action
+  - first:
+      74: 4674721510095826550
+    second: rock7.002|Cube.008Action
+  - first:
+      74: -2486791670909608982
+    second: rock7.002|Cube.011Action
+  - first:
+      74: 1438057127562624473
+    second: rock7.002|Cube.011Action.001
+  - first:
+      74: 1254531805916667797
+    second: rock7.002|Cube.013Action
+  - first:
+      74: -5006226230063117780
+    second: rock7.002|Cube.013Action.001
+  - first:
+      74: -6617136715362383817
+    second: rock7.002|Cube.013Action.002
+  - first:
+      74: 4847424304970703394
+    second: rock7.002|CubeAction.001
+  - first:
+      74: 7969977804357065471
+    second: rock7.002|Plane.001Action
+  - first:
+      74: 1893794362704764326
+    second: rock7.002|Plane.001Action.001
+  - first:
+      74: 515891847483244329
+    second: rock7.002|Plane.002Action
+  - first:
+      74: -6322322093633654448
+    second: rock7.002|portal 1Action.001
+  - first:
+      74: 2891753193832000004
+    second: rock7.002|portal 2Action
+  - first:
+      74: 8762592675617709317
+    second: rock7.002|portal frame 1Action.001
+  - first:
+      74: 2019765918005811644
+    second: rock7.002|rock1Action
+  - first:
+      74: 159054162843551148
+    second: rock7.002|rock7.001Action.001
+  - first:
+      74: -4414513326317661500
+    second: rock7.002|rock7.002Action.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,136 +1,386 @@
 fileFormatVersion: 2
 guid: cb834500b83783144bb289f52c173edc
 ModelImporter:
-  serializedVersion: 22
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: SM_Veh_Tank_German_01_Turret
-    100004: SM_Veh_Tank_German_01_Turret_Barrel
-    100006: SM_Veh_Tank_German_Track_L
-    100008: SM_Veh_Tank_German_Track_R
-    100010: SM_Veh_Tank_German_Track_Wheel_L_01
-    100012: SM_Veh_Tank_German_Track_Wheel_L_02
-    100014: SM_Veh_Tank_German_Track_Wheel_L_03
-    100016: SM_Veh_Tank_German_Track_Wheel_L_04
-    100018: SM_Veh_Tank_German_Track_Wheel_L_05
-    100020: SM_Veh_Tank_German_Track_Wheel_L_06
-    100022: SM_Veh_Tank_German_Track_Wheel_L_07
-    100024: SM_Veh_Tank_German_Track_Wheel_L_08
-    100026: SM_Veh_Tank_German_Track_Wheel_L_09
-    100028: SM_Veh_Tank_German_Track_Wheel_R_01
-    100030: SM_Veh_Tank_German_Track_Wheel_R_02
-    100032: SM_Veh_Tank_German_Track_Wheel_R_03
-    100034: SM_Veh_Tank_German_Track_Wheel_R_04
-    100036: SM_Veh_Tank_German_Track_Wheel_R_05
-    100038: SM_Veh_Tank_German_Track_Wheel_R_06
-    100040: SM_Veh_Tank_German_Track_Wheel_R_07
-    100042: SM_Veh_Tank_German_Track_Wheel_R_08
-    100044: SM_Veh_Tank_German_Track_Wheel_R_09
-    100046: SM_Veh_Tank_German_01_Hatch_l
-    100048: SM_Veh_Tank_German_01_Hatch_r
-    400000: //RootNode
-    400002: SM_Veh_Tank_German_01_Turret
-    400004: SM_Veh_Tank_German_01_Turret_Barrel
-    400006: SM_Veh_Tank_German_Track_L
-    400008: SM_Veh_Tank_German_Track_R
-    400010: SM_Veh_Tank_German_Track_Wheel_L_01
-    400012: SM_Veh_Tank_German_Track_Wheel_L_02
-    400014: SM_Veh_Tank_German_Track_Wheel_L_03
-    400016: SM_Veh_Tank_German_Track_Wheel_L_04
-    400018: SM_Veh_Tank_German_Track_Wheel_L_05
-    400020: SM_Veh_Tank_German_Track_Wheel_L_06
-    400022: SM_Veh_Tank_German_Track_Wheel_L_07
-    400024: SM_Veh_Tank_German_Track_Wheel_L_08
-    400026: SM_Veh_Tank_German_Track_Wheel_L_09
-    400028: SM_Veh_Tank_German_Track_Wheel_R_01
-    400030: SM_Veh_Tank_German_Track_Wheel_R_02
-    400032: SM_Veh_Tank_German_Track_Wheel_R_03
-    400034: SM_Veh_Tank_German_Track_Wheel_R_04
-    400036: SM_Veh_Tank_German_Track_Wheel_R_05
-    400038: SM_Veh_Tank_German_Track_Wheel_R_06
-    400040: SM_Veh_Tank_German_Track_Wheel_R_07
-    400042: SM_Veh_Tank_German_Track_Wheel_R_08
-    400044: SM_Veh_Tank_German_Track_Wheel_R_09
-    400046: SM_Veh_Tank_German_01_Hatch_l
-    400048: SM_Veh_Tank_German_01_Hatch_r
-    2300000: //RootNode
-    2300002: SM_Veh_Tank_German_01_Turret
-    2300004: SM_Veh_Tank_German_01_Turret_Barrel
-    2300006: SM_Veh_Tank_German_Track_L
-    2300008: SM_Veh_Tank_German_Track_R
-    2300010: SM_Veh_Tank_German_Track_Wheel_L_01
-    2300012: SM_Veh_Tank_German_Track_Wheel_L_02
-    2300014: SM_Veh_Tank_German_Track_Wheel_L_03
-    2300016: SM_Veh_Tank_German_Track_Wheel_L_04
-    2300018: SM_Veh_Tank_German_Track_Wheel_L_05
-    2300020: SM_Veh_Tank_German_Track_Wheel_L_06
-    2300022: SM_Veh_Tank_German_Track_Wheel_L_07
-    2300024: SM_Veh_Tank_German_Track_Wheel_L_08
-    2300026: SM_Veh_Tank_German_Track_Wheel_L_09
-    2300028: SM_Veh_Tank_German_Track_Wheel_R_01
-    2300030: SM_Veh_Tank_German_Track_Wheel_R_02
-    2300032: SM_Veh_Tank_German_Track_Wheel_R_03
-    2300034: SM_Veh_Tank_German_Track_Wheel_R_04
-    2300036: SM_Veh_Tank_German_Track_Wheel_R_05
-    2300038: SM_Veh_Tank_German_Track_Wheel_R_06
-    2300040: SM_Veh_Tank_German_Track_Wheel_R_07
-    2300042: SM_Veh_Tank_German_Track_Wheel_R_08
-    2300044: SM_Veh_Tank_German_Track_Wheel_R_09
-    2300046: SM_Veh_Tank_German_01_Hatch_l
-    2300048: SM_Veh_Tank_German_01_Hatch_r
-    3300000: //RootNode
-    3300002: SM_Veh_Tank_German_01_Turret
-    3300004: SM_Veh_Tank_German_01_Turret_Barrel
-    3300006: SM_Veh_Tank_German_Track_L
-    3300008: SM_Veh_Tank_German_Track_R
-    3300010: SM_Veh_Tank_German_Track_Wheel_L_01
-    3300012: SM_Veh_Tank_German_Track_Wheel_L_02
-    3300014: SM_Veh_Tank_German_Track_Wheel_L_03
-    3300016: SM_Veh_Tank_German_Track_Wheel_L_04
-    3300018: SM_Veh_Tank_German_Track_Wheel_L_05
-    3300020: SM_Veh_Tank_German_Track_Wheel_L_06
-    3300022: SM_Veh_Tank_German_Track_Wheel_L_07
-    3300024: SM_Veh_Tank_German_Track_Wheel_L_08
-    3300026: SM_Veh_Tank_German_Track_Wheel_L_09
-    3300028: SM_Veh_Tank_German_Track_Wheel_R_01
-    3300030: SM_Veh_Tank_German_Track_Wheel_R_02
-    3300032: SM_Veh_Tank_German_Track_Wheel_R_03
-    3300034: SM_Veh_Tank_German_Track_Wheel_R_04
-    3300036: SM_Veh_Tank_German_Track_Wheel_R_05
-    3300038: SM_Veh_Tank_German_Track_Wheel_R_06
-    3300040: SM_Veh_Tank_German_Track_Wheel_R_07
-    3300042: SM_Veh_Tank_German_Track_Wheel_R_08
-    3300044: SM_Veh_Tank_German_Track_Wheel_R_09
-    3300046: SM_Veh_Tank_German_01_Hatch_l
-    3300048: SM_Veh_Tank_German_01_Hatch_r
-    4300000: SM_Veh_Tank_German_01
-    4300002: SM_Veh_Tank_German_01_Turret
-    4300004: SM_Veh_Tank_German_01_Turret_Barrel
-    4300006: SM_Veh_Tank_German_Track_L
-    4300008: SM_Veh_Tank_German_Track_Wheel_L_01
-    4300010: SM_Veh_Tank_German_Track_Wheel_L_02
-    4300012: SM_Veh_Tank_German_Track_Wheel_L_03
-    4300014: SM_Veh_Tank_German_Track_Wheel_L_04
-    4300016: SM_Veh_Tank_German_Track_Wheel_L_05
-    4300018: SM_Veh_Tank_German_Track_Wheel_L_06
-    4300020: SM_Veh_Tank_German_Track_Wheel_L_07
-    4300022: SM_Veh_Tank_German_Track_Wheel_L_08
-    4300024: SM_Veh_Tank_German_Track_Wheel_L_09
-    4300026: SM_Veh_Tank_German_Track_R
-    4300028: SM_Veh_Tank_German_Track_Wheel_R_01
-    4300030: SM_Veh_Tank_German_Track_Wheel_R_02
-    4300032: SM_Veh_Tank_German_Track_Wheel_R_03
-    4300034: SM_Veh_Tank_German_Track_Wheel_R_04
-    4300036: SM_Veh_Tank_German_Track_Wheel_R_05
-    4300038: SM_Veh_Tank_German_Track_Wheel_R_06
-    4300040: SM_Veh_Tank_German_Track_Wheel_R_07
-    4300042: SM_Veh_Tank_German_Track_Wheel_R_08
-    4300044: SM_Veh_Tank_German_Track_Wheel_R_09
-    4300046: SM_Veh_Tank_German_01_Hatch_r
-    4300048: SM_Veh_Tank_German_01_Hatch_l
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: SM_Veh_Tank_German_01_Turret
+  - first:
+      1: 100004
+    second: SM_Veh_Tank_German_01_Turret_Barrel
+  - first:
+      1: 100006
+    second: SM_Veh_Tank_German_Track_L
+  - first:
+      1: 100008
+    second: SM_Veh_Tank_German_Track_R
+  - first:
+      1: 100010
+    second: SM_Veh_Tank_German_Track_Wheel_L_01
+  - first:
+      1: 100012
+    second: SM_Veh_Tank_German_Track_Wheel_L_02
+  - first:
+      1: 100014
+    second: SM_Veh_Tank_German_Track_Wheel_L_03
+  - first:
+      1: 100016
+    second: SM_Veh_Tank_German_Track_Wheel_L_04
+  - first:
+      1: 100018
+    second: SM_Veh_Tank_German_Track_Wheel_L_05
+  - first:
+      1: 100020
+    second: SM_Veh_Tank_German_Track_Wheel_L_06
+  - first:
+      1: 100022
+    second: SM_Veh_Tank_German_Track_Wheel_L_07
+  - first:
+      1: 100024
+    second: SM_Veh_Tank_German_Track_Wheel_L_08
+  - first:
+      1: 100026
+    second: SM_Veh_Tank_German_Track_Wheel_L_09
+  - first:
+      1: 100028
+    second: SM_Veh_Tank_German_Track_Wheel_R_01
+  - first:
+      1: 100030
+    second: SM_Veh_Tank_German_Track_Wheel_R_02
+  - first:
+      1: 100032
+    second: SM_Veh_Tank_German_Track_Wheel_R_03
+  - first:
+      1: 100034
+    second: SM_Veh_Tank_German_Track_Wheel_R_04
+  - first:
+      1: 100036
+    second: SM_Veh_Tank_German_Track_Wheel_R_05
+  - first:
+      1: 100038
+    second: SM_Veh_Tank_German_Track_Wheel_R_06
+  - first:
+      1: 100040
+    second: SM_Veh_Tank_German_Track_Wheel_R_07
+  - first:
+      1: 100042
+    second: SM_Veh_Tank_German_Track_Wheel_R_08
+  - first:
+      1: 100044
+    second: SM_Veh_Tank_German_Track_Wheel_R_09
+  - first:
+      1: 100046
+    second: SM_Veh_Tank_German_01_Hatch_l
+  - first:
+      1: 100048
+    second: SM_Veh_Tank_German_01_Hatch_r
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: SM_Veh_Tank_German_01_Turret
+  - first:
+      4: 400004
+    second: SM_Veh_Tank_German_01_Turret_Barrel
+  - first:
+      4: 400006
+    second: SM_Veh_Tank_German_Track_L
+  - first:
+      4: 400008
+    second: SM_Veh_Tank_German_Track_R
+  - first:
+      4: 400010
+    second: SM_Veh_Tank_German_Track_Wheel_L_01
+  - first:
+      4: 400012
+    second: SM_Veh_Tank_German_Track_Wheel_L_02
+  - first:
+      4: 400014
+    second: SM_Veh_Tank_German_Track_Wheel_L_03
+  - first:
+      4: 400016
+    second: SM_Veh_Tank_German_Track_Wheel_L_04
+  - first:
+      4: 400018
+    second: SM_Veh_Tank_German_Track_Wheel_L_05
+  - first:
+      4: 400020
+    second: SM_Veh_Tank_German_Track_Wheel_L_06
+  - first:
+      4: 400022
+    second: SM_Veh_Tank_German_Track_Wheel_L_07
+  - first:
+      4: 400024
+    second: SM_Veh_Tank_German_Track_Wheel_L_08
+  - first:
+      4: 400026
+    second: SM_Veh_Tank_German_Track_Wheel_L_09
+  - first:
+      4: 400028
+    second: SM_Veh_Tank_German_Track_Wheel_R_01
+  - first:
+      4: 400030
+    second: SM_Veh_Tank_German_Track_Wheel_R_02
+  - first:
+      4: 400032
+    second: SM_Veh_Tank_German_Track_Wheel_R_03
+  - first:
+      4: 400034
+    second: SM_Veh_Tank_German_Track_Wheel_R_04
+  - first:
+      4: 400036
+    second: SM_Veh_Tank_German_Track_Wheel_R_05
+  - first:
+      4: 400038
+    second: SM_Veh_Tank_German_Track_Wheel_R_06
+  - first:
+      4: 400040
+    second: SM_Veh_Tank_German_Track_Wheel_R_07
+  - first:
+      4: 400042
+    second: SM_Veh_Tank_German_Track_Wheel_R_08
+  - first:
+      4: 400044
+    second: SM_Veh_Tank_German_Track_Wheel_R_09
+  - first:
+      4: 400046
+    second: SM_Veh_Tank_German_01_Hatch_l
+  - first:
+      4: 400048
+    second: SM_Veh_Tank_German_01_Hatch_r
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: SM_Veh_Tank_German_01_Turret
+  - first:
+      23: 2300004
+    second: SM_Veh_Tank_German_01_Turret_Barrel
+  - first:
+      23: 2300006
+    second: SM_Veh_Tank_German_Track_L
+  - first:
+      23: 2300008
+    second: SM_Veh_Tank_German_Track_R
+  - first:
+      23: 2300010
+    second: SM_Veh_Tank_German_Track_Wheel_L_01
+  - first:
+      23: 2300012
+    second: SM_Veh_Tank_German_Track_Wheel_L_02
+  - first:
+      23: 2300014
+    second: SM_Veh_Tank_German_Track_Wheel_L_03
+  - first:
+      23: 2300016
+    second: SM_Veh_Tank_German_Track_Wheel_L_04
+  - first:
+      23: 2300018
+    second: SM_Veh_Tank_German_Track_Wheel_L_05
+  - first:
+      23: 2300020
+    second: SM_Veh_Tank_German_Track_Wheel_L_06
+  - first:
+      23: 2300022
+    second: SM_Veh_Tank_German_Track_Wheel_L_07
+  - first:
+      23: 2300024
+    second: SM_Veh_Tank_German_Track_Wheel_L_08
+  - first:
+      23: 2300026
+    second: SM_Veh_Tank_German_Track_Wheel_L_09
+  - first:
+      23: 2300028
+    second: SM_Veh_Tank_German_Track_Wheel_R_01
+  - first:
+      23: 2300030
+    second: SM_Veh_Tank_German_Track_Wheel_R_02
+  - first:
+      23: 2300032
+    second: SM_Veh_Tank_German_Track_Wheel_R_03
+  - first:
+      23: 2300034
+    second: SM_Veh_Tank_German_Track_Wheel_R_04
+  - first:
+      23: 2300036
+    second: SM_Veh_Tank_German_Track_Wheel_R_05
+  - first:
+      23: 2300038
+    second: SM_Veh_Tank_German_Track_Wheel_R_06
+  - first:
+      23: 2300040
+    second: SM_Veh_Tank_German_Track_Wheel_R_07
+  - first:
+      23: 2300042
+    second: SM_Veh_Tank_German_Track_Wheel_R_08
+  - first:
+      23: 2300044
+    second: SM_Veh_Tank_German_Track_Wheel_R_09
+  - first:
+      23: 2300046
+    second: SM_Veh_Tank_German_01_Hatch_l
+  - first:
+      23: 2300048
+    second: SM_Veh_Tank_German_01_Hatch_r
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: SM_Veh_Tank_German_01_Turret
+  - first:
+      33: 3300004
+    second: SM_Veh_Tank_German_01_Turret_Barrel
+  - first:
+      33: 3300006
+    second: SM_Veh_Tank_German_Track_L
+  - first:
+      33: 3300008
+    second: SM_Veh_Tank_German_Track_R
+  - first:
+      33: 3300010
+    second: SM_Veh_Tank_German_Track_Wheel_L_01
+  - first:
+      33: 3300012
+    second: SM_Veh_Tank_German_Track_Wheel_L_02
+  - first:
+      33: 3300014
+    second: SM_Veh_Tank_German_Track_Wheel_L_03
+  - first:
+      33: 3300016
+    second: SM_Veh_Tank_German_Track_Wheel_L_04
+  - first:
+      33: 3300018
+    second: SM_Veh_Tank_German_Track_Wheel_L_05
+  - first:
+      33: 3300020
+    second: SM_Veh_Tank_German_Track_Wheel_L_06
+  - first:
+      33: 3300022
+    second: SM_Veh_Tank_German_Track_Wheel_L_07
+  - first:
+      33: 3300024
+    second: SM_Veh_Tank_German_Track_Wheel_L_08
+  - first:
+      33: 3300026
+    second: SM_Veh_Tank_German_Track_Wheel_L_09
+  - first:
+      33: 3300028
+    second: SM_Veh_Tank_German_Track_Wheel_R_01
+  - first:
+      33: 3300030
+    second: SM_Veh_Tank_German_Track_Wheel_R_02
+  - first:
+      33: 3300032
+    second: SM_Veh_Tank_German_Track_Wheel_R_03
+  - first:
+      33: 3300034
+    second: SM_Veh_Tank_German_Track_Wheel_R_04
+  - first:
+      33: 3300036
+    second: SM_Veh_Tank_German_Track_Wheel_R_05
+  - first:
+      33: 3300038
+    second: SM_Veh_Tank_German_Track_Wheel_R_06
+  - first:
+      33: 3300040
+    second: SM_Veh_Tank_German_Track_Wheel_R_07
+  - first:
+      33: 3300042
+    second: SM_Veh_Tank_German_Track_Wheel_R_08
+  - first:
+      33: 3300044
+    second: SM_Veh_Tank_German_Track_Wheel_R_09
+  - first:
+      33: 3300046
+    second: SM_Veh_Tank_German_01_Hatch_l
+  - first:
+      33: 3300048
+    second: SM_Veh_Tank_German_01_Hatch_r
+  - first:
+      43: 4300000
+    second: SM_Veh_Tank_German_01
+  - first:
+      43: 4300002
+    second: SM_Veh_Tank_German_01_Turret
+  - first:
+      43: 4300004
+    second: SM_Veh_Tank_German_01_Turret_Barrel
+  - first:
+      43: 4300006
+    second: SM_Veh_Tank_German_Track_L
+  - first:
+      43: 4300008
+    second: SM_Veh_Tank_German_Track_Wheel_L_01
+  - first:
+      43: 4300010
+    second: SM_Veh_Tank_German_Track_Wheel_L_02
+  - first:
+      43: 4300012
+    second: SM_Veh_Tank_German_Track_Wheel_L_03
+  - first:
+      43: 4300014
+    second: SM_Veh_Tank_German_Track_Wheel_L_04
+  - first:
+      43: 4300016
+    second: SM_Veh_Tank_German_Track_Wheel_L_05
+  - first:
+      43: 4300018
+    second: SM_Veh_Tank_German_Track_Wheel_L_06
+  - first:
+      43: 4300020
+    second: SM_Veh_Tank_German_Track_Wheel_L_07
+  - first:
+      43: 4300022
+    second: SM_Veh_Tank_German_Track_Wheel_L_08
+  - first:
+      43: 4300024
+    second: SM_Veh_Tank_German_Track_Wheel_L_09
+  - first:
+      43: 4300026
+    second: SM_Veh_Tank_German_Track_R
+  - first:
+      43: 4300028
+    second: SM_Veh_Tank_German_Track_Wheel_R_01
+  - first:
+      43: 4300030
+    second: SM_Veh_Tank_German_Track_Wheel_R_02
+  - first:
+      43: 4300032
+    second: SM_Veh_Tank_German_Track_Wheel_R_03
+  - first:
+      43: 4300034
+    second: SM_Veh_Tank_German_Track_Wheel_R_04
+  - first:
+      43: 4300036
+    second: SM_Veh_Tank_German_Track_Wheel_R_05
+  - first:
+      43: 4300038
+    second: SM_Veh_Tank_German_Track_Wheel_R_06
+  - first:
+      43: 4300040
+    second: SM_Veh_Tank_German_Track_Wheel_R_07
+  - first:
+      43: 4300042
+    second: SM_Veh_Tank_German_Track_Wheel_R_08
+  - first:
+      43: 4300044
+    second: SM_Veh_Tank_German_Track_Wheel_R_09
+  - first:
+      43: 4300046
+    second: SM_Veh_Tank_German_01_Hatch_r
+  - first:
+      43: 4300048
+    second: SM_Veh_Tank_German_01_Hatch_l
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 1
     materialSearch: 2
     materialLocation: 0
@@ -139,6 +389,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -147,6 +398,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -155,38 +407,55 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: 1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 5
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -196,14 +465,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

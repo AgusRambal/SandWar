@@ -1,0 +1,16 @@
+{
+    "name": "MeshFusionPro.Example",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7ff1d9b7deeacb840a11da1b7af66c30"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

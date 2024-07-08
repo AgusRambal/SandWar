@@ -1,0 +1,89 @@
+**************************************
+CHANGELOG
+**************************************
+
+v5.5.2
+- fixed WaypointManager not placing new waypoints or making them invisible.
+  This required a workaround due to a Unity bug only fixed in 2022.2 and above
+- fixed WaypointManager not using the assigned view placement key
+
+v5.5.1
+- DOTween updated to 1.2.705
+- fixed NREs on event variables when instantiating movement scripts at runtime
+- changed asset root folder name, delete the old 'SWS' root folder when updating!
+- changed asset documentation moving everything from included PDF file to
+  online documentation page on GitLab
+- changed namespace using directives for third-party packages to be included
+  inside the SWS namespace, instead of outside. This should solve most clashes
+  for assets not using namespaces
+- removed actions for PlayMaker
+- minimum required Unity version: 2020.3.0
+
+v5.5.0
+- changed events on waypoints: UnityEvents for all waypoints in the
+  inspector are gone, as feedback told they were difficult to maintain.
+  Instead, three UnityEvents were added: start, change (waypoint), end.
+  You can also listen to these events via code on the corresponding Action.
+  Be aware that when updating, your existing events need to be re-added.
+  See the scripting documentation for more details and event descriptions.
+- changed NavMeshAgent stoppingDistance default to 0.5 if kept at zero
+- fixed splineMove not starting to play with DOTween AutoPlay set to none
+- fixed documentation links
+
+v5.4.7
+- DOTween updated to 1.2.420
+- added IsMoving() and IsPaused() convenience methods to movement scripts
+- fixed multiple events being called at once when startPoint > 0
+- fixed general Reverse behavior on non-pingpong paths using navMove
+- minimum required Unity version: 2018.4.0
+
+v5.4.6
+- added BezierPathManager method, converting waypoint index to path point
+- added CTRL+click de/selecting for moving multiple waypoints at once
+- fixed events not being called on reverse paths due to wrong index
+- fixed reversing on bezier paths by returning new path copy each time
+- minimum required Unity version: 2017.4.16
+
+v5.4.5
+- DOTween updated to 1.2.305
+- added missing startPoint indicator on navMove movement script
+- fixed startPoint indicator at wrong position if reverse is checked
+- fixed Pause() coroutine not getting cancelled on subsequent calls
+- fixed some warnings about invalid/already killed tweens
+
+v5.4.4
+- DOTween updated to 1.2.235
+- changed: local checkbox to dropdown, none/toPath/toObject. toPath is
+  the same as enabling local in earlier versions. toObject can be used to
+  let objects move on path formations from their local position
+- minimum required Unity version: 2017.3.0
+
+v5.4.3
+- DOTween updated to 1.2.135
+- added support for bezier paths on navMove component (only waypoints)
+- very minor code structure changes for better compatibility
+
+v5.4.2
+- DOTween updated to 1.1.710
+- removed defines for old Unity versions
+
+v5.4.1
+- DOTween updated to 1.1.640, fixing an issue with the first waypoint
+  when creating paths very far away from the scene origin
+
+v5.4
+- added button to continue editing paths on the PathManager components
+- added dropdown for custom waypoint placement keys to WaypointManager
+- added red dot highlighting the starting point of movement scripts
+- changed modifier button structure on PathManager into drop down menu
+- changed WaypointManager path warnings into editor dialog popups
+- changed losing focus while editing paths will not destroy them anymore
+- fixed waypoint handles not showing due to incorrect event (Unity 5.6+)
+- fixed child ordering of newly inserted waypoints via PathManagers
+- fixed ordering of waypoints when inverting bezier path direction
+- DOTween updated to 1.1.595
+
+v5.3.1
+- fixed Reverse method not working in combination with changing speed
+- DOTween updated to 1.1.555
+- Unity 5.6 compatibility
