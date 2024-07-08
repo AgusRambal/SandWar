@@ -23,7 +23,6 @@ public class CharacterCustomPart : MonoBehaviour
         index = 0;
         partList.ForEach(x=>x.SetActive(false));
         partList[index].SetActive(true);
-        manager.partsID[typeOfPart] = index;
     }
 
     private void OnMouseDown()

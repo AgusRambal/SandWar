@@ -28,19 +28,21 @@ public class CharacterCustomizationManager : MonoBehaviour
         allMarines.ForEach(x=>x.SetActive(false));
         marineID = 0;
         selectedMarineID = 0;
+
         allMarines[marineID].SetActive(true);
         marineSelected = allMarines[marineID];
         characterScriptableObject = characterScriptableObjects[marineID];
+        ResetMarine();
     }
 
     public void ChangeMarine(bool leftOrRight)
     {
         if (leftOrRight)
-        {            
+        {
             if (marineID >= 11)
                 return;
-            
-            allMarines.ForEach(x=>x.SetActive(false));
+
+            allMarines.ForEach(x => x.SetActive(false));
 
             marineID++;
             allMarines[marineID].SetActive(true);
@@ -50,25 +52,21 @@ public class CharacterCustomizationManager : MonoBehaviour
         {
             if (marineID <= 0)
                 return;
-            
-            allMarines.ForEach(x=>x.SetActive(false));
+
+            allMarines.ForEach(x => x.SetActive(false));
 
             marineID--;
             allMarines[marineID].SetActive(true);
         }
-        
-        for (int i = 0; i < allParts.Count; i++)
-        {
-            allParts[i].Reset();
-        }
 
-        ResetMarine();
+        allParts.ForEach(x => x.Reset());
+        SetCustomAvailability();
 
         marineSelected = allMarines[marineID];
         characterScriptableObject = characterScriptableObjects[marineID];
         selectedMarineID = marineSelected.GetComponentInChildren<MarineRotation>().ID;
 
-        SetCustomAvailability();
+        ResetMarine();
     }
 
     private void SetCustomAvailability()
@@ -99,9 +97,10 @@ public class CharacterCustomizationManager : MonoBehaviour
         customPart.transform.localRotation  = Quaternion.identity;
     }
 
-    //Esto deberia llamarse (no exactamente igual) cuando creo un marine asi carga las customizaciones
     public void ResetMarine()
     {
+        partsID.ForEach(x => x = 0);
+
         for (int i = 0; i < marineSelected.GetComponentInChildren<MarineRotation>().transformsList.Count; i++)
         {
             if (marineSelected.GetComponentInChildren<MarineRotation>().transformsList[i].childCount > 0)
