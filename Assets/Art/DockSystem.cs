@@ -3,23 +3,24 @@ using UnityEngine;
 
 public class DockSystem : MonoBehaviour
 {
-    public RectTransform parentImage;
-    public RectTransform[] dockImages;
-    public float maxScale;
-    public float animationDuration;
-    public float spacing;
-    public float parentPadding; 
+    [SerializeField] private RectTransform[] dockImages;
+    [SerializeField] private float maxScale;
+    [SerializeField] private float animationDuration;
+    [SerializeField] private float spacing;
+    [SerializeField] private float parentPadding;
+
+    private RectTransform parentImage;
     private Vector3[] originalPositions;
 
     private void Start()
     {
+        parentImage = GetComponent<RectTransform>();
         originalPositions = new Vector3[dockImages.Length];
+
         for (int i = 0; i < dockImages.Length; i++)
         {
             originalPositions[i] = dockImages[i].localPosition;
         }
-
-        //AdjustSpacing();
     }
 
     private void Update()
