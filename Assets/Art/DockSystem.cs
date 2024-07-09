@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DockSystem : MonoBehaviour
 {
+    [SerializeField] private UIMethods uiManager;
     [SerializeField] private RectTransform[] dockImages;
     [SerializeField] private float maxScale;
     [SerializeField] private float animationDuration;
@@ -25,6 +26,9 @@ public class DockSystem : MonoBehaviour
 
     private void Update()
     {
+        if (!uiManager.gameStarted)
+            return;
+
         Vector2 mousePosition = Input.mousePosition;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mousePosition, null, out Vector2 localMousePosition);
 

@@ -20,8 +20,7 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject startWindow;
 
     [Header("SelectWindow")]
-    [SerializeField] private Color selectedColor;
-    [SerializeField] private Color deselectedColor;
+    [SerializeField] private Transform targetPosition;
     [SerializeField] private List<GameObject> marinesModels = new List<GameObject>();
     [SerializeField] private TMP_Text marineName;
     [SerializeField] private TMP_Text marineClass;
@@ -54,19 +53,28 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject selectableCharacterPrefab;
     [SerializeField] private Transform selectableCharacterParent;
 
+    [Header("Settings")]
+    public bool gameStarted = false;
+
     public static bool isOverUI = false;
 
     private int selectedID = 1;
     private float sellTimer;
     private bool sellTimerState;
     private bool notificationActive;
+    private Vector3 recruitWindowOriginalPosition;
+    private bool isRecruitWindowOpen = false;
+
+    //private Vector3 recruitWindowOriginalPosition;
 
     private void Awake()
     {
         Application.targetFrameRate = -1;
-
         OnEnableEventListenerSubscriptions();
         DOTween.Init();
+
+        recruitWindowOriginalPosition = recruitWindow.transform.position;
+
     }
 
     private void Update()
@@ -81,19 +89,29 @@ public class UIMethods : MonoBehaviour, IEventListener
         SetMarketStatus();
     }
 
-    public void OpenRecruitWindow()
+    public void RecruitWindow()
     {
-        //if (isOverUI)
-        //    return;
+        if (isRecruitWindowOpen)
+        {
+            CloseRecruitWindows();
+        }
 
-        recruitWindow.transform.DOScale(1f, .2f).SetEase(Ease.InOutQuad);
+        else
+        {
+            OpenRecruitWindow();
+        }
+
+        isRecruitWindowOpen = !isRecruitWindowOpen;
+    }
+
+    private void OpenRecruitWindow()
+    {
+        recruitWindow.transform.DOMove(targetPosition.position, 0.2f).SetEase(Ease.InOutQuad);
+        recruitWindow.transform.DOScale(1f, 0.2f).SetEase(Ease.InOutQuad);
     }
 
     public void OpenSellOilWindow()
     {
-        //if (isOverUI)
-        //    return;
-
         sellOilWindow.transform.DOScale(1f, .2f).SetEase(Ease.InOutQuad);
     }
 
@@ -105,6 +123,7 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     public void CloseRecruitWindows()
     {
+        recruitWindow.transform.DOMove(recruitWindowOriginalPosition, 0.2f).SetEase(Ease.InOutQuad);
         recruitWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
     }
 
@@ -281,6 +300,7 @@ public class UIMethods : MonoBehaviour, IEventListener
     //StartButton
     public void StartGame()
     {
+        gameStarted = true;
         cam.enabled = true;
         startWindow.SetActive(false);
         DOTween.To(() => volume.weight, x => volume.weight = x, 0, .25f);
