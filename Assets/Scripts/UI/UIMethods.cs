@@ -6,6 +6,7 @@ using Core.Characters;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class UIMethods : MonoBehaviour, IEventListener
 {
@@ -14,6 +15,9 @@ public class UIMethods : MonoBehaviour, IEventListener
     [SerializeField] private GameObject sellOilWindow;
     [SerializeField] private GameObject progressBar;
     [SerializeField] private Transform progressBarTransform;
+    [SerializeField] private CameraBehaviour cam;
+    [SerializeField] private Volume volume;
+    [SerializeField] private GameObject startWindow;
 
     [Header("SelectWindow")]
     [SerializeField] private Color selectedColor;
@@ -277,14 +281,12 @@ public class UIMethods : MonoBehaviour, IEventListener
         }
     }
 
-    private void OnDestroy()
+    //StartButton
+    public void StartGame()
     {
-        CancelEventListenerSubscriptions();
-    }
-
-    private void OnDisable()
-    {
-        CancelEventListenerSubscriptions();
+        cam.enabled = true;
+        startWindow.SetActive(false);
+        DOTween.To(() => volume.weight, x => volume.weight = x, 0, .25f);
     }
 
     public void OnEnableEventListenerSubscriptions()
@@ -297,5 +299,15 @@ public class UIMethods : MonoBehaviour, IEventListener
     {
         EventManager.StopListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
         EventManager.StopListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
+    }
+
+    private void OnDestroy()
+    {
+        CancelEventListenerSubscriptions();
+    }
+
+    private void OnDisable()
+    {
+        CancelEventListenerSubscriptions();
     }
 }
