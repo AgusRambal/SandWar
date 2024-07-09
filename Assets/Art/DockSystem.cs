@@ -3,24 +3,23 @@ using UnityEngine;
 
 public class DockSystem : MonoBehaviour
 {
+    public RectTransform parentImage;
     public RectTransform[] dockImages;
-    public float maxScale = 1.6f;
-    public float adjacentScale1 = 1.4f;
-    public float adjacentScale2 = 1.2f;
-    public float animationDuration = 0.2f;
-    public float spacing = 100f; // Espacio deseado entre las imágenes
+    public float maxScale;
+    public float animationDuration;
+    public float spacing;
+    public float parentPadding; 
     private Vector3[] originalPositions;
 
     private void Start()
     {
-        // Guardar las posiciones originales
         originalPositions = new Vector3[dockImages.Length];
         for (int i = 0; i < dockImages.Length; i++)
         {
             originalPositions[i] = dockImages[i].localPosition;
         }
 
-        AdjustSpacing();
+        //AdjustSpacing();
     }
 
     private void Update()
@@ -28,7 +27,6 @@ public class DockSystem : MonoBehaviour
         Vector2 mousePosition = Input.mousePosition;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform as RectTransform, mousePosition, null, out Vector2 localMousePosition);
 
-        // Verificar si el ratón está dentro del dock
         if (RectTransformUtility.RectangleContainsScreenPoint(transform as RectTransform, mousePosition))
         {
             float[] scales = new float[dockImages.Length];
@@ -54,42 +52,71 @@ public class DockSystem : MonoBehaviour
                     targetScale = Mathf.Max(targetScale, Mathf.Lerp(scales[i], scales[i + 1], 0.5f));
                 }
 
+                if (i > 1)
+                {
+                    targetScale = Mathf.Max(targetScale, Mathf.Lerp(scales[i], scales[i - 2], 0.25f));
+                }
+
+                if (i < dockImages.Length - 2)
+                {
+                    targetScale = Mathf.Max(targetScale, Mathf.Lerp(scales[i], scales[i + 2], 0.25f));
+                }
+
                 dockImages[i].DOScale(Vector3.one * targetScale, animationDuration);
             }
         }
         else
         {
-            // Resetear las escalas si el ratón no está en el dock
             for (int i = 0; i < dockImages.Length; i++)
             {
                 dockImages[i].DOScale(Vector3.one, animationDuration);
             }
         }
 
+        AdjustParentSize();
         AdjustSpacing();
     }
 
     private void AdjustSpacing()
     {
-        float currentPosition = originalPositions[0].x;
+        float totalWidth = parentPadding * 2 + (dockImages.Length - 1) * spacing;
+
+        for (int i = 0; i < dockImages.Length; i++)
+        {
+            float halfWidth = dockImages[i].rect.width * dockImages[i].localScale.x / 2;
+            totalWidth += halfWidth * 2;
+        }
+
+        float startX = -totalWidth / 2 + parentPadding;
 
         for (int i = 0; i < dockImages.Length; i++)
         {
             RectTransform rectTransform = dockImages[i];
-            float scaleFactor = rectTransform.localScale.x;
-            float halfWidth = rectTransform.rect.width * scaleFactor / 2;
-
-            if (i > 0)
-            {
-                float previousHalfWidth = dockImages[i - 1].rect.width * dockImages[i - 1].localScale.x / 2;
-                currentPosition += previousHalfWidth + spacing + halfWidth;
-            }
-
-            // Ajustar la posición y para escalar hacia arriba
+            float halfWidth = rectTransform.rect.width * rectTransform.localScale.x / 2;
             float originalY = originalPositions[i].y;
-            float heightDifference = (rectTransform.rect.height * (scaleFactor - 1)) / 2;
-            rectTransform.localPosition = new Vector3(currentPosition, originalY + heightDifference, rectTransform.localPosition.z);
-            currentPosition += halfWidth;
+            float heightDifference = (rectTransform.rect.height * (rectTransform.localScale.x - 1)) / 2;
+
+            rectTransform.localPosition = new Vector3(startX + halfWidth, originalY + heightDifference, rectTransform.localPosition.z);
+            startX += halfWidth * 2 + spacing;
         }
+    }
+
+    private void AdjustParentSize()
+    {
+        float minX = float.MaxValue;
+        float maxX = float.MinValue;
+
+        for (int i = 0; i < dockImages.Length; i++)
+        {
+            RectTransform rectTransform = dockImages[i];
+            float halfWidth = rectTransform.rect.width * rectTransform.localScale.x / 2;
+
+            minX = Mathf.Min(minX, rectTransform.localPosition.x - halfWidth);
+            maxX = Mathf.Max(maxX, rectTransform.localPosition.x + halfWidth);
+        }
+
+        float totalWidth = maxX - minX + 2 * parentPadding;
+
+        parentImage.sizeDelta = new Vector2(totalWidth, parentImage.sizeDelta.y);
     }
 }
