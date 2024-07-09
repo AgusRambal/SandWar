@@ -22,7 +22,6 @@ public class UIMethods : MonoBehaviour, IEventListener
     [Header("SelectWindow")]
     [SerializeField] private Color selectedColor;
     [SerializeField] private Color deselectedColor;
-    [SerializeField] private List<Image> marinesBorder = new List<Image>();
     [SerializeField] private List<GameObject> marinesModels = new List<GameObject>();
     [SerializeField] private TMP_Text marineName;
     [SerializeField] private TMP_Text marineClass;
@@ -82,23 +81,23 @@ public class UIMethods : MonoBehaviour, IEventListener
         SetMarketStatus();
     }
 
-    private void OpenRecruitWindow(Hashtable hashtable)
+    public void OpenRecruitWindow()
     {
-        if (isOverUI)
-            return;
+        //if (isOverUI)
+        //    return;
 
         recruitWindow.transform.DOScale(1f, .2f).SetEase(Ease.InOutQuad);
     }
 
-    private void OpenSellOilWindow(Hashtable hashtable)
+    public void OpenSellOilWindow()
     {
-        if (isOverUI)
-            return;
+        //if (isOverUI)
+        //    return;
 
         sellOilWindow.transform.DOScale(1f, .2f).SetEase(Ease.InOutQuad);
     }
 
-    private void CloseAllWindows()
+    public void CloseAllWindows()
     {
         recruitWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
         sellOilWindow.transform.DOScale(0f, .2f).SetEase(Ease.InOutQuad);
@@ -116,7 +115,6 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     public void SelectMarine(int id)
     {
-        marinesBorder.ForEach(x => x.color = deselectedColor);
         marinesModels.ForEach(x => x.SetActive(false));
 
         var allMarines = GameManager.Instance.allMarines;
@@ -126,7 +124,6 @@ public class UIMethods : MonoBehaviour, IEventListener
             if (allMarines[i].Id != id) 
                 continue;
             
-            marinesBorder[i].color = selectedColor;
             marinesModels[i].SetActive(true);
             selectedID = id;
             marineName.text = $"{allMarines[i].MarineName}";
@@ -291,14 +288,14 @@ public class UIMethods : MonoBehaviour, IEventListener
 
     public void OnEnableEventListenerSubscriptions()
     {
-        EventManager.StartListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
-        EventManager.StartListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
+        //EventManager.StartListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
+        //EventManager.StartListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
     }
 
     public void CancelEventListenerSubscriptions()
     {
-        EventManager.StopListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
-        EventManager.StopListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
+        //EventManager.StopListening(GenericEvents.OpenRecruitWindow, OpenRecruitWindow);
+        //EventManager.StopListening(GenericEvents.OpenSellOilWindow, OpenSellOilWindow);
     }
 
     private void OnDestroy()
