@@ -1,0 +1,1510 @@
+fileFormatVersion: 2
+guid: ea4f02b323d494a4a8484db35cd7183a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d13a7ba081b94575baa7b9c461ea44d
+      internalID: -495059149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_1"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017b4d84a2d094b2cb33a256c0147160
+      internalID: -1712392518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_2"
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55db538f46aac42928d4c4bf434e20ea
+      internalID: -2016392669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_3"
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b70274b18794297b1b8864b1521bd5
+      internalID: -134358627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_4"
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec8fdeb46da34804a22cde7706b9dba
+      internalID: 1257030289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_5"
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418d08b9c53014451bd75277cf89bba3
+      internalID: -157455287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_6"
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2584a29ed016443ff97cd5f3fea69ffe
+      internalID: 574218363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_7"
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a2a3e4a22ba478c9077a3e42323463
+      internalID: 1017758744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_8"
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef91c8bc3e457401c89c47de285e57b6
+      internalID: -190110997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_9"
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c3a17dc2bd0477ba292014c2839048
+      internalID: -884812809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_10"
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bb5f31778004409a2754f5ca249f69
+      internalID: 551582645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_11"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1276
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d84284a7b88724c0193a1e27f184273f
+      internalID: 415233968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_12"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd845e21cd4947f5b5bb3f631272179
+      internalID: 1461932119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_13"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2ea1253e0df45afba7103e932ff1e4
+      internalID: 596071736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_14"
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3938141e235c24e379923569b877195b
+      internalID: 396782741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_15"
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c6169e6306b4416b777ea2811b881e
+      internalID: -1551750361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_16"
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace70d4ad0f244b1793f0921e6a02d1e
+      internalID: -889688470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_17"
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb7eb1aeefdf4a70aeeb173a984f4fd
+      internalID: -1754103324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_18"
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459cf2656de104c899861c32b217949c
+      internalID: -2038498564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_19"
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c88e98929d4f45c88facdbe092e6883
+      internalID: -1918939734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_20"
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364a1a0cc55944c018b2df47282b5773
+      internalID: 1231019012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_21"
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c2f6a3426f1481ebefb658b32fc09a
+      internalID: -930043126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_22"
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da2f5d7e00c4446c8842e71c374e7f0
+      internalID: -1108584459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_23"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 957
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850f66203a6b040f5be81fbe31374cac
+      internalID: 1735782193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_24"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542451402c3174f2eb36098c68fe3b6c
+      internalID: 390437891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_25"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190ba9917d51d4b2c9f44b6f41ca3874
+      internalID: 494054802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_26"
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf691a638a3b64510963eda8dad933a6
+      internalID: 2070487122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_27"
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668441112784a4e26879e7857b2858ca
+      internalID: -1121650027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_28"
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4126cac2d5d73478586f0027c56ad79b
+      internalID: -1303533348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_29"
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afcd661bed114ff4813c47d9d00b0fa
+      internalID: -1677164393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_30"
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002712b187782458baa8eda24a2b4a35
+      internalID: -520316877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_31"
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a2f5edcfe01474f9f8a199b46128d0
+      internalID: 1586186591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_32"
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b37eb9c5ee14fe2954cb7fe296cb3f
+      internalID: 124030299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_33"
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107a18b11cc614a579c803c494a825ac
+      internalID: -322952442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_34"
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd66267dae1e14bc59897ac2297b6cbe
+      internalID: -2039501272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_35"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 638
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9f4c7c61051f4dbb8e7f96c9631171a
+      internalID: -1184327707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_36"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bfb7024ff11e4ca59c76522f93eb1fb
+      internalID: -1910833822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_37"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8edb1a6914254f65917105c4b5dcd51
+      internalID: 1638451387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_38"
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc73da4c452b54645a44ae39ceb845fc
+      internalID: -298517154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_39"
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e78c0dcba784ca4b69c4092fb2b1b9
+      internalID: -451921139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_40"
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfc8ab169b7a42158a7746faa32bb4f
+      internalID: 777222365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_41"
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e643719a470b749bdb5b0d53bbc24e03
+      internalID: 2129452320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_42"
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d80a238948fd40fc9559690156d12fa
+      internalID: -1049684765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_43"
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aebe8f5a95e743a29525c3377104374
+      internalID: 2060896746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_44"
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953c233961a844621b08175915b3e10b
+      internalID: 1422976095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_45"
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc292af5890b54f28b407e7e26a61deb
+      internalID: 1030537406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_46"
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a06d52b852134b8594b09aae04795e8
+      internalID: -1796788179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_47"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 319
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b368d845ee494f4ea1a004e48147ba0
+      internalID: 270455863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_48"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfbd23c463304751bdd402e7443d364
+      internalID: -1818098997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_49"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11c59d3a1aec42d8859f4498102ed20
+      internalID: 661421240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_50"
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ab133b9cbef45e2808a91a47a67e9c
+      internalID: -1181671672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_51"
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c700b8753f447579eaea05ed08512b
+      internalID: -667267798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_52"
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf9297ab1d0343cd9fc73ea4c0f252a
+      internalID: 276432455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_53"
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c80130a7c5844e8f8e8c82220b4ce9e
+      internalID: -1071508337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_54"
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24559bb297cfe43ad97e3cb7fc5f2ef4
+      internalID: 3291613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_55"
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0854b0d575194f18b06ab584cc8ed55
+      internalID: 953386634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_56"
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ecab24eedbed4de2981c47bdb8c8df5
+      internalID: 1293235524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_57"
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8b76be86e3246398e8b4e43e37c4f0
+      internalID: -585898250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_58"
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fed0b498c2884591be549e762e7ffa2
+      internalID: -1962833124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Baraja_espan\u0303ola_completa_59"
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 208
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce6461ed55a349f3919605237a13d8b
+      internalID: 1060336704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3f5437254a5d640f497a49b32dd02b07
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "Baraja_espan\u0303ola_completa_0": -495059149
+      "Baraja_espan\u0303ola_completa_1": -1712392518
+      "Baraja_espan\u0303ola_completa_10": 551582645
+      "Baraja_espan\u0303ola_completa_11": 415233968
+      "Baraja_espan\u0303ola_completa_12": 1461932119
+      "Baraja_espan\u0303ola_completa_13": 596071736
+      "Baraja_espan\u0303ola_completa_14": 396782741
+      "Baraja_espan\u0303ola_completa_15": -1551750361
+      "Baraja_espan\u0303ola_completa_16": -889688470
+      "Baraja_espan\u0303ola_completa_17": -1754103324
+      "Baraja_espan\u0303ola_completa_18": -2038498564
+      "Baraja_espan\u0303ola_completa_19": -1918939734
+      "Baraja_espan\u0303ola_completa_2": -2016392669
+      "Baraja_espan\u0303ola_completa_20": 1231019012
+      "Baraja_espan\u0303ola_completa_21": -930043126
+      "Baraja_espan\u0303ola_completa_22": -1108584459
+      "Baraja_espan\u0303ola_completa_23": 1735782193
+      "Baraja_espan\u0303ola_completa_24": 390437891
+      "Baraja_espan\u0303ola_completa_25": 494054802
+      "Baraja_espan\u0303ola_completa_26": 2070487122
+      "Baraja_espan\u0303ola_completa_27": -1121650027
+      "Baraja_espan\u0303ola_completa_28": -1303533348
+      "Baraja_espan\u0303ola_completa_29": -1677164393
+      "Baraja_espan\u0303ola_completa_3": -134358627
+      "Baraja_espan\u0303ola_completa_30": -520316877
+      "Baraja_espan\u0303ola_completa_31": 1586186591
+      "Baraja_espan\u0303ola_completa_32": 124030299
+      "Baraja_espan\u0303ola_completa_33": -322952442
+      "Baraja_espan\u0303ola_completa_34": -2039501272
+      "Baraja_espan\u0303ola_completa_35": -1184327707
+      "Baraja_espan\u0303ola_completa_36": -1910833822
+      "Baraja_espan\u0303ola_completa_37": 1638451387
+      "Baraja_espan\u0303ola_completa_38": -298517154
+      "Baraja_espan\u0303ola_completa_39": -451921139
+      "Baraja_espan\u0303ola_completa_4": 1257030289
+      "Baraja_espan\u0303ola_completa_40": 777222365
+      "Baraja_espan\u0303ola_completa_41": 2129452320
+      "Baraja_espan\u0303ola_completa_42": -1049684765
+      "Baraja_espan\u0303ola_completa_43": 2060896746
+      "Baraja_espan\u0303ola_completa_44": 1422976095
+      "Baraja_espan\u0303ola_completa_45": 1030537406
+      "Baraja_espan\u0303ola_completa_46": -1796788179
+      "Baraja_espan\u0303ola_completa_47": 270455863
+      "Baraja_espan\u0303ola_completa_48": -1818098997
+      "Baraja_espan\u0303ola_completa_49": 661421240
+      "Baraja_espan\u0303ola_completa_5": -157455287
+      "Baraja_espan\u0303ola_completa_50": -1181671672
+      "Baraja_espan\u0303ola_completa_51": -667267798
+      "Baraja_espan\u0303ola_completa_52": 276432455
+      "Baraja_espan\u0303ola_completa_53": -1071508337
+      "Baraja_espan\u0303ola_completa_54": 3291613
+      "Baraja_espan\u0303ola_completa_55": 953386634
+      "Baraja_espan\u0303ola_completa_56": 1293235524
+      "Baraja_espan\u0303ola_completa_57": -585898250
+      "Baraja_espan\u0303ola_completa_58": -1962833124
+      "Baraja_espan\u0303ola_completa_59": 1060336704
+      "Baraja_espan\u0303ola_completa_6": 574218363
+      "Baraja_espan\u0303ola_completa_7": 1017758744
+      "Baraja_espan\u0303ola_completa_8": -190110997
+      "Baraja_espan\u0303ola_completa_9": -884812809
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

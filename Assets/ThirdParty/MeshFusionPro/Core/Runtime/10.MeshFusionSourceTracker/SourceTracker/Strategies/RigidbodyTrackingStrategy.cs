@@ -47,7 +47,7 @@ namespace NGS.MeshFusionPro
 
         public bool OnUpdate()
         {
-            float velocity = _rigidbody.velocity.magnitude;
+            float velocity = _rigidbody.linearVelocity.magnitude;
             float angularVelocity = _rigidbody.angularVelocity.magnitude;
 
             if (velocity > _velocityThreashold || angularVelocity > _angularVelocityThreashold)
